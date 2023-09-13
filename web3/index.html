@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Title -->
+    <title>数据大屏案例展示中心</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="index/favicons/favicon.ico">
+    <!--  Meta tags -->
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="index/brand/bootstrap-social.png">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+    <!-- 登录 -->
+    <link rel="stylesheet" href="index/css/styles.css">
+    <!-- 图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!-- CSS Template -->
+    <link rel="stylesheet" href="index/css/theme.css">
+    <style>
+        .text-secondary {
+            color: #712cf9 !important;
+        }
+
+        .btn-secondary {
+            background-color: #712cf9;
+            border-color: #712cf9;
+        }
+    </style>
+
+</head>
+<body>
+<!-- /**zjh -->
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+
+            </div>
+            <div class="modal-body">
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" aria-label="Sizing example input" id="modal-body-input"
+                           placeholder="请输入密码" aria-describedby="inputGroup-sizing-default"/>
+                </div>
+                <div class="alert alert-primary" id="modal-body-div" style="display: none" role="alert">
+                    获取密码请联系电话13266825268
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row align-items-center">
+                    <!--                        &lt;!&ndash; QQ 图标 &ndash;&gt;-->
+                    <!--                        <div class="col-2 text-left icon">-->
+                    <!--                            <i class="fab fa-qq"></i>-->
+                    <!--                        </div>-->
+                    <!--                        &lt;!&ndash; WX 图标 &ndash;&gt;-->
+                    <!--                        <div class="col-2 text-left icon">-->
+                    <!--                            <i class="fab fa-weixin"></i>-->
+                    <!--                        </div>-->
+                    <!-- 登录按钮 -->
+                    <div class="col text-right" onclick="affirm()">
+                        <button class="btn btn-primary">点击进入</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 底部固定导航栏 -->
+<nav class="navbar fixed-bottom navbar-expand-lg navbar-dark bg-warning ">
+    <div class="row">
+        <div class="col-7 bottom-nav-left ">
+            <h6 class="text-white">
+                花知管理咨询<br/>
+                （深圳）有限公司
+            </h6>
+        </div>
+        <div class="col-5 bottom-nav-right">
+            <h6 class="text-white">
+                电话：<br/1>
+                13266825268
+            </h6>
+        </div>
+    </div>
+</nav>
+<!-- **zjh -->
+<!-- Header -->
+<header class="duik-header">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white position-absolute left-0 right-0 flex-nowrap z-index-3">
+        <div class="container">
+            <a class="navbar-brand" href="/"><img src="index/img/navlogo-small.png"> Hzcloud 汇智云</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo"
+                    aria-controls="navbarTogglerDemo" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item dropdown ml-lg-6 mb-2 mb-lg-0 d-none d-lg-block">
+                        <a class="nav-link px-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
+                            汇智云 <i class="fas fa-angle-down small ml-1"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="" target="_blank">HzClound v3 </a>
+                            <a class="dropdown-item" href="" target="_blank">HzClound v4 </a>
+                            <a class="dropdown-item" href="" target="_blank">HzClound v5 </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="" target="_blank">HzClound v3 </a>
+                        </div>
+                    </li>
+                    <li class="nav-item ml-lg-6 mb-2 mb-lg-0 d-lg-none">
+                        <a class="nav-link px-0 active" href="" target="_blank">HzClound v3 中文文档</a>
+                    </li>
+                    <li class="nav-item ml-lg-6 mb-2 mb-lg-0 d-lg-none">
+                        <a class="nav-link px-0 active" href="" target="_blank">HzClound v4 中文文档</a>
+                    </li>
+                    <li class="nav-item ml-lg-6 mb-2 mb-lg-0 d-lg-none">
+                        <a class="nav-link px-0 active" href="" target="_blank">HzClound v5 中文文档</a>
+                    </li>
+                    <li class="nav-item ml-lg-6 mb-2 mb-lg-0">
+                        <a class="nav-link px-0 active position-relative reddot" href="" target="_blank">大屏实例</a>
+                    </li>
+                    <!-- <li class="nav-item ml-lg-6 mb-2 mb-lg-0">
+                      <a class="nav-link px-0 active position-relative reddot" href=" target="_blank" >精选模板</a>
+                    </li> -->
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li class="nav-item ml-lg-6 mb-2 mb-lg-0 d-lg-none">
+                        <a class="nav-link px-0 active" href="" target="_blank">HzClound v2 中文文档</a>
+                    </li>
+                    <li class="nav-item dropdown ml-lg-6 mb-2 mb-lg-0 d-none d-lg-block">
+                        <a class="nav-link px-0" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-solid fa-globe small ml-1"></i>语言
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                            <a class="dropdown-item" href="#" target="_blank">中文</a>
+                            <a class="dropdown-item" href="#" target="_blank">EN</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+</header>
+<!-- End Header -->
+<!-- Promo Section -->
+
+<section class="duik-promo bg-light text-center ">
+    <div class="container duik-promo-container">
+        <div class="d-flex justify-content-center">
+            <img class="home-index-head-background" src="index/img/home-bg.png">
+        </div>
+    </div>
+
+</section>
+<!-- End Promo Section -->
+
+<main>
+    <section class="text-center ">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="card flex-row border-0">
+                        <div class="d-flex align-items-center">
+                            <img class="card-img-left " src="index/img/item1.png" width="64" height="64"/>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title text-left">稳定</h3>
+                            <p class="card-text text-left">分布式部署，确保平台在任何时候稳定运行。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card flex-row border-0">
+                        <div class="d-flex align-items-center">
+                            <img class="card-img-left " src="index/img/item2.png" width="64" height="64"/>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title text-left">快速</h3>
+                            <p class="card-text text-left">多层优化，提升平台内容的加载速度</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card flex-row border-0">
+                        <div class="d-flex align-items-center">
+                            <img class="card-img-left " src="index/img/item3.png" width="64" height="64"/>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title text-left">全球加速</h3>
+                            <p class="card-text text-left">采用腾讯云108个国家全球CDN加速服务，访问更加便捷。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 mt-10">
+                <!-- <div class="col d-flex justify-content-center pb-5 rounded-home-item"> -->
+                <!-- <div class="card shadow position-relative h-100 rounded-home-item" style="max-width: 310px;"> -->
+                <!-- <div class="card-header p-1"><img class="img-fluid lazy rounded-home-item-img" src="index/img/null.png" data-src="index/img/expo.png" width="300" height="150" alt="Bootstrap 优站精选" /></div> -->
+                <!-- <div class="card-body p-3"> -->
+                <!-- <h4 class="h5 mb-2"><a class="link-dark stretched-link" target="_blank" href="https://www.youzhan.org/" >优站精选</a></h4> -->
+                <!-- <p class="card-text mb-3" style="height: 7rem; overflow: hidden;">Bootstrap 优站精选频道收集了众多基于 Bootstrap 构建、设计精美的、有创意的网站。</p> -->
+                <!-- </div> -->
+                <!-- </div> -->
+                <!-- </div> -->
+                <div class="col d-flex justify-content-center pb-5 rounded-home-item" onclick="openModal()">
+                    <div class="card shadow position-relative h-100 rounded-home-item" style="max-width: 310px;">
+                        <div class="card-header p-1">
+                            <img class="img-fluid lazy rounded-home-item-img"
+                                 src="index/img/home/001.png" data-src="index/img/home/001.png"
+                                 width="300" height="150"/></div>
+                        <div class="card-body p-3">
+                            <h4 class="h5 mb-2">
+                                <a class="link-dark stretched-link" target="_blank">H001-智慧物流服务中心</a></h4>
+                            <p class="card-text mb-3" style="height: 7rem; overflow: hidden;">
+                                各个城市派件、寄件数量一目了然，直观！当前到件量，当前值班人员！</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="intelligentLogisticsModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">温馨提示：</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                各个城市派件、寄件数量一目了然，直观！当前到件量，当前值班人员！
+                                请复制以下链接：<br/>
+                                https://001/index.html
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                                        onclick="clickClose()">关闭
+                                </button>
+                                <button type="button" class="btn btn-primary" onclick="clickCopy()">点击复制链接
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col d-flex justify-content-center pb-5 rounded-home-item">
+                    <div class="card shadow position-relative h-100 rounded-home-item" style="max-width: 310px;">
+                        <div class="card-header p-1"><img class="img-fluid lazy rounded-home-item-img"
+                                                          src="index/img/home/002.png" data-src="index/img/home/002.png"
+                                                          width="300" height="150"/></div>
+                        <div class="card-body p-3">
+                            <h4 class="h5 mb-2"><a class="link-dark stretched-link" target="_blank"
+                                                   href="002/index.html">H002-城镇大数据分析平台</a></h4>
+                            <p class="card-text mb-3" style="height: 7rem; overflow: hidden;">
+                                城镇大数据分析平台，根据地图区域调取数据，车辆等实时情况等</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-flex justify-content-center pb-5 rounded-home-item">
+                    <div class="card shadow position-relative h-100 rounded-home-item" style="max-width: 310px;">
+                        <div class="card-header p-1"><img class="img-fluid lazy rounded-home-item-img"
+                                                          src="index/img/home/003-1.png"
+                                                          data-src="index/img/home/003-1.png" width="300" height="150"
+                                                          alt="TypeScript 中文手册"/></div>
+                        <div class="card-body p-3">
+                            <h4 class="h5 mb-2"><a class="link-dark stretched-link" target="_blank"
+                                                   href="003/public.html">H003-某市公安局-舆情分析平台</a></h4>
+                            <p class="card-text mb-3" style="height: 7rem; overflow: hidden;">
+                                舆情分析，舆情来源分析，舆情环比分析,矛盾纠纷七日数据分析
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-flex justify-content-center pb-5 rounded-home-item">
+                    <div class="card shadow position-relative h-100 rounded-home-item" style="max-width: 310px;">
+                        <div class="card-header p-1"><img class="img-fluid lazy rounded-home-item-img"
+                                                          src="index/img/home/003-2.png"
+                                                          data-src="index/img/home/003-2.png" width="300" height="150"
+                                                          alt="Bootstrap 免费模板"/></div>
+                        <div class="card-body p-3">
+                            <h4 class="h5 mb-2"><a class="link-dark stretched-link" target="_blank"
+                                                   href="003/people.html">H004-某市公安局-人口分析平台</a></h4>
+                            <p class="card-text mb-3" style="height: 7rem; overflow: hidden;">
+                                实有人口名族分析，人口职业占比TOP5，高危人员分类统计，流动人口年龄分析等</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col d-flex justify-content-center pb-5 rounded-home-item"> -->
+                <!-- <div class="card shadow position-relative h-100 rounded-home-item" style="max-width: 310px;"> -->
+                <!-- <div class="card-header p-1"><img class="img-fluid lazy rounded-home-item-img" src="index/img/null.png" data-src="index/img/nextjs.png" width="300" height="150" alt="Next.js 是一个轻量级的 React 服务端渲染应用框架。" /></div> -->
+                <!-- <div class="card-body p-3"> -->
+                <!-- <h4 class="h5 mb-2"><a class="link-dark stretched-link" target="_blank" href="https://www.nextjs.cn/" >Next.js</a></h4> -->
+                <!-- <p class="card-text mb-3" style="height: 7rem; overflow: hidden;">Next.js 是一个轻量级的 React 服务端渲染应用框架。</p> -->
+                <!-- </div> -->
+                <!-- </div> -->
+                <!-- </div> -->
+                <div class="col d-flex justify-content-center pb-5 rounded-home-item">
+                    <div class="card shadow position-relative h-100 rounded-home-item" style="max-width: 310px;">
+                        <div class="card-header p-1"><img class="img-fluid lazy rounded-home-item-img"
+                                                          src="index/img/home/003-3.png"
+                                                          data-src="index/img/home/003-3.png" width="300" height="150"
+                                                          alt="Babel 是一个 JavaScript 编译器。"/></div>
+                        <div class="card-body p-3">
+                            <h4 class="h5 mb-2"><a class="link-dark stretched-link" target="_blank"
+                                                   href="003/traffic.html">某市-交通局分析平台</a></h4>
+                            <p class="card-text mb-3" style="height: 7rem; overflow: hidden;">
+                                实时地图，每日上户车辆、高危车辆统计、新增驾驶人、办驾照雷达等</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col d-flex justify-content-center pb-5 rounded-home-item">
+                    <div class="card shadow position-relative h-100 rounded-home-item" style="max-width: 310px;">
+                        <div class="card-header p-1"><img class="img-fluid lazy rounded-home-item-img"
+                                                          src="index/img/home/003-4.png"
+                                                          data-src="index/img/home/003-4.png" width="300" height="150"
+                                                          alt="Tailwind CSS 中文网 / 中文文档"/></div>
+                        <div class="card-body p-3">
+                            <h4 class="h5 mb-2"><a class="link-dark stretched-link" target="_blank"
+                                                   href="003/analysis.html">某市公安局-矛盾纠纷分析平台 </a></h4>
+                            <p class="card-text mb-3" style="height: 7rem; overflow: hidden;">
+                                今日矛盾纠纷数据统计，纠纷地区统计，案件统计，警力分析等</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-flex justify-content-center pb-5 rounded-home-item">
+                    <div class="card shadow position-relative h-100 rounded-home-item" style="max-width: 310px;">
+                        <div class="card-header p-1"><img class="img-fluid lazy rounded-home-item-img"
+                                                          src="index/img/home/003-5.png"
+                                                          data-src="index/img/home/003-5.png" width="300" height="150"
+                                                          alt="Alpine.js"/></div>
+                        <div class="card-body p-3">
+                            <h4 class="h5 mb-2"><a class="link-dark stretched-link" target="_blank"
+                                                   href="003/activity.html">某市-聚集活动分析平台</a></h4>
+                            <p class="card-text mb-3" style="height: 7rem; overflow: hidden;">
+                                活动总数、佛事活动统计，民俗活动，民事活动统计</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col d-flex justify-content-center pb-5 rounded-home-item">
+                    <div class="card shadow position-relative h-100 rounded-home-item" style="max-width: 310px;">
+                        <div class="card-header p-1"><img class="img-fluid lazy rounded-home-item-img"
+                                                          src="index/img/home/005.png" data-src="index/img/home/005.png"
+                                                          width="300" height="150" alt="Alpine.js"/></div>
+                        <div class="card-body p-3">
+                            <h4 class="h5 mb-2"><a class="link-dark stretched-link" target="_blank"
+                                                   href="005/index.html">H005-某车联网平台数据分析大屏</a></h4>
+                            <p class="card-text mb-3" style="height: 7rem; overflow: hidden;">
+                                实时统计车辆在线数量，总数，活跃数等，车型分类统计，充电高峰时间统计,
+                                汽车充电电池报警统计及预测。</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col d-flex justify-content-center pb-5 rounded-home-item">
+                    <div class="card shadow position-relative h-100 rounded-home-item" style="max-width: 310px;">
+                        <div class="card-header p-1"><img class="img-fluid lazy rounded-home-item-img"
+                                                          src="index/img/home/008.png" data-src="index/img/home/008.png"
+                                                          width="300" height="150" alt="Alpine.js"/></div>
+                        <div class="card-body p-3">
+                            <h4 class="h5 mb-2"><a class="link-dark stretched-link" target="_blank"
+                                                   href="008/index.html">H008-某省物流大数据服务平台</a></h4>
+                            <p class="card-text mb-3" style="height: 7rem; overflow: hidden;">
+                                省货远输收入统计、飞机场业务量统计、湖南省货物周转量统计、分析、调配等 </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col d-flex justify-content-center pb-5 rounded-home-item">
+                    <div class="card shadow position-relative h-100 rounded-home-item" style="max-width: 310px;">
+                        <div class="card-header p-1"><img class="img-fluid lazy rounded-home-item-img"
+                                                          src="index/img/home/009.png" data-src="index/img/home/009.png"
+                                                          width="300" height="150" alt="Alpine.js"/></div>
+                        <div class="card-body p-3">
+                            <h4 class="h5 mb-2"><a class="link-dark stretched-link" target="_blank"
+                                                   href="009/index.html">H009-某设备终端数据平台</a></h4>
+                            <p class="card-text mb-3" style="height: 7rem; overflow: hidden;">
+                                接入终端设备总数、今天新增存储数据，当前任务个数，当前集群数，接入机型占比</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col d-flex justify-content-center pb-5 rounded-home-item">
+                    <div class="card shadow position-relative h-100 rounded-home-item" style="max-width: 310px;">
+                        <div class="card-header p-1"><img class="img-fluid lazy rounded-home-item-img"
+                                                          src="index/img/home/010.png" data-src="index/img/home/010.png"
+                                                          width="300" height="150" alt="Alpine.js"/></div>
+                        <div class="card-body p-3">
+                            <h4 class="h5 mb-2"><a class="link-dark stretched-link" target="_blank"
+                                                   href="010/index.html">H010-某省电子商务公共服务平台大数据中心</a>
+                            </h4>
+                            <p class="card-text mb-3" style="height: 7rem; overflow: hidden;">
+                                电子商务销售额、订单量，快递企业月寄递量，农村电商交易统计，热销产品排行榜。</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col d-flex justify-content-center pb-5 rounded-home-item">
+                    <div class="card shadow position-relative h-100 rounded-home-item" style="max-width: 310px;">
+                        <div class="card-header p-1"><img class="img-fluid lazy rounded-home-item-img"
+                                                          src="index/img/home/011.png" data-src="index/img/home/011.png"
+                                                          width="300" height="150" alt="Alpine.js"/></div>
+                        <div class="card-body p-3">
+                            <h4 class="h5 mb-2"><a class="link-dark stretched-link" target="_blank"
+                                                   href="011/views/index.html">H011-某中医院数据中心</a></h4>
+                            <p class="card-text mb-3" style="height: 7rem; overflow: hidden;">
+                                慢性病趋势分析，传染病发病趋势、高血压、抑郁症、乙肝等大数据展示</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col d-flex justify-content-center pb-5 rounded-home-item">
+                    <div class="card shadow position-relative h-100 rounded-home-item" style="max-width: 310px;">
+                        <div class="card-header p-1"><img class="img-fluid lazy rounded-home-item-img"
+                                                          src="index/img/home/012.png" data-src="index/img/home/012.png"
+                                                          width="300" height="150" alt="Alpine.js"/></div>
+                        <div class="card-body p-3">
+                            <h4 class="h5 mb-2"><a class="link-dark stretched-link" target="_blank"
+                                                   href="012/index.html">H012-某市博安信通智慧社区内网数据比对信息系统</a>
+                            </h4>
+                            <p class="card-text mb-3" style="height: 7rem; overflow: hidden;">
+                                违法犯罪人员分析、重点入口分析，经侦嫌疑等数据分析.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col d-flex justify-content-center pb-5 rounded-home-item">
+                    <div class="card shadow position-relative h-100 rounded-home-item" style="max-width: 310px;">
+                        <div class="card-header p-1"><img class="img-fluid lazy rounded-home-item-img"
+                                                          src="index/img/home/013.png" data-src="index/img/home/013.png"
+                                                          width="300" height="150" alt="Alpine.js"/></div>
+                        <div class="card-body p-3">
+                            <h4 class="h5 mb-2"><a class="link-dark stretched-link" target="_blank"
+                                                   href="013/index.html">H013-某物联网设备平台数据统计</a></h4>
+                            <p class="card-text mb-3" style="height: 7rem; overflow: hidden;">
+                                设备在线情况，负跳变占比、正跳变占比、下下线占比等，接入工厂类型，设备报警等。</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col d-flex justify-content-center pb-5 rounded-home-item">
+                    <div class="card shadow position-relative h-100 rounded-home-item" style="max-width: 310px;">
+                        <div class="card-header p-1"><img class="img-fluid lazy rounded-home-item-img"
+                                                          src="index/img/home/014.png" data-src="index/img/home/014.png"
+                                                          width="300" height="150" alt="Alpine.js"/></div>
+                        <div class="card-body p-3">
+                            <h4 class="h5 mb-2"><a class="link-dark stretched-link" target="_blank"
+                                                   href="014/index.html">H014-某知名企业运营大数据平台</a></h4>
+                            <p class="card-text mb-3" style="height: 7rem; overflow: hidden;">
+                                月销量总额，订单量趋势，客流量，转换率等数据，年度销售额走势图，销售渠道占比等</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col d-flex justify-content-center pb-5 rounded-home-item">
+                    <div class="card shadow position-relative h-100 rounded-home-item" style="max-width: 310px;">
+                        <div class="card-header p-1"><img class="img-fluid lazy rounded-home-item-img"
+                                                          src="index/img/home/015.png" data-src="index/img/home/015.png"
+                                                          width="300" height="150" alt="Alpine.js"/></div>
+                        <div class="card-body p-3">
+                            <h4 class="h5 mb-2"><a class="link-dark stretched-link" target="_blank"
+                                                   href="015/index.html">H015-某市人才大数据服务平台</a></h4>
+                            <p class="card-text mb-3" style="height: 7rem; overflow: hidden;">
+                                城市企业就业分布，高层次人才分布，城市虹吸指数，人次流入占比等</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col d-flex justify-content-center pb-5 rounded-home-item">
+                    <div class="card shadow position-relative h-100 rounded-home-item" style="max-width: 310px;">
+                        <div class="card-header p-1"><img class="img-fluid lazy rounded-home-item-img"
+                                                          src="index/img/home/016.png" data-src="index/img/home/016.png"
+                                                          width="300" height="150" alt="Alpine.js"/></div>
+                        <div class="card-body p-3">
+                            <h4 class="h5 mb-2"><a class="link-dark stretched-link" target="_blank"
+                                                   href="016/index.html">H016-某环境监测数据平台</a></h4>
+                            <p class="card-text mb-3" style="height: 7rem; overflow: hidden;">
+                                接入设备总数，设备增值率，设备分布，设备使用频率等，维保人员配置</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col d-flex justify-content-center pb-5 rounded-home-item">
+                    <div class="card shadow position-relative h-100 rounded-home-item" style="max-width: 310px;">
+                        <div class="card-header p-1"><img class="img-fluid lazy rounded-home-item-img"
+                                                          src="index/img/home/017.png" data-src="index/img/home/017.png"
+                                                          width="300" height="150" alt="Alpine.js"/></div>
+                        <div class="card-body p-3">
+                            <h4 class="h5 mb-2"><a class="link-dark stretched-link" target="_blank"
+                                                   href="017/index.html">H017-某知名企业指挥中心</a></h4>
+                            <p class="card-text mb-3" style="height: 7rem; overflow: hidden;">
+                                生产销售完成情况，计划生产，已接订单，计划完成率</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col d-flex justify-content-center pb-5 rounded-home-item">
+                    <div class="card shadow position-relative h-100 rounded-home-item" style="max-width: 310px;">
+                        <div class="card-header p-1"><img class="img-fluid lazy rounded-home-item-img"
+                                                          src="index/img/home/018.png" data-src="index/img/home/018.png"
+                                                          width="300" height="150" alt="Alpine.js"/></div>
+                        <div class="card-body p-3">
+                            <h4 class="h5 mb-2"><a class="link-dark stretched-link" target="_blank"
+                                                   href="018/index.html">H018-某通大数据智慧能力网络平台中心</a></h4>
+                            <p class="card-text mb-3" style="height: 7rem; overflow: hidden;">
+                                VLR登记数，A口话务量,语音网路接通率等</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col d-flex justify-content-center pb-5 rounded-home-item">
+                    <div class="card shadow position-relative h-100 rounded-home-item" style="max-width: 310px;">
+                        <div class="card-header p-1"><img class="img-fluid lazy rounded-home-item-img"
+                                                          src="index/img/home/019.png" data-src="index/img/home/019.png"
+                                                          width="300" height="150" alt="Alpine.js"/></div>
+                        <div class="card-body p-3">
+                            <h4 class="h5 mb-2"><a class="link-dark stretched-link" target="_blank"
+                                                   href="019/index.html">H019-某新能源车联网综合大数据平台</a></h4>
+                            <p class="card-text mb-3" style="height: 7rem; overflow: hidden;">
+                                实时行驶车辆统计，在线数统计，活跃数量，车型分析，车辆充电高峰时间统计等</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col d-flex justify-content-center pb-5 rounded-home-item">
+                    <div class="card shadow position-relative h-100 rounded-home-item" style="max-width: 310px;">
+                        <div class="card-header p-1"><img class="img-fluid lazy rounded-home-item-img"
+                                                          src="index/img/home/020.png" data-src="index/img/home/020.png"
+                                                          width="300" height="150" alt="Alpine.js"/></div>
+                        <div class="card-body p-3">
+                            <h4 class="h5 mb-2"><a class="link-dark stretched-link" target="_blank"
+                                                   href="020/index.html">H020-某移动能效管理平台</a></h4>
+                            <p class="card-text mb-3" style="height: 7rem; overflow: hidden;">
+                                实时能耗统计，能耗实时排行统计，能耗热点图分布数据等</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+</main>
+<!-- Footer -->
+<footer class="bg-dark-footer font-weight-light text-white-55 pt-11 pb-5">
+    <div class="container">
+        <div class="row justify-content-md-between">
+            <div class="order-4 order-lg-1 col-md-12 col-lg-4 mb-4 mr-lg-auto">
+                <a class="navbar-brand mb-3 text-white" href="/"><img class="mr-1"
+                                                                      src="index/img/bootstrap-logo-white.svg"
+                                                                      alt="HzCloud" style="height: 32px;">Hzcloud 汇智云</a>
+                <p class="small font-weight-light mb-3">我们一直致力于为广大企业提供更多的优质云服务和辅助开发工具！</p>
+            </div>
+            <div class="col-sm-4 col-lg-2 mb-4 order-lg-2">
+                <h4 class="h6 text-white mb-3">关于</h4>
+                <!-- Links -->
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a class="link-white-55" href="/about/">关于我们</a></li>
+                    <li class="mb-2"><a class="link-white-55" href="/ad/">广告合作</a></li>
+                    <li class="mb-2"><a class="link-white-55" href="/links/">友链</a></li>
+                    <li class="mb-2"><a class="link-white-55" href="/jobs/">招聘</a></li>
+                </ul>
+                <!-- End Links -->
+            </div>
+            <div class="col-sm-4 col-lg-2 mb-4 order-lg-3">
+                <h4 class="h6 text-white mb-3">特别致谢</h4>
+                <!-- Links -->
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a class="link-white-55" href="https://www.qq.com" target="_blank">腾讯云</a></li>
+                    <li class="mb-2"><a class="link-white-55" href="https://www.jdcloud.com" target="_blank">阿里云</a>
+                    </li>
+                </ul>
+                <!-- End Links -->
+            </div>
+            <div class="col-sm-4 col-lg-2 mb-4 order-lg-4">
+                <h4 class="h6 text-white mb-3">联系方式</h4>
+                <!-- Links -->
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a class="link-white-55" href="https://weibo.com/" target="_blank">微博</a></li>
+                    <li class="mb-2"><a class="link-white-55" href="mailto:xmgqw@qq.com" target="_blank">邮箱</a></li>
+                </ul>
+                <!-- End Links -->
+            </div>
+        </div>
+        <hr class="my-5 opacity-10">
+        <div class="row row-cols-1 row-cols-md-3">
+            <div class="col">
+                <p class="small font-weight-light mb-0"><a class="link-white-55" href="https://beian.miit.gov.cn/"
+                                                           target="_blank"> 粤ICP备2021164328号</a>&nbsp;&nbsp;</p>
+            </div>
+            <div class="col text-md-center">
+
+            </div>
+            <div class="col text-md-right">
+                <p class="small font-weight-light mb-0">&copy; 2016-2023 <a class="link-white-55" href="">HzCloud
+                    汇智云</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- End Footer -->
+<!-- Go to Top -->
+<a class="js-go-to duik-go-to" href="javascript:;">
+    <span class="fa fa-arrow-up duik-go-to__inner"></span>
+</a>
+<!-- End Go to Top -->
+<!-- JS Global Compulsory -->
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.2/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/unveil/1.3.0/jquery.unveil.min.js"></script>
+<!-- JS -->
+<script src="index/js/main.js"></script>
+<script src="index/js/script.js"></script>
+
+<script src="https://cdn.bootcdn.net/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/1.5.16/clipboard.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/localforage/1.4.2/localforage.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+<script src="index/js/bootcdn.js?ver=1.1"></script>
+
+<script src="https://cdn.bootcss.com/cdn/check.js"></script>
+<script src="https://cdn.bootcdn.net/cdn/check.js"></script>
+
+</body>
+</html>

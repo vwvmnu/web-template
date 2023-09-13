@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- 必须的 meta 标签 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap 的 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <!-- 选项 1：jQuery 和 Bootstrap 集成包（集成了 Popper） -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-7ymO4nGrkm372HoSbq1OY2DP4pEZnMiA+E0F3zPr+JQQtQ82gQ1HPY3QIVtztVua"
+            crossorigin="anonymous"></script>
+
+    <!-- 选项 2：Popper 和 Bootstrap 的 JS 插件各自独立 -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-Lge2E2XotzMiwH69/MXB72yLpwyENMiOKX8zS8Qo7LDCvaBIWGL+GlRQEKIpYR04" crossorigin="anonymous"></script>
+    -->
+
+    <!-- 引入 Vue 3 -->
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <title>work</title>
+
+    <style>
+        .red-box {
+            border-style: solid;
+            border-color: red;
+            height: 38px;
+            width: 38px;
+        }
+
+        .red-font {
+            font-family: Source Han Sans CN, serif;
+            letter-spacing: 0;
+            font-size: 20px;
+            color: red;
+        }
+
+        .title-font {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .white-font {
+            font-family: Source Han Sans CN, serif;
+            letter-spacing: 0;
+            color: white;
+        }
+
+        .box-2 {
+            height: 123px;
+        }
+
+        .background-left {
+            background-color: #FCD3D0;
+        }
+
+        .background-right {
+            background-color: #E51D09;
+        }
+
+        .center {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .center-vertically {
+            display: flex;
+            align-items: center;
+        }
+
+        .big-font {
+            font-size: 30px;
+            font-weight: bolder;
+        }
+
+        .big-font-percentage {
+            font-size: 34px;
+            font-weight: bolder;
+        }
+
+        .img-width {
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <img src="img.fw.png" alt="" class="img-width"/>
+    <div class="container">
+        <br>
+        <br>
+        <!-- 01 -->
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-1 " style="padding:0; text-align: center;">
+                <div class="red-box red-font">
+                    01
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="red-font title-font">
+                    每日访问画册统计...
+                </div>
+            </div>
+            <div class="col-1"></div>
+        </div>
+        <br>
+        <div class="row box-2">
+            <div class="offset-1 col-7 background-left red-font"
+                 style="display: flex; align-items: center;">
+                <div>
+                    <div><span>
+                2023年9月10日数据统计
+            </span>
+                    </div>
+                    <div>
+                <span>
+                新增流量：
+                </span>
+                        <span class="big-font">
+                120+
+                </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 background-right white-font center">
+                <div>
+                    <div>
+                        <span>同比增长</span>
+                    </div>
+                    <div style="margin-top: 5px">
+                        <span class="big-font-percentage">30%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- 02 -->
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-1" style="padding:0; text-align: center;">
+                <div class="red-font red-box">
+                    02
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="red-font title-font">
+                    最受欢迎画册
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+        <br>
+        <div class="row box-2">
+            <div class="offset-1 col-7 background-left red-font center-vertically">
+                <div>
+                    <span>某某画册</span>
+                    <br>
+                    <span>总访问量：</span>
+                    <span class="big-font">
+                120+
+            </span>
+                </div>
+            </div>
+            <div class="col-3 background-right white-font center">
+                <div>
+                    <div>
+                        <span>同比增长</span>
+                    </div>
+                    <div style="margin-top: 5px">
+                        <span class="big-font-percentage">30%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- 03 -->
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-1 " style="padding:0; text-align: center;">
+                <div class="red-box red-font">
+                    03
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="red-font title-font">
+                    画册详细
+                </div>
+            </div>
+            <div class="col-1"></div>
+        </div>
+        <br>
+        <div v-for="(item, index) in albumDetailsData">
+            <br>
+            <div class="row box-2">
+                <div class="offset-1 col-7 background-left red-font center-vertically">
+                    <div>
+                        <span>{{ item.title }}</span>
+                        <br>
+                        <span>总访问量：</span>
+                        <span class="big-font">{{ item.pageView }}</span>
+                    </div>
+                </div>
+                <div class="col-3 background-right white-font center">
+                    <down-icon v-if="item.whetherItIsGrowthOrNot"></down-icon>
+                    <up-icon v-else></up-icon>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <img src="img_1.fw.png" alt="" class="img-width">
+
+</div>
+
+<script>
+    const {createApp, ref} = Vue;
+    const DownIcon = {
+        template: `
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+               width="64" height="64" viewBox="0 0 64 64">
+            <defs>
+              <clipPath id="master_svg0_10_631">
+                <rect x="0" y="0" width="64" height="64" rx="0"/>
+              </clipPath>
+            </defs>
+            <g clip-path="url(#master_svg0_10_631)">
+              <g>
+                <path
+                    d="M0.781048,14.1144220234375C1.82245,13.0730240234375,3.51088,13.0730240234375,4.55229,14.1144220234375C4.55229,14.1144220234375,22.6667,32.228774023437495,22.6667,32.228774023437495C22.6667,32.228774023437495,34.1144,20.7810840234375,34.1144,20.7810840234375C35.1557,19.7396940234375,36.8443,19.7396940234375,37.8856,20.7810840234375C37.8856,20.7810840234375,58.6667,41.5621740234375,58.6667,41.5621740234375C58.6667,41.5621740234375,58.6667,32.0000740234375,58.6667,32.0000740234375C58.6667,30.5272740234375,59.8605,29.3333740234375,61.3333,29.3333740234375C62.8061,29.3333740234375,64,30.5272740234375,64,32.0000740234375C64,32.0000740234375,64,48.0000740234375,64,48.0000740234375C64,49.4728740234375,62.8061,50.6666740234375,61.3333,50.6666740234375C61.3333,50.6666740234375,45.3333,50.6666740234375,45.3333,50.6666740234375C43.8605,50.6666740234375,42.6667,49.4728740234375,42.6667,48.0000740234375C42.6667,46.5272740234375,43.8605,45.3333740234375,45.3333,45.3333740234375C45.3333,45.3333740234375,54.8955,45.3333740234375,54.8955,45.3333740234375C54.8955,45.3333740234375,36,26.437974023437498,36,26.437974023437498C36,26.437974023437498,24.5523,37.8856740234375,24.5523,37.8856740234375C23.5109,38.9270740234375,21.8225,38.9270740234375,20.781,37.8856740234375C20.781,37.8856740234375,0.781048,17.8856640234375,0.781048,17.8856640234375C-0.26035,16.8442540234375,-0.26035,15.1558240234375,0.781048,14.1144220234375C0.781048,14.1144220234375,0.781048,14.1144220234375,0.781048,14.1144220234375Z"
+                    fill-rule="evenodd" fill="#FFFFFF" fill-opacity="1"/>
+              </g>
+            </g>
+          </svg>
+        `,
+        setup() {
+        }
+    };
+    const UpIcon = {
+        template: `
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+               width="51" height="29.75" viewBox="0 0 51 29.75">
+            <g>
+              <path
+                  d="M36.125,4.25C34.9514,4.25,34,3.29859,34,2.125C34,0.951394,34.9514,0,36.125,0C36.125,0,48.875,0,48.875,0C50.0486,0,51,0.951394,51,2.125C51,2.125,51,14.875,51,14.875C51,16.0486,50.0486,17,48.875,17C47.7014,17,46.75,16.0486,46.75,14.875C46.75,14.875,46.75,7.2552,46.75,7.2552C46.75,7.2552,30.1901,23.8151,30.1901,23.8151C29.3603,24.6449,28.0147,24.6449,27.1849,23.8151C27.1849,23.8151,18.0625,14.6927,18.0625,14.6927C18.0625,14.6927,3.62761,29.1276,3.62761,29.1276C2.79773,29.9574,1.45226,29.9574,0.622398,29.1276C-0.207466,28.2978,-0.207466,26.9522,0.622398,26.1224C0.622398,26.1224,16.5599,10.1849,16.5599,10.1849C17.3898,9.35504,18.7352,9.35504,19.5651,10.1849C19.5651,10.1849,28.6875,19.3073,28.6875,19.3073C28.6875,19.3073,43.7448,4.25,43.7448,4.25C43.7448,4.25,36.125,4.25,36.125,4.25C36.125,4.25,36.125,4.25,36.125,4.25Z"
+                  fill-rule="evenodd" fill="#FFFFFF" fill-opacity="1"/>
+            </g>
+          </svg>
+        `,
+        setup() {
+        }
+    };
+
+
+
+
+    const App = {
+        //使用短横线命名
+        components: {
+            DownIcon, UpIcon
+        },
+        setup() {
+            function generateRandomChinese() {
+                let randomChineseString = "";
+                const commonChars = "的一是了我不人在他有这个上们来到时大地为子中你说生国年着就那和要她出也得里后自以会家可下而过天去能对小多然于心学么之都好看起发";
+                for (let i = 0; i < 4; i++) {
+                    //randomChineseString += String.fromCharCode(Math.floor(Math.random() * (0x9FFF - 0x4E00 + 1)) + 0x4E00);
+                    randomChineseString +=  commonChars[Math.floor(Math.random() * commonChars.length)];
+                }
+                return randomChineseString;
+            }
+
+            const albumDetailsData = ref([
+                {
+                    title: "某某画册",
+                    pageView: 120 + "+",
+                    whetherItIsGrowthOrNot: true,
+                }
+            ]);
+
+            const addData = () => {
+                albumDetailsData.value.push({
+                    title: generateRandomChinese(),
+                    pageView: (Math.floor(Math.random() * 200) + 100) + "+",
+                    whetherItIsGrowthOrNot: Math.random() < 0.5,
+                })
+            }
+
+            for (let i = 0; i < 4; i++) {
+                
+            }
+
+            const loadMore = () => {
+                // 这里只是为了演示，实际情况可能需要从服务器加载数据
+                for (let i = 1; i <= 5; i++) {
+                    addData();
+                }
+            };
+
+            const handleScroll = (event) => {
+                if (window.innerHeight + window.scrollY > 20000){
+                    return;
+                }
+                let nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000;
+                if (nearBottom) {
+                    loadMore();
+                }
+            };
+
+            // 添加滚动事件监听器
+            window.addEventListener('scroll', handleScroll);
+            return {albumDetailsData};
+        }
+    };
+
+    createApp(App).mount('#app');
+</script>
+
+</body>
+
+</html>

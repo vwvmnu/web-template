@@ -1,0 +1,60 @@
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.popup-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+.icon-clicked {
+    transform: scale(1.1);  /* 当图标被点击时，缩放到 1.1 倍 */
+    transition: transform 0.3s;  /* 动画过渡效果，持续时间为 0.3 秒 */
+}
+
+/**
+底部导航左边
+ */
+.bottom-nav-left{
+
+}
+
+/**
+底部导航右边
+ */
+.bottom-nav-right{
+
+}
+
