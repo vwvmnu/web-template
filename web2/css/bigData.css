@@ -649,11 +649,15 @@ body{
     /* 中心数据表 */
 
     position: absolute;
-    left: 258.03px;
+    left: 240px;
     top: -30px;
-    width: 423.8px;
-    height: 423.63px;
+    width: 424px;
+    height: 424px;
     opacity: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -693,5 +697,346 @@ body{
     letter-spacing: 0px;
 
     color: #FFFFFF;
+
+}
+
+.div-main-instrument-left-top {
+    /* Frame 10188 */
+
+    /* 自动布局子元素 */
+    position: static;
+    left: 0px;
+    top: 0px;
+    width: 240px;
+    height: 76px;
+    border-radius: 4px;
+    opacity: 1;
+
+
+    /* 自动布局 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 40px;
+    gap: 4px;
+    align-self: stretch;
+
+    background: #00071B;
+
+    box-sizing: border-box;
+    border: 1px solid #0066FF;
+
+    box-shadow: inset 0px 0px 40px 0px #1B7EF2;
+
+    z-index: 0;
+}
+
+.div-main-instrument-left-font-header {
+    /* 154 */
+
+    /* 自动布局子元素 */
+    position: static;
+    left: 92px;
+    top: 8px;
+    width: 56px;
+    height: 32px;
+    opacity: 1;
+
+    font-family: 思源黑体, serif;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 32px;
+    letter-spacing: 0px;
+
+    color: #FFFFFF;
+
+    z-index: 0;
+}
+
+.div-main-instrument-left-font-info {
+    /* 当前在线拣货员 */
+
+    /* 自动布局子元素 */
+    position: static;
+    left: 72px;
+    top: 44px;
+    height: 24px;
+    opacity: 1;
+
+    font-family: 思源黑体, serif;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 20px;
+    letter-spacing: 0px;
+
+    color: #FFFFFF;
+
+    z-index: 1;
+}
+
+.div-main-instrument-left-bottom-left {
+    /* Frame 10189 */
+
+    /* 自动布局子元素 */
+    position: static;
+    left: 0px;
+    top: 0px;
+    width: 116px;
+    height: 76px;
+    border-radius: 4px;
+    opacity: 1;
+
+    /* 自动布局 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 0px;
+    gap: 4px;
+
+
+    background: #00071B;
+
+    box-sizing: border-box;
+    border: 1px solid #0066FF;
+
+    box-shadow: inset 0px 0px 40px 0px #1B7EF2;
+
+    z-index: 0;
+}
+
+.div-main-instrument-left-bottom-right {
+    /* Frame 10190 */
+
+    /* 自动布局子元素 */
+    position: static;
+    left: 124px;
+    top: 0px;
+    width: 116px;
+    height: 76px;
+    border-radius: 4px;
+    opacity: 1;
+
+    /* 自动布局 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 0px;
+    gap: 4px;
+
+    background: #00071B;
+
+    box-sizing: border-box;
+    border: 1px solid #0066FF;
+
+    box-shadow: inset 0px 0px 40px 0px #1B7EF2;
+
+    z-index: 1;
+}
+
+.div-main-instrument-left-bottom {
+    /* Frame 10191 */
+
+    /* 自动布局子元素 */
+    position: static;
+    left: 0px;
+    top: 108px;
+    width: 240px;
+    height: 76px;
+    opacity: 1;
+
+    /* 自动布局 */
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    gap: 8px;
+
+    z-index: 1;
+}
+
+.div-main-instrument-bottom-number-background {
+    background-image: url("../img/number-background.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-main-instrument-bottom-size1 {
+    /* 自动布局子元素 */
+    position: static;
+    left: 0px;
+    top: 0px;
+    width: 9%;
+    height: 56px;
+    opacity: 1;
+
+    z-index: 0;
+}
+
+.div-main-instrument-bottom-size2 {
+    /* 自动布局子元素 */
+    position: static;
+    left: 64px;
+    top: 0px;
+    width: 9%;
+    height: 56px;
+    opacity: 1;
+
+    z-index: 1;
+}
+
+.div-main-instrument-bottom-size3 {
+    /* 自动布局子元素 */
+    position: static;
+    left: 128px;
+    top: 0px;
+    width: 9%;
+    height: 56px;
+    opacity: 1;
+
+    z-index: 2;
+}
+
+.div-main-instrument-bottom-size4 {
+    /* , */
+
+    /* 自动布局子元素 */
+    position: static;
+    left: 192px;
+    top: 28px;
+    width: 5px;
+    height: 23px;
+    opacity: 1;
+
+    font-family: Roboto, serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: 0px;
+
+    color: #FFFFFF;
+
+    z-index: 3;
+}
+
+.div-main-instrument-bottom-size5 {
+
+    /* 自动布局子元素 */
+    position: static;
+    left: 205px;
+    top: 0px;
+    width: 9%;
+    height: 56px;
+    opacity: 1;
+
+    z-index: 4;
+}
+
+.div-main-instrument-bottom-size6 {
+    /* 自动布局子元素 */
+    position: static;
+    left: 269px;
+    top: 0px;
+    width: 9%;
+    height: 56px;
+    opacity: 1;
+
+    z-index: 5;
+}
+
+.div-main-instrument-bottom-size7 {
+    /* 自动布局子元素 */
+    position: static;
+    left: 333px;
+    top: 0px;
+    width: 9%;
+    height: 56px;
+    opacity: 1;
+
+    z-index: 6;
+}
+
+.div-main-instrument-bottom-size8 {
+    /* 自动布局子元素 */
+    position: static;
+    left: 397px;
+    top: 28px;
+    width: 5px;
+    height: 23px;
+    opacity: 1;
+
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: 0px;
+
+    color: #FFFFFF;
+
+    z-index: 7;
+}
+
+.div-main-instrument-bottom-size9 {
+    /* 自动布局子元素 */
+    position: static;
+    left: 410px;
+    top: 0px;
+    width: 9%;
+    height: 56px;
+    opacity: 1;
+
+    z-index: 8;
+}
+
+.div-main-instrument-bottom-size10 {
+    /* 自动布局子元素 */
+    position: static;
+    left: 474px;
+    top: 0px;
+    width: 9%;
+    height: 56px;
+    opacity: 1;
+
+    z-index: 9;
+}
+
+.div-main-instrument-bottom-size11 {
+    /* 自动布局子元素 */
+    position: static;
+    left: 538px;
+    top: 0px;
+    width: 9%;
+    height: 56px;
+    opacity: 1;
+
+    z-index: 10;
+}
+
+.div-main-instrument-bottom-size12 {
+    /* 自动布局子元素 */
+    position: static;
+    left: 602px;
+    top: 28px;
+    width: 20px;
+    height: 29px;
+    opacity: 1;
+
+    font-family: 思源黑体;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: 0px;
+
+    color: #FFFFFF;
+
+    z-index: 11;
+}
+
+.div-main-instrument-bottom-number-num {
+    /* Frame 10235 */
+
 
 }
