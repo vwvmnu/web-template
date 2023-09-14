@@ -4,32 +4,29 @@
     <!-- 必须的 meta 标签 -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap 的 CSS 文件 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/bigData.css">
-
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-            integrity="sha384-Lge2E2XotzMiwH69/MXB72yLpwyENMiOKX8zS8Qo7LDCvaBIWGL+GlRQEKIpYR04"
-            crossorigin="anonymous"></script>
-    <script src="js/bigData.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title>work</title>
+    <!-- CSS 文件 -->
+    <link rel="stylesheet" href="./css/http_cdn.jsdelivr.net_npm_bootstrap@4.6.2_dist_css_bootstrap.css">
+    <link rel="stylesheet" href="./css/bigData.css">
+
+    <!-- 引入js文件 -->
+    <script src="./js/http_cdn.jsdelivr.net_npm_jquery@3.5.1_dist_jquery.slim.js"></script>
+    <script src="./js/http_cdn.jsdelivr.net_npm_popper.js@1.16.1_dist_umd_popper.js"></script>
+    <script src="./js/http_cdn.jsdelivr.net_npm_bootstrap@4.6.2_dist_js_bootstrap.js"></script>
+    <script src="./js/bigData.js"></script>
+    <script src="./js/http_cdn.jsdelivr.net_npm_echarts@5.4.3_dist_echarts.js"></script>
+    <script src="./js/http_unpkg.com_vue@3_dist_vue.global.js"></script>
+
+
+
 </head>
 <body>
 <div id="app">
     <header class="header-background">
         <div class="header-background-container">
-            <img src="img/left.png" alt="" id="header-div-left">
-            <img src="img/center.png" alt="" id="header-div-center">
-            <img src="img/right.png" alt="" id="header-div-right">
+            <img src="./img/left.png" alt="" id="header-div-left">
+            <img src="./img/center.png" alt="" id="header-div-center">
+            <img src="./img/right.png" alt="" id="header-div-right">
         </div>
         <div class="header-text">
             <div class="header-text-left">
@@ -37,7 +34,7 @@
                     深圳市
                 </div>
                 <div class="header-text-left-frame">
-                    <img src="img/rain.png" class="header-text-left-frame-rain">
+                    <img src="./img/rain.png" class="header-text-left-frame-rain">
                     <span class="header-text-left-frame-text">下雨</span>
                 </div>
                 <div class="header-text-left-frame-temperature">
@@ -103,25 +100,25 @@
 
             <div class="div-main-instrument-bottom">
                 <div class="div-main-instrument-bottom-size1 div-main-instrument-bottom-number-background">
-                    <img class="div-main-instrument-bottom-number-num" src="img/number0.png">
+                    <img class="div-main-instrument-bottom-number-num" src="./img/number0.png">
                 </div>
                 <div class="div-main-instrument-bottom-size2 div-main-instrument-bottom-number-background">
-                    <img class="div-main-instrument-bottom-number-num" src="img/number0.png">
+                    <img class="div-main-instrument-bottom-number-num" src="./img/number0.png">
                 </div>
                 <div class="div-main-instrument-bottom-size3 div-main-instrument-bottom-number-background">
-                    <img class="div-main-instrument-bottom-number-num" src="img/number0.png">
+                    <img class="div-main-instrument-bottom-number-num" src="./img/number0.png">
                 </div>
                 <div class="div-main-instrument-bottom-size4">
                     ,
                 </div>
                 <div class="div-main-instrument-bottom-size5 div-main-instrument-bottom-number-background">
-                    <img class="div-main-instrument-bottom-number-num" src="img/number0.png">
+                    <img class="div-main-instrument-bottom-number-num" src="./img/number0.png">
                 </div>
                 <div class="div-main-instrument-bottom-size6 div-main-instrument-bottom-number-background">
-                    <img class="div-main-instrument-bottom-number-num" src="img/number0.png">
+                    <img class="div-main-instrument-bottom-number-num" src="./img/number0.png">
                 </div>
                 <div class="div-main-instrument-bottom-size7 div-main-instrument-bottom-number-background">
-                    <img class="div-main-instrument-bottom-number-num" src="img/number0.png">
+                    <img class="div-main-instrument-bottom-number-num" src="./img/number0.png">
                 </div>
                 <div class="div-main-instrument-bottom-size8">
                     ,
@@ -168,7 +165,7 @@
             <div class="div-main-left-header-main">
                 <div class="div-main-left-header-main-row" v-for="_ in 5">
                     <div class="col-1">
-                        <img class="triangle" src="img/triangle.png" alt="">
+                        <img class="triangle" src="./img/triangle.png" alt="">
                     </div>
                     <div class="col-5 div-main-left-header-main-font">
                         {{ generateRandomChinese(7) }}公司
@@ -204,7 +201,7 @@
             <div class="div-main-left-header-main">
                 <div class="div-main-left-header-main-row" v-for="_ in 5">
                     <div class="col-1">
-                        <img class="triangle" src="img/triangle.png" alt="">
+                        <img class="triangle" src="./img/triangle.png" alt="">
                     </div>
                     <div class="col-5 div-main-left-header-main-font">
                         {{ generateRandomChinese(7) }}公司
@@ -240,7 +237,7 @@
             <div class="div-main-left-header-main">
                 <div class="div-main-left-header-main-row" v-for="_ in 5">
                     <div class="col-1">
-                        <img class="triangle" src="img/triangle.png" alt="">
+                        <img class="triangle" src="./img/triangle.png" alt="">
                     </div>
                     <div class="col-5 div-main-left-header-main-font">
                         {{ generateRandomChinese(7) }}公司
@@ -276,7 +273,7 @@
             <div class="div-main-left-header-main">
                 <div class="div-main-left-header-main-row" v-for="_ in 5">
                     <div class="col-1">
-                        <img class="triangle" src="img/triangle.png" alt="">
+                        <img class="triangle" src="./img/triangle.png" alt="">
                     </div>
                     <div class="col-5 div-main-left-header-main-font">
                         {{ generateRandomChinese(7) }}公司
@@ -312,7 +309,7 @@
             <div class="div-main-left-header-main">
                 <div class="div-main-left-header-main-row" v-for="_ in 5">
                     <div class="col-1">
-                        <img class="triangle" src="img/triangle.png" alt="">
+                        <img class="triangle" src="./img/triangle.png" alt="">
                     </div>
                     <div class="col-5 div-main-left-header-main-font">
                         {{ generateRandomChinese(7) }}公司
@@ -347,7 +344,6 @@
         setup() {
         }
     };
-
 
     const App = {
         //使用短横线命名
@@ -583,5 +579,4 @@
     createApp(App).mount('#app');
 </script>
 </body>
-
 </html>
