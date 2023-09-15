@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.canvasBottom {
+    display: table-cell;
+    border-radius: 20px 20px 0 0;
+    --bs-offcanvas-height: 60vh;
+    height: auto;
+    background-image: linear-gradient(45deg, #D8DCF2,  #F2E0DF, #D8E6F2, #F2F2F2);
+}
+
+.header-font {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+}
+
+.zjh-canvas-border {
+    padding: 32px 10px;
+}
+
+#carouselExampleSlidesOnly img{
+    border-radius: 15px;
+}
+
+.canvasBottom-main-telephone  {
+    border: 1px solid #bbc8ff;
+    width: 100%;
+    height: 52px;
+    border-radius: 24px;
+    background-color: white;
+    font-size: 16px;
+    line-height: 24px;
+}
+.canvasBottom-main-telephone input{
+    border-style: none;
+    outline: none;
+    border-radius: 24px;
+    padding: 0 25px;
+    width: 100%;
+    height: 48px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.canvasBottom-main-button  {
+    border-style: none;
+    width: 100%;
+    height: 52px;
+    border-radius: 24px;
+    background-color: black;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#carouselExampleSlidesOnly div{
+
+}
+
+.canvas-main-upload {
+    border: 1px solid #bbc8ff;
+    border-radius: 13px;
+    padding: 10px;
+}
+
+.canvas-warning {
+    border: 1px solid #bbc8ff;
+    border-radius: 13px;
+    padding: 20px 10px;
+
+}
+
+.canvasBottom-warning-button {
+    background-color: #0a6bd4;
+}
