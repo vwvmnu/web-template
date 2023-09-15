@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- 必须的 meta 标签 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>work</title>
+    <!-- CSS 文件 -->
+    <link rel="stylesheet" href="./css/http_cdn.jsdelivr.net_npm_bootstrap@4.6.2_dist_css_bootstrap.css">
+    <link rel="stylesheet" href="./css/index.css">
+
+    <!-- 引入js文件 -->
+    <script src="./js/http_cdn.jsdelivr.net_npm_jquery@3.5.1_dist_jquery.slim.js"></script>
+    <script src="./js/http_cdn.jsdelivr.net_npm_popper.js@1.16.1_dist_umd_popper.js"></script>
+    <script src="./js/http_cdn.jsdelivr.net_npm_bootstrap@4.6.2_dist_js_bootstrap.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/http_cdn.jsdelivr.net_npm_echarts@5.4.3_dist_echarts.js"></script>
+    <script src="./js/http_unpkg.com_vue@3_dist_vue.global.js"></script>
+
+
+
+</head>
+<body>
+<div id="app">
+
+</div>
+<script>
+
+    const {createApp, ref, onMounted} = Vue;
+    const UpIcon = {
+        template: `
+        `,
+        setup() {
+        }
+    };
+
+    const App = {
+        //使用短横线命名
+        components: {
+            UpIcon,
+        },
+        setup() {
+            /**
+             * 生成{size}大小的汉字
+             * @param size 传入大小,默认3
+             * @returns {string} 返回汉字
+             */
+            const generateRandomChinese = (size = 3) => {
+                if (typeof size != "number") {
+                    console.log("请输入数字")
+                }
+                let randomChineseString = "";
+                const commonChars = "的一是了我不人在他有这个上们来到时大地为子中你说生国年着就那和要她出也得里后自以会家可下而过天去能对小多然于心学么之都好看起发";
+                for (let i = 0; i < size; i++) {
+                    //randomChineseString += String.fromCharCode(Math.floor(Math.random() * (0x9FFF - 0x4E00 + 1)) + 0x4E00);
+                    randomChineseString += commonChars[Math.floor(Math.random() * commonChars.length)];
+                }
+                return randomChineseString;
+            }
+            const generateRandomNumber = (min = 0, max = 1) => {
+                if (typeof min != "number" || typeof max != "number") {
+                    console.log("请输入数字")
+                }
+                return Math.floor(Math.random() * (max - min)) + min;
+            }
+
+            const albumDetailsData = ref([
+                {
+                    title: "某某画册",
+                    pageView: 120 + "+",
+                    whetherItIsGrowthOrNot: true,
+                }
+            ]);
+
+
+            const addData = () => {
+                albumDetailsData.value.push({
+                    title: generateRandomChinese(),
+                    pageView: (Math.floor(Math.random() * 200) + 100) + "+",
+                    whetherItIsGrowthOrNot: Math.random() < 0.5,
+                })
+            }
+
+            for (let i = 0; i < 4; i++) {
+                addData();
+            }
+
+            const loadMore = () => {
+                // 这里只是为了演示，实际情况可能需要从服务器加载数据
+                for (let i = 1; i <= 5; i++) {
+                    addData();
+                }
+            };
+
+            const handleScroll = (event) => {
+                if (window.innerHeight + window.scrollY > 20000) {
+                    return;
+                }
+                let nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000;
+                if (nearBottom) {
+                    loadMore();
+                }
+            };
+
+            // 添加滚动事件监听器
+            window.addEventListener('scroll', handleScroll);
+
+
+            onMounted(() => {
+                const chartRef = document.getElementById("main");
+
+                // ECharts 数据和配置
+                option = {
+                    series: [
+                        {
+                            type: 'gauge',
+                            center: ['50%', '60%'],
+                            startAngle: 200,
+                            endAngle: -20,
+                            min: 0,
+                            max: 600000,
+                            splitNumber: 5,
+                            itemStyle: {
+                                color: '#00C2FF '
+                            },
+                            progress: {
+                                show: true,
+                                width: 20
+                            },
+                            anchor: {
+                                show: false
+                            },
+                            pointer: {
+                                show: false
+                            },
+                            axisLine: {
+                                lineStyle: {
+                                    width: 20
+                                },
+                            },
+                            //坐标轴
+                            axisTick: {
+                                distance: -25,
+                                splitNumber: 5,
+                                lineStyle: {
+                                    width: 2,
+                                    color: '#999'
+                                },
+                                length: 4
+                            },
+
+                            //间隔标识刻度样式
+                            splitLine: {
+                                distance: -30,
+                                length: 8,
+                                lineStyle: {
+                                    width: 3,
+                                    color: '#999'
+                                },
+                                formatter: "的"
+                            },
+                            //间隔标识刻度字体
+                            axisLabel: {
+                                distance: -10,
+                                color: '#999',
+                                fontSize: 14,
+                                formatter: function (value, index) {
+                                    return value / 10000 + 'w';
+                                }
+                            },
+
+                            detail: {
+                                valueAnimation: true,
+                                width: '60%',
+                                lineHeight: 40,
+                                borderRadius: 8,
+                                offsetCenter: [0, '-15%'],
+                                fontSize: 40,
+                                fontWeight: 'bolder',
+                                formatter: '{value}',
+                                color: 'inherit'
+                            },
+                            title: {
+                                offsetCenter: [0, 10],
+                                fontSize: 18,
+                                color: "#ffffff",
+                            },
+                            data: [
+                                {
+                                    value: 20,
+                                    name: "已链接数量"
+                                }
+                            ]
+                        },
+                        {
+                            type: 'gauge',
+                            center: ['50%', '60%'],
+                            startAngle: 200,
+                            endAngle: -20,
+                            min: 0,
+                            max: 600000,
+                            itemStyle: {
+                                color: '#D200FF '
+                            },
+                            progress: {
+                                show: true,
+                                width: 8
+                            },
+                            pointer: {
+                                show: false
+                            },
+                            axisLine: {
+                                show: false
+                            },
+                            axisTick: {
+                                show: false
+                            },
+                            splitLine: {
+                                show: false
+                            },
+                            axisLabel: {
+                                show: false
+                            },
+                            detail: {
+                                show: false
+                            },
+                            data: [
+                                {
+                                    value: 20
+                                }
+                            ]
+                        }
+                    ]
+                };
+
+                setInterval(function () {
+                    const random = +(Math.random() * 600000).toFixed(0);
+                    myChart.setOption({
+                        series: [
+                            {
+                                data: [
+                                    {
+                                        value: random,
+                                        name: "已链接数量"
+                                    }
+                                ]
+                            },
+                            {
+                                data: [
+                                    {
+                                        value: random,
+                                    }
+                                ]
+                            }
+                        ]
+                    });
+                }, 2000);
+
+                // 使用 ECharts
+                const myChart = echarts.init(chartRef);
+                myChart.setOption(option);
+            })
+
+            return {albumDetailsData, generateRandomChinese, generateRandomNumber};
+        }
+    };
+
+    createApp(App).mount('#app');
+</script>
+</body>
+</html>
