@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- 必须的 meta 标签 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>work</title>
+    <!-- CSS 文件 -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/index.css">
+
+    <!-- 引入js文件 -->
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/http_cdn.jsdelivr.net_npm_echarts@5.4.3_dist_echarts.js"></script>
+    <script src="./js/http_unpkg.com_vue@3_dist_vue.global.js"></script>
+
+    <style>
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .carousel-slides {
+            display: flex;
+            transition: all 0.5s;
+        }
+
+        .carousel-slide {
+            flex: 0 0 100%;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .carousel-prev,
+        .carousel-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .carousel-prev {
+            left: 0;
+        }
+
+        .carousel-next {
+            right: 0;
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+<!-- Swiper -->
+<div class="carousel">
+    <div class="carousel-slides">
+        <div class="carousel-slide" style="background-image: url('img/nature-1.jpg');"></div>
+        <div class="carousel-slide" style="background-image: url('img/nature-2.jpg');"></div>
+        <div class="carousel-slide" style="background-image: url('img/nature-3.jpg');"></div>
+    </div>
+    <button class="carousel-prev">Prev</button>
+    <button class="carousel-next">Next</button>
+</div>
+<script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const totalSlides = slides.length;
+
+    const carouselPrev = () => {
+        currentIndex = (currentIndex === 0) ? totalSlides - 1  : currentIndex - 1;
+        updateCarousel();
+    }
+    const carouselNext = () => {
+        currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
+        updateCarousel();
+    }
+    const updateCarousel = () => {
+        const offset = -currentIndex * 100;
+        console.log(offset)
+        document.querySelector('.carousel-slides').style.transform = `translateX(${offset}%)`;
+    }
+
+    // 定时操作
+    let carouseInterval = setInterval(function () {
+        currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
+        updateCarousel();
+    }, 2000)
+
+    document.querySelector('.carousel-prev').addEventListener('click', function () {
+        carouselPrev();
+    });
+
+    document.querySelector('.carousel-next').addEventListener('click', function () {
+        carouselNext()
+    });
+
+    let startX, endX, startY, endY;
+    let isTouchEnd = true, isMove = true;
+    const scrollContainer = document.querySelector('.carousel-slides');
+
+    // 手指放在屏幕上
+    scrollContainer.addEventListener("touchstart", function (e) {
+        e.preventDefault();
+
+        // 单手指触摸或者多手指同时触摸，禁止第二个手指延迟操作事件
+        if (e.touches.length === 1 || isTouchEnd) {
+            clearInterval(carouseInterval);
+            const touch = e.touches[0];
+            startX = touch.pageX;
+            startY = touch.pageY;
+            isTouchEnd = false;
+        }
+    });
+
+    scrollContainer.addEventListener("touchmove", function (e) {
+        // 如果当前滑动已结束，不管其他手指是否在屏幕上都禁止该事件
+        if (isTouchEnd) {
+            return
+        }
+        const touch = e.touches[0];
+        endX = touch.pageX
+        endY = touch.pageY
+
+        document.querySelector('.carousel-slides').style.transform = `translateX(${(-currentIndex*100) + (endX - startX)/10}%)`;
+    });
+    //手指离开屏幕时，计算最终需要停留在哪一页
+    scrollContainer.addEventListener("touchend", function (e) {
+        carouseInterval = setInterval(function() {
+            currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
+        }, 2000);
+        const touch = e.touches[0];
+        let deltaX = endX - startX;
+        let deltaY = endY - startY;
+        if (Math.abs(deltaX) > 50){
+            if (deltaX < 0) {
+                carouselNext();
+            } else {
+                carouselPrev();
+            }
+            updateCarousel();
+        }
+    })
+
+
+</script>
+
+</body>
+</html>
