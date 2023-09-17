@@ -21,7 +21,15 @@
 </head>
 <body>
 <div id="app">
-    <div style="width: 50px; height: 50px" v-for="_ in 9"></div>
+    <div class="container">
+        <div class="slide" >Content 1</div>
+        <div class="slide" >Content 2</div>
+        <div class="slide" >Content 3</div>
+        <div class="slide" >Content 4</div>
+        <div class="slide" >Content 5</div>
+    </div>
+
+    <button onclick="addSlide()">Add New Slide</button>
 </div>
 
 <script>
@@ -113,158 +121,10 @@
 
 
             onMounted(() => {
-                const chartRef = document.getElementById("main");
-
-                // ECharts 数据和配置
-                option = {
-                    series: [
-                        {
-                            type: 'gauge',
-                            center: ['50%', '60%'],
-                            startAngle: 200,
-                            endAngle: -20,
-                            min: 0,
-                            max: 600000,
-                            splitNumber: 5,
-                            itemStyle: {
-                                color: '#00C2FF '
-                            },
-                            progress: {
-                                show: true,
-                                width: 20
-                            },
-                            anchor: {
-                                show: false
-                            },
-                            pointer: {
-                                show: false
-                            },
-                            axisLine: {
-                                lineStyle: {
-                                    width: 20
-                                },
-                            },
-                            //坐标轴
-                            axisTick: {
-                                distance: -25,
-                                splitNumber: 5,
-                                lineStyle: {
-                                    width: 2,
-                                    color: '#999'
-                                },
-                                length: 4
-                            },
-
-                            //间隔标识刻度样式
-                            splitLine: {
-                                distance: -30,
-                                length: 8,
-                                lineStyle: {
-                                    width: 3,
-                                    color: '#999'
-                                },
-                                formatter: "的"
-                            },
-                            //间隔标识刻度字体
-                            axisLabel: {
-                                distance: -10,
-                                color: '#999',
-                                fontSize: 14,
-                                formatter: function (value, index) {
-                                    return value / 10000 + 'w';
-                                }
-                            },
-
-                            detail: {
-                                valueAnimation: true,
-                                width: '60%',
-                                lineHeight: 40,
-                                borderRadius: 8,
-                                offsetCenter: [0, '-15%'],
-                                fontSize: 40,
-                                fontWeight: 'bolder',
-                                formatter: '{value}',
-                                color: 'inherit'
-                            },
-                            title: {
-                                offsetCenter: [0, 10],
-                                fontSize: 18,
-                                color: "#ffffff",
-                            },
-                            data: [
-                                {
-                                    value: 20,
-                                    name: "已链接数量"
-                                }
-                            ]
-                        },
-                        {
-                            type: 'gauge',
-                            center: ['50%', '60%'],
-                            startAngle: 200,
-                            endAngle: -20,
-                            min: 0,
-                            max: 600000,
-                            itemStyle: {
-                                color: '#D200FF '
-                            },
-                            progress: {
-                                show: true,
-                                width: 8
-                            },
-                            pointer: {
-                                show: false
-                            },
-                            axisLine: {
-                                show: false
-                            },
-                            axisTick: {
-                                show: false
-                            },
-                            splitLine: {
-                                show: false
-                            },
-                            axisLabel: {
-                                show: false
-                            },
-                            detail: {
-                                show: false
-                            },
-                            data: [
-                                {
-                                    value: 20
-                                }
-                            ]
-                        }
-                    ]
-                };
-
-                setInterval(function () {
-                    const random = +(Math.random() * 600000).toFixed(0);
-                    myChart.setOption({
-                        series: [
-                            {
-                                data: [
-                                    {
-                                        value: random,
-                                        name: "已链接数量"
-                                    }
-                                ]
-                            },
-                            {
-                                data: [
-                                    {
-                                        value: random,
-                                    }
-                                ]
-                            }
-                        ]
-                    });
-                }, 2000);
 
                 // 使用 ECharts
-                const myChart = echarts.init(chartRef);
-                myChart.setOption(option);
+                // const myChart = echarts.init(chartRef);
+                // myChart.setOption(option);
             })
 
             return {albumDetailsData, generateRandomChinese, generateRandomNumber};

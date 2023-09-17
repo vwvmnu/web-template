@@ -1,0 +1,15 @@
+.container {
+    width: 300px;
+    height: 250px; /* Assuming each slide is 50px high */
+    overflow: hidden;
+    border: 1px solid black;
+    position: relative;
+}
+
+.slide {
+    height: 50px;
+    line-height: 50px;
+    background-color: #e9e9e9;
+    text-align: center;
+    font-size: 18px;
+}
