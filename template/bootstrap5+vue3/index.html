@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>work</title>
     <!-- CSS 文件 -->
-    <link rel="stylesheet" href="./css/http_cdn.jsdelivr.net_npm_bootstrap@4.6.2_dist_css_bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/index.css">
 
     <!-- 引入js文件 -->
-    <script src="./js/http_cdn.jsdelivr.net_npm_jquery@3.5.1_dist_jquery.slim.js"></script>
-    <script src="./js/http_cdn.jsdelivr.net_npm_popper.js@1.16.1_dist_umd_popper.js"></script>
-    <script src="./js/http_cdn.jsdelivr.net_npm_bootstrap@4.6.2_dist_js_bootstrap.js"></script>
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script src="./js/bootstrap.js"></script>
     <script src="./js/index.js"></script>
     <script src="./js/http_cdn.jsdelivr.net_npm_echarts@5.4.3_dist_echarts.js"></script>
     <script src="./js/http_unpkg.com_vue@3_dist_vue.global.js"></script>
@@ -57,6 +56,12 @@
                 }
                 return randomChineseString;
             }
+            /**
+             * 随机生成整数
+             * @param min 最小值
+             * @param max 最大值
+             * @returns {number}
+             */
             const generateRandomNumber = (min = 0, max = 1) => {
                 if (typeof min != "number" || typeof max != "number") {
                     console.log("请输入数字")

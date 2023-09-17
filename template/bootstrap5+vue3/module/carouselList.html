@@ -1,44 +1,37 @@
 <!doctype html>
-<html lang="zh-CN" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/html">
 <head>
     <!-- 必须的 meta 标签 -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>work</title>
     <!-- CSS 文件 -->
-    <link rel="stylesheet" href="./css/bootstrap.css">
-    <link rel="stylesheet" href="./css/index.css">
-
+    <link rel="stylesheet" href="../css/bootstrap.css">
     <!-- 引入js文件 -->
-    <script src="./js/bootstrap.js"></script>
-    <script src="./js/index.js"></script>
-    <script src="./js/http_cdn.jsdelivr.net_npm_echarts@5.4.3_dist_echarts.js"></script>
-    <script src="./js/http_unpkg.com_vue@3_dist_vue.global.js"></script>
+    <script src="../js/jquery-3.7.1.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/http_cdn.jsdelivr.net_npm_echarts@5.4.3_dist_echarts.js"></script>
+    <script src="../js/http_unpkg.com_vue@3_dist_vue.global.js"></script>
+
+    <!-- my -->
+    <link rel="stylesheet" href="carouselList.css">
+    <script src="carouselList.js"></script>
+
 
 </head>
 <body>
-
-
 <div id="app">
-
-    <!-- Swiper -->
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
-            <div class="swiper-slide">Slide 4</div>
-            <div class="swiper-slide">Slide 5</div>
-            <div class="swiper-slide">Slide 6</div>
-            <div class="swiper-slide">Slide 7</div>
-            <div class="swiper-slide">Slide 8</div>
-            <div class="swiper-slide">Slide 9</div>
-        </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+    <div class="container">
+        <div class="slide" >Content 1</div>
+        <div class="slide" >Content 2</div>
+        <div class="slide" >Content 3</div>
+        <div class="slide" >Content 4</div>
+        <div class="slide" >Content 5</div>
     </div>
 
+    <button onclick="addSlide()">Add New Slide</button>
 </div>
+
 <script>
 
     const {createApp, ref, onMounted} = Vue;
@@ -72,6 +65,12 @@
                 }
                 return randomChineseString;
             }
+            /**
+             * 随机生成整数
+             * @param min 最小值
+             * @param max 最大值
+             * @returns {number}
+             */
             const generateRandomNumber = (min = 0, max = 1) => {
                 if (typeof min != "number" || typeof max != "number") {
                     console.log("请输入数字")
@@ -122,8 +121,10 @@
 
 
             onMounted(() => {
-                const chartRef = document.getElementById("main");
 
+                // 使用 ECharts
+                // const myChart = echarts.init(chartRef);
+                // myChart.setOption(option);
             })
 
             return {albumDetailsData, generateRandomChinese, generateRandomNumber};
