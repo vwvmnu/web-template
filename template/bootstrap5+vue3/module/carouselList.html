@@ -6,23 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>work</title>
     <!-- CSS 文件 -->
-    <link rel="stylesheet" href="./css/bootstrap.css">
-    <link rel="stylesheet" href="./css/index.css">
-
+    <link rel="stylesheet" href="../css/bootstrap.css">
     <!-- 引入js文件 -->
-    <script src="./js/jquery-3.7.1.js"></script>
-    <script src="./js/bootstrap.js"></script>
-    <script src="./js/index.js"></script>
-    <script src="./js/http_cdn.jsdelivr.net_npm_echarts@5.4.3_dist_echarts.js"></script>
-    <script src="./js/http_unpkg.com_vue@3_dist_vue.global.js"></script>
+    <script src="../js/jquery-3.7.1.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/http_cdn.jsdelivr.net_npm_echarts@5.4.3_dist_echarts.js"></script>
+    <script src="../js/http_unpkg.com_vue@3_dist_vue.global.js"></script>
 
+    <!-- my -->
+    <link rel="stylesheet" href="carouselList.css">
+    <script src="carouselList.js"></script>
 
 
 </head>
 <body>
 <div id="app">
-
+    <div style="width: 50px; height: 50px" v-for="_ in 9"></div>
 </div>
+
 <script>
 
     const {createApp, ref, onMounted} = Vue;

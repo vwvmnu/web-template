@@ -7,7 +7,7 @@ body {
 .canvasBottom {
     display: table-cell;
     border-radius: 20px 20px 0 0;
-    --bs-offcanvas-height: 60vh;
+    --bs-offcanvas-height: initial;
     height: auto;
     background-image: linear-gradient(45deg, #D8DCF2,  #F2E0DF, #D8E6F2, #F2F2F2);
 }
