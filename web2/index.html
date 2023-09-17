@@ -32,7 +32,7 @@
                 </div>
                 <div class="header-text-left-frame">
                     <img src="./img/weather/sun.png" class="header-text-left-frame-rain">
-                    <span class="header-text-left-frame-text">日出</span>
+                    <span class="header-text-left-frame-text">天晴</span>
                 </div>
                 <div class="header-text-left-frame-temperature">
                     10-36℃
@@ -100,34 +100,31 @@
                     <img class="div-main-instrument-bottom-number-num" src="./img/number0.png">
                 </div>
                 <div class="div-main-instrument-bottom-size3 div-main-instrument-bottom-number-background">
-                    <img class="div-main-instrument-bottom-number-num" src="./img/number0.png">
+                    <img class="div-main-instrument-bottom-number-num" :src="'img/number'+ generateRandomNumber(0,9) +'.png'">
                 </div>
                 <div class="div-main-instrument-bottom-size4">
                     ,
                 </div>
                 <div class="div-main-instrument-bottom-size5 div-main-instrument-bottom-number-background">
-                    <img class="div-main-instrument-bottom-number-num" src="./img/number0.png">
+                    <img class="div-main-instrument-bottom-number-num" :src="'img/number'+ generateRandomNumber(0,9) +'.png'">
                 </div>
                 <div class="div-main-instrument-bottom-size6 div-main-instrument-bottom-number-background">
-                    <img class="div-main-instrument-bottom-number-num" src="./img/number0.png">
+                    <img class="div-main-instrument-bottom-number-num" :src="'img/number'+ generateRandomNumber(0,9) +'.png'">
                 </div>
                 <div class="div-main-instrument-bottom-size7 div-main-instrument-bottom-number-background">
-                    <img class="div-main-instrument-bottom-number-num" src="./img/number0.png">
+                    <img class="div-main-instrument-bottom-number-num" :src="'img/number'+ generateRandomNumber(0,9) +'.png'">
                 </div>
                 <div class="div-main-instrument-bottom-size8">
                     ,
                 </div>
                 <div class="div-main-instrument-bottom-size9 div-main-instrument-bottom-number-background">
-                    <img class="div-main-instrument-bottom-number-num"
-                         :src="'img/number'+ generateRandomNumber(0,9) +'.png'">
+                    <img class="div-main-instrument-bottom-number-num" :src="'img/number'+ generateRandomNumber(0,9) +'.png'">
                 </div>
                 <div class="div-main-instrument-bottom-size10 div-main-instrument-bottom-number-background">
-                    <img class="div-main-instrument-bottom-number-num"
-                         :src="'img/number'+ generateRandomNumber(0,9) +'.png'">
+                    <img class="div-main-instrument-bottom-number-num" :src="'img/number'+ generateRandomNumber(0,9) +'.png'">
                 </div>
                 <div class="div-main-instrument-bottom-size11 div-main-instrument-bottom-number-background">
-                    <img class="div-main-instrument-bottom-number-num"
-                         :src="'img/number'+ generateRandomNumber(0,9) +'.png'">
+                    <img class="div-main-instrument-bottom-number-num" :src="'img/number'+ generateRandomNumber(0,9) +'.png'">
                 </div>
                 <div class="div-main-instrument-bottom-size12">
                     元
@@ -355,7 +352,7 @@
                     console.log("请输入数字")
                 }
                 let randomChineseString = "";
-                const commonChars = "的一是了我不人在他有这个上们来到时大地为子中你说生国年着就那和要她出也得里后自以会家可下而过天去能对小多然于心学么之都好看起发";
+                const commonChars = "的一是了我不人在他有这个上们来到时大地为子中你说生国年着就那和要她出也得里后自以会家可下而过天去能对小多然于心学么之都好看起发菲总统对华为";
                 for (let i = 0; i < size; i++) {
                     //randomChineseString += String.fromCharCode(Math.floor(Math.random() * (0x9FFF - 0x4E00 + 1)) + 0x4E00);
                     randomChineseString += commonChars[Math.floor(Math.random() * commonChars.length)];
