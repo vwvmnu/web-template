@@ -1,33 +1,77 @@
 let count = 0;
-function addSlide() {
+
+const msgList = ["123", "456", "789", "-1235", "-4563", "-7895"]
+const size = 3;
+const runningMark = true;
+
+/**
+ * 休眠函数
+ * @param ms
+ * @returns {Promise<unknown>}
+ */
+const sleep = (ms) => {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+const initCarouserList = (msgList = [""], size = 3) => {
+    // 绘制列表
+    let container = document.querySelector('.carouselList-container');
+    for (let i = 0; i < size; i++) {
+        let newSlide = document.createElement('div');
+        newSlide.className = 'slide';
+        newSlide.innerText = msgList[msgList.length - i - 1];
+        // debugger
+        container.appendChild(newSlide);
+    }
+}
+
+const startCarouserList = async (timeSize = 0) => {
+    while (runningMark) {
+        for (let i = 0; i < msgList.length; i++) {
+            await addSlide(msgList[i]);
+        }
+    }
+}
+
+
+async function addSlide(msg) {
     // Create a new slide
     let newSlide = document.createElement('div');
     newSlide.className = 'slide';
-    newSlide.innerText = 'New Content' + count;
+    newSlide.innerText = msg;
     count++;
+
+    // Initially place the new slide below the visible area based on container's height
 
     // Append the new slide to the container
     let container = document.querySelector('.carouselList-container');
     container.appendChild(newSlide);
 
+    await sleep(32);  // Small delay to ensure the new slide's transform is applied
+
     // Move the slides upwards
-    const timeoutA = setTimeout(()=>{
-        let slides = document.querySelectorAll('.slide');
-        for (let slide of slides) {
-            slide.style.transition = 'transform 0.4s ease-in-out';
-            slide.style.transform = `translateY(-50px)`;
-        }
-    }, 100)
+    let slides = document.querySelectorAll('.slide');
+    for (let slide of slides) {
+        slide.style.transition = 'transform 0.4s ease-in-out';
+        slide.style.transform = `translateY(-50px)`;
+    }
 
+    await sleep(400);  // Match the duration of the transition
+    container.removeChild(slides[0]);
 
-    // Remove the first slide after the transition
-    const timeoutB = setTimeout(() => {
-        let slides = document.querySelectorAll('.slide');
-        container.removeChild(slides[0]);
-        // Reset transform for remaining slides
-        for (let slide of document.querySelectorAll('.slide')) {
-            slide.style.transition = 'none'
-            slide.style.transform = `translateY(0px)`;
-        }
-    }, 500);
+    // Reset transform for remaining slides
+    slides = document.querySelectorAll('.slide');
+    for (let slide of slides) {
+        slide.style.transition = 'none';
+        slide.style.transform = `translateY(0px)`;
+    }
+
+    await sleep(600);  // Remaining time to reach the total sleep time of 1000ms as earlier
 }
+
+
+
+
+initCarouserList(msgList, 5);
+startCarouserList().then();
+

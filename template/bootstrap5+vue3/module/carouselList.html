@@ -13,125 +13,20 @@
     <script src="../js/http_cdn.jsdelivr.net_npm_echarts@5.4.3_dist_echarts.js"></script>
     <script src="../js/http_unpkg.com_vue@3_dist_vue.global.js"></script>
 
-    <!-- my -->
     <link rel="stylesheet" href="carouselList.css">
-    <script src="carouselList.js"></script>
+
 
 
 </head>
 <body>
 <div id="app">
     <div class="carouselList-container">
-        <div class="slide" >Content 1</div>
-        <div class="slide" >Content 2</div>
-        <div class="slide" >Content 3</div>
-        <div class="slide" >Content 4</div>
-        <div class="slide" >Content 5</div>
+
     </div>
 
     <button onclick="addSlide()">Add New Slide</button>
 </div>
 
-<script>
-
-    const {createApp, ref, onMounted} = Vue;
-    const UpIcon = {
-        template: `
-        `,
-        setup() {
-        }
-    };
-
-    const App = {
-        //使用短横线命名
-        components: {
-            UpIcon,
-        },
-        setup() {
-            /**
-             * 生成{size}大小的汉字
-             * @param size 传入大小,默认3
-             * @returns {string} 返回汉字
-             */
-            const generateRandomChinese = (size = 3) => {
-                if (typeof size != "number") {
-                    console.log("请输入数字")
-                }
-                let randomChineseString = "";
-                const commonChars = "的一是了我不人在他有这个上们来到时大地为子中你说生国年着就那和要她出也得里后自以会家可下而过天去能对小多然于心学么之都好看起发";
-                for (let i = 0; i < size; i++) {
-                    //randomChineseString += String.fromCharCode(Math.floor(Math.random() * (0x9FFF - 0x4E00 + 1)) + 0x4E00);
-                    randomChineseString += commonChars[Math.floor(Math.random() * commonChars.length)];
-                }
-                return randomChineseString;
-            }
-            /**
-             * 随机生成整数
-             * @param min 最小值
-             * @param max 最大值
-             * @returns {number}
-             */
-            const generateRandomNumber = (min = 0, max = 1) => {
-                if (typeof min != "number" || typeof max != "number") {
-                    console.log("请输入数字")
-                }
-                return Math.floor(Math.random() * (max - min)) + min;
-            }
-
-            const albumDetailsData = ref([
-                {
-                    title: "某某画册",
-                    pageView: 120 + "+",
-                    whetherItIsGrowthOrNot: true,
-                }
-            ]);
-
-
-            const addData = () => {
-                albumDetailsData.value.push({
-                    title: generateRandomChinese(),
-                    pageView: (Math.floor(Math.random() * 200) + 100) + "+",
-                    whetherItIsGrowthOrNot: Math.random() < 0.5,
-                })
-            }
-
-            for (let i = 0; i < 4; i++) {
-                addData();
-            }
-
-            const loadMore = () => {
-                // 这里只是为了演示，实际情况可能需要从服务器加载数据
-                for (let i = 1; i <= 5; i++) {
-                    addData();
-                }
-            };
-
-            const handleScroll = (event) => {
-                if (window.innerHeight + window.scrollY > 20000) {
-                    return;
-                }
-                let nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000;
-                if (nearBottom) {
-                    loadMore();
-                }
-            };
-
-            // 添加滚动事件监听器
-            window.addEventListener('scroll', handleScroll);
-
-
-            onMounted(() => {
-
-                // 使用 ECharts
-                // const myChart = echarts.init(chartRef);
-                // myChart.setOption(option);
-            })
-
-            return {albumDetailsData, generateRandomChinese, generateRandomNumber};
-        }
-    };
-
-    createApp(App).mount('#app');
-</script>
+<script src="carouselList.js"></script>
 </body>
 </html>
