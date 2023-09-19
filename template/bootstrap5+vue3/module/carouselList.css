@@ -1,4 +1,4 @@
-.container {
+.carouselList-container {
     width: 300px;
     height: 250px; /* Assuming each slide is 50px high */
     overflow: hidden;

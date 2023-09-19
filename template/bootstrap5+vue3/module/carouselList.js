@@ -7,7 +7,7 @@ function addSlide() {
     count++;
 
     // Append the new slide to the container
-    let container = document.querySelector('.container');
+    let container = document.querySelector('.carouselList-container');
     container.appendChild(newSlide);
 
     // Move the slides upwards
