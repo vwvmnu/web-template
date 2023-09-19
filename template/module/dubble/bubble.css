@@ -1,0 +1,37 @@
+.carouselList-container {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.slide {
+    border-radius: 10px;
+    padding: 5px;
+    top: 250px;
+    height: 40px;
+    margin-top: 10px;
+    line-height: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    font-size: 14px;
+    color: rgba(236, 240, 241,1.0);
+
+    min-width: 50px;
+    max-width: 200px;  /* This width might need to be adjusted based on the actual width of 10 characters in your font */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.screen {
+    background-image: url("../img/nature-5.jpg");
+    position: absolute;
+    width: 600px;
+    height: 500px;
+}
+
+.lower-left-screen {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
