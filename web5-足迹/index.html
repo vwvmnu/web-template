@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- 必须的 meta 标签 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>work</title>
+    <!-- CSS 文件 -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/index.css">
+
+    <!-- 引入js文件 -->
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/http_cdn.jsdelivr.net_npm_echarts@5.4.3_dist_echarts.js"></script>
+    <script src="./js/http_unpkg.com_vue@3_dist_vue.global.js"></script>
+
+<style>
+    .ccc:hover{
+        color: white;
+    }
+    p:hover{color: white;}
+    p:active{color: darkblue;}
+    p:focus{color: yellow;}
+    p:visited{color:olive;}
+</style>
+</head>
+<body>
+<p class="ccc" style="color: red;">1231231</p>
+
+<div id="app">
+    <div class="container">
+        <div class="row">
+            <div class=col-12" v-for="_ in 5">
+                <div class="card mt-2 shadow" style="">
+                    <div class="container">
+                        <div class="row pt-1 ps-1 bg-light  rounded-pill">
+                            <div class="col-3 ">
+                                <img src="./img/img.png" class="card-img-top" alt="...">
+                            </div>
+                            <div class="col-5">
+                                <div class="row d-flex align-items-center fw-bold fs-3 text-primary">
+                                    <span>小明</span>
+                                </div>
+                                <div class="row">
+                                    <span> 12345678910</span>
+                                </div>
+                            </div>
+                            <div class="col ">
+                                <div class="row ">
+                                    <span>足迹:</span>
+                                </div>
+                                <div class="row d-flex align-items-center fw-bold fs-1" style="color: #264653">
+                                    <span>999次</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="row mt-1 mb-2"> -->
+                        <!--     <div class="col-12 mt-1 mb-2"> -->
+                        <!--         <span class="fs-5 fw-bold" style="color: #2A9D8F">主要浏览画册:</span> -->
+                        <!--     </div> -->
+                        <!--     <div class="col"><span style="color: #E76F51">画册A</span></div> -->
+                        <!--     <div class="col"><span style="color: #F4A261">画册A</span></div> -->
+                        <!--     <div class="col"><span style="color: #E9C46A">画册A</span></div> -->
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container list-group-item list-group-item-action bg-light border border-1 padding padding-1">
+        <div class="row ms-1">
+            <div class="col-8">
+                <div class="d-flex w-100 justify-content-between">
+                    <p class="mb-1 mt-1 fs-3" style="color: #E76F51">`+ msgData.bookName +`</p>
+                </div>
+                <p class="mb-1 ms-2 fs-6" style="color: #2A9D8F">`+ msgData.bookBrowse +`</p>
+                <p class="mb-1 ms-2" style="color: #264653">`+ msgData.bookInterest +`</p>
+            </div>
+            <div class="vr" style="padding:0 0 0 1px"></div>
+            <div class="col d-flex align-items-left flex-column justify-content-center">
+                <span class="fs-6 mt-1" style="color: #50514F">`+data[i].time+`</span>
+                <span class="fs-6" style="color: #F25F5C">浏览`+data[i].num+`次</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="list-group " v-for="_ in 3">
+        <div class="container list-group-item list-group-item-action bg-light">
+            <div class="row ">
+                <div class="col-8">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1" style="color: #E76F51">画册A</h5>
+                    </div>
+                    <p class="mb-1" style="color: #2A9D8F">共浏览了3页, 浏览时长3秒</p>
+                    <small style="color: #264653">第1页兴趣XXX,第2页兴趣XXX</small>
+                </div>
+                <div class="col d-flex align-items-center flex-column justify-content-center">
+                    <span class="fs-6 mt-1" style="color: #50514F">3天前</span>
+                    <span class="fs-6" style="color: #F25F5C">浏览14次</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container list-group-item list-group-item-action bg-light">
+            <div class="row ">
+                <div class="col-8">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1" style="color: #F4A261">画册B</h5>
+                    </div>
+                    <p class="mb-1" style="color: #2A9D8F">共浏览了3页, 浏览时长3秒</p>
+                    <small style="color: #264653">第1页兴趣XXX,第2页兴趣XXX</small>
+                </div>
+                <div class="col d-flex align-items-center flex-column justify-content-center">
+                    <span class="fs-6 mt-1" style="color: #50514F">3小时前</span>
+                    <span class="fs-6" style="color: #F25F5C">浏览14次</span>
+                </div>
+            </div>
+        </div>
+        <div class="container list-group-item list-group-item-action bg-light">
+            <div class="row ">
+                <div class="col-8">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1" style="color: #E9C46A;">画册C</h5>
+                    </div>
+                    <p class="mb-1" style="color: #2A9D8F">共浏览了3页, 浏览时长3秒</p>
+                    <small style="color: #264653">第1页兴趣XXX,第2页兴趣XXX</small>
+                </div>
+                <div class="col d-flex align-items-center flex-column justify-content-center">
+                    <span class="fs-6 mt-1" style="color: #50514F">3分钟前</span>
+                    <span class="fs-6" style="color: #F25F5C">浏览14次</span>
+                </div>
+            </div>
+        </div>
+        <div class="container list-group-item list-group-item-action bg-light">
+            <div class="row ">
+                <div class="col-8">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1" style=";">画册D</h5>
+                    </div>
+                    <p class="mb-1" style="color: #2A9D8F">共浏览了3页, 浏览时长3秒</p>
+                    <small style="color: #264653">第1页兴趣XXX,第2页兴趣XXX</small>
+                </div>
+                <div class="col d-flex align-items-center flex-column justify-content-center">
+                    <span class="fs-6 mt-1" style="color: #50514F">3天前</span>
+                    <span class="fs-6" style="color: #F25F5C">浏览14次</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container list-group-item list-group-item-action bg-light">
+            <div class="row ">
+                <div class="col-8">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1" style=";">画册E</h5>
+                    </div>
+                    <p class="mb-1" style="color: #2A9D8F">共浏览了3页, 浏览时长3秒</p>
+                    <small style="color: #264653">第1页兴趣XXX,第2页兴趣XXX</small>
+                </div>
+                <div class="col d-flex align-items-center flex-column justify-content-center">
+                    <span class="fs-6 mt-1" style="color: #50514F">3天前</span>
+                    <span class="fs-6" style="color: #F25F5C">浏览14次</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container list-group-item list-group-item-action bg-light">
+            <div class="row ">
+                <div class="col-8">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1" style="">画册F</h5>
+                    </div>
+                    <p class="mb-1" style="color: #2A9D8F">共浏览了3页, 浏览时长3秒</p>
+                    <small style="color: #264653">第1页兴趣XXX,第2页兴趣XXX</small>
+                </div>
+                <div class="col d-flex align-items-center flex-column justify-content-center">
+                    <span class="fs-6 mt-1" style="color: #50514F">3天前</span>
+                    <span class="fs-6" style="color: #F25F5C">浏览14次</span>
+                </div>
+            </div>
+        </div>
+        <div class="container list-group-item list-group-item-action bg-light">
+            <div class="row ">
+                <div class="col-8">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1" style="">画册G</h5>
+                    </div>
+                    <p class="mb-1" style="color: #2A9D8F">共浏览了3页, 浏览时长3秒</p>
+                    <small style="color: #264653">第1页兴趣XXX,第2页兴趣XXX</small>
+                </div>
+                <div class="col d-flex align-items-center flex-column justify-content-center">
+                    <span class="fs-6 mt-1" style="color: #50514F">3天前</span>
+                    <span class="fs-6" style="color: #F25F5C">浏览14次</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="list-group " v-for="_ in 10">
+        <div class="container list-group-item list-group-item-action bg-light">
+            <div class="container list-group-item list-group-item-action bg-light">
+                <h5 class="mb-1" style=";">画册E</h5>
+                <p class="mb-1" style="color: #2A9D8F">2023-12-12 11:11:11 星期一</p>
+                <small style="color: #264653">浏览了第1页,浏览时长2秒</small>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    const {createApp, ref, onMounted} = Vue;
+    const UpIcon = {
+        template: `
+        `,
+        setup() {
+        }
+    };
+
+    const App = {
+        //使用短横线命名
+        components: {
+            UpIcon,
+        },
+        setup() {
+            /**
+             * 生成{size}大小的汉字
+             * @param size 传入大小,默认3
+             * @returns {string} 返回汉字
+             */
+            const generateRandomChinese = (size = 3) => {
+                if (typeof size != "number") {
+                    console.log("请输入数字")
+                }
+                let randomChineseString = "";
+                const commonChars = "的一是了我不人在他有这个上们来到时大地为子中你说生国年着就那和要她出也得里后自以会家可下而过天去能对小多然于心学么之都好看起发";
+                for (let i = 0; i < size; i++) {
+                    //randomChineseString += String.fromCharCode(Math.floor(Math.random() * (0x9FFF - 0x4E00 + 1)) + 0x4E00);
+                    randomChineseString += commonChars[Math.floor(Math.random() * commonChars.length)];
+                }
+                return randomChineseString;
+            }
+            /**
+             * 随机生成整数
+             * @param min 最小值
+             * @param max 最大值
+             * @returns {number}
+             */
+            const generateRandomNumber = (min = 0, max = 1) => {
+                if (typeof min != "number" || typeof max != "number") {
+                    console.log("请输入数字")
+                }
+                return Math.floor(Math.random() * (max - min)) + min;
+            }
+
+            const albumDetailsData = ref([
+                {
+                    title: "某某画册",
+                    pageView: 120 + "+",
+                    whetherItIsGrowthOrNot: true,
+                }
+            ]);
+
+
+            const addData = () => {
+                albumDetailsData.value.push({
+                    title: generateRandomChinese(),
+                    pageView: (Math.floor(Math.random() * 200) + 100) + "+",
+                    whetherItIsGrowthOrNot: Math.random() < 0.5,
+                })
+            }
+
+            for (let i = 0; i < 4; i++) {
+                addData();
+            }
+
+            const loadMore = () => {
+                // 这里只是为了演示，实际情况可能需要从服务器加载数据
+                for (let i = 1; i <= 5; i++) {
+                    addData();
+                }
+            };
+
+            const handleScroll = (event) => {
+                if (window.innerHeight + window.scrollY > 20000) {
+                    return;
+                }
+                let nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000;
+                if (nearBottom) {
+                    loadMore();
+                }
+            };
+
+            // 添加滚动事件监听器
+            window.addEventListener('scroll', handleScroll);
+
+
+            onMounted(() => {
+                const chartRef = document.getElementById("main");
+
+            })
+
+            return {albumDetailsData, generateRandomChinese, generateRandomNumber};
+        }
+    };
+
+    createApp(App).mount('#app');
+</script>
+</body>
+</html>
