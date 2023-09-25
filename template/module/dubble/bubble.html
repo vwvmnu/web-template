@@ -12,21 +12,24 @@
 </head>
 <body>
 <div id="app">
-    <div class="screen">
-        <div class="lower-left-screen">
-            <div class="carouselList-container">
 
-            </div>
-        </div>
-    </div>
+    <div class="myBarrage"></div>
 
     <button onclick="addSlide()">Add New Slide</button>
 </div>
+
 <!-- 引入js文件 -->
 <script src="../js/jquery-3.7.1.js"></script>
 <script src="../js/bootstrap.js"></script>
 <script src="../js/http_cdn.jsdelivr.net_npm_echarts@5.4.3_dist_echarts.js"></script>
 <script src="../js/http_unpkg.com_vue@3_dist_vue.global.js"></script>
 <script src="./bubble.js"></script>
+
+<script>
+    const myBarrageConfig = { numberOfColumns: 1, barrageHeight: 25, bottom: "18%",}
+    let msgList = ["123在9秒前浏览的画册", "456在3秒前浏览的画册", "小黑在8秒前浏览的画册", "小白小在8秒前浏览的画册", "小白小在8秒前浏览的画册", "小白小在8前浏览的画册"];
+    const myBarrage = document.querySelector('.myBarrage');
+    startCarouserList(msgList, myBarrage, myBarrageConfig).then();
+</script>
 </body>
 </html>
