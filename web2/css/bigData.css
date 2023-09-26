@@ -498,14 +498,32 @@ body{
     left: 20px;
     top: 135px;
     width: 420px;
-    height: 564px;
+    height: 320px;
     opacity: 1;
 
     /* 自动布局 */
     padding: 0;
     gap: 8px;
 
+    overflow:hidden;
+    z-index: 1;
+}
 
+.div-main-left-header-main1 {
+
+    /* 自动布局子元素 */
+    position: static;
+    left: 20px;
+    top: 135px;
+    width: 420px;
+    height: 825px;
+    opacity: 1;
+
+    /* 自动布局 */
+    padding: 0;
+    gap: 8px;
+
+    overflow:hidden;
     z-index: 1;
 }
 
@@ -564,12 +582,37 @@ body{
     z-index: 2;
 }
 
+.div-main-left-header-main-man1 {
+    /* 拣货员tag */
+
+    /* 自动布局子元素 */
+    position: static;
+    left: 316px;
+    top: 0px;
+    width: 88px;
+    height: 28px;
+    border-radius: 4px;
+    opacity: 1;
+
+    /* 自动布局 */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 8px;
+    gap: 10px;
+
+    background: rgba(24, 254, 254, 0.2);
+
+    box-sizing: border-box;
+    border: 1px solid #18FEFE;
+
+    z-index: 2;
+}
+
 .div-main-left-header-main-row {
 
     /* 自动布局子元素 */
     position: static;
-    left: 0px;
-    top: 0px;
     width: 420px;
     height: 36px;
     opacity: 1;
@@ -577,7 +620,7 @@ body{
     /* 自动布局 */
     display: flex;
     flex-direction: row;
-    padding: 4px 0px;
+    padding: 4px 0;
     align-self: stretch;
 
     z-index: 0;
