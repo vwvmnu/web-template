@@ -8,14 +8,13 @@
     <!-- CSS 文件 -->
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="./bubble.css">
-
 </head>
 <body>
 <div id="app">
-
     <div class="myBarrage"></div>
+    <div class="myBarrage1"></div>
+    <button onclick="addSlide()">自定义按钮</button>
 
-    <button onclick="addSlide()">Add New Slide</button>
 </div>
 
 <!-- 引入js文件 -->
@@ -26,10 +25,22 @@
 <script src="./bubble.js"></script>
 
 <script>
-    const myBarrageConfig = { numberOfColumns: 1, barrageHeight: 25, bottom: "18%",}
-    let msgList = ["123在9秒前浏览的画册", "456在3秒前浏览的画册", "小黑在8秒前浏览的画册", "小白小在8秒前浏览的画册", "小白小在8秒前浏览的画册", "小白小在8前浏览的画册"];
+
+    const myBarrageConfig = { numberOfColumns: 1, barrageHeight: 25, bottom: "18%",rollInterval: 2, styleType: 2}
+    let msgList = ["123在9秒前浏览的画册", "小白小在8前浏览的画册", "", " ", "  ", [], undefined];
     const myBarrage = document.querySelector('.myBarrage');
-    startCarouserList(msgList, myBarrage, myBarrageConfig).then();
+    const start1 = new MyBarrage(msgList, myBarrage, myBarrageConfig).start();
+
+    const myBarrageConfig1 = { numberOfColumns: 1, barrageHeight: 25, bottom: "28%",}
+    let msgList1 = ["小白1在9秒前浏览的画册", "小白2在8前浏览的画册", "小白3在9秒前浏览的画册", "小白4在8前浏览的画册"];
+    const myBarrage1 = document.querySelector('.myBarrage1');
+    const start2 = new MyBarrage(msgList1, myBarrage1, myBarrageConfig1).start();
+
+
+    const addSlide = () => {
+        start1.stop()
+        start2.stop()
+    }
 </script>
 </body>
 </html>

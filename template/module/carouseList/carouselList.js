@@ -2,7 +2,7 @@ let count = 0;
 
 const msgList = ["123", "456", "789", "-1235", "-4563", "-7895"]
 const size = 3;
-const runningMark = true;
+let runningMark = true;
 
 /**
  * 休眠函数
@@ -26,6 +26,7 @@ const initCarouserList = (msgList = [""], size = 3) => {
 }
 
 const startCarouserList = async (timeSize = 0) => {
+
     while (runningMark) {
         for (let i = 0; i < msgList.length; i++) {
             await addSlide(msgList[i]);
