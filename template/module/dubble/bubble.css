@@ -1,23 +1,29 @@
 .carouselList-container {
     position: relative;
-    height: 250px;
+    height: 100%;
     overflow: hidden;
+    --height: 250px;
+    --numberOfColumns: 5;
+    display: flex;
+    flex-direction: column;
 }
 
-.slide {
-    border-radius: 10px;
-    padding: 5px;
+.mySlide {
+    border-radius: calc(var(--height) * 0.2 / var(--numberOfColumns));
+    padding: calc(var(--height) * 0.1 / var(--numberOfColumns));
     top: 250px;
-    height: 40px;
-    margin-top: 10px;
-    line-height: 30px;
+    height: calc(var(--height) * 0.8 / var(--numberOfColumns));
+    margin-top: calc(var(--height) * 0.2 / var(--numberOfColumns));
+    line-height: calc(var(--height) * 0.6 / var(--numberOfColumns));
     background-color: rgba(0, 0, 0, 0.5);
     text-align: center;
-    font-size: 14px;
+    font-size: calc(var(--height) * 0.3 / var(--numberOfColumns));
     color: rgba(236, 240, 241,1.0);
 
-    min-width: 50px;
-    max-width: 200px;  /* This width might need to be adjusted based on the actual width of 10 characters in your font */
+    display: inline-block;
+    width: auto;
+    min-width: calc(var(--height) * 0.2);
+    max-width: calc(var(--height) * 1.2);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -31,6 +37,7 @@
 }
 
 .lower-left-screen {
+    background-color: red;
     position: absolute;
     bottom: 20px;
     left: 20px;

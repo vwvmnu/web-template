@@ -1,162 +1,17 @@
-<!doctype html>
-<html lang="zh-CN" xmlns="http://www.w3.org/1999/html">
-<head>
-    <!-- 必须的 meta 标签 -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>work</title>
-    <!-- CSS 文件 -->
-    <link rel="stylesheet" href="./css/bootstrap.css">
-    <link rel="stylesheet" href="./css/index.css">
+<!-- index.html -->
 
-    <!-- 引入js文件 -->
-    <script src="./js/bootstrap.js"></script>
-    <script src="./js/index.js"></script>
+<script type="module">
+    console.log("module")
+</script>
 
-</head>
-<body>
+<iframe>
+    <div id="shadowHost"></div>
+    <script src="js/testA.js"></script>
+</iframe>
+<iframe>
+    <script src="js/testB.js"></script>
+</iframe>
 
 
-<div id="app">
-    <div class="zjh" style="position: absolute;bottom: 60px; background: white; height: 50px; width: 100vw;
-        z-index: auto !important;display: block !important;" onclick="displayAd1()">
-        <a><img style="width: 100%; height: 100%"
-                src="https://img2.baidu.com/it/u=1561653189,2616458538&fm=253&fmt=auto&app=138&f=JPEG?w=1371&h=500"
-                alt="">
-        </a>
-    </div>
-
-    <div class="offcanvas offcanvas-bottom canvasBottom" tabindex="-1" id="canvasBottom1"
-         aria-labelledby="canvasBottomLabel">
-        <div class="zjh-canvas-border">
-            <div class="offcanvas-header">
-                <p class="offcanvas-title header-font" id="canvasBottomLabel1">
-                    做好营销和销售,扩大你的生意<br/>
-                    就现在,从一本AI画册开始!
-                </p>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body small">
-                    <div id="carouselExampleSlidesOnly1"  class="carousel slide row gy-2" data-bs-ride="carousel">
-                        <div class="col-12  carousel-inner">
-                            <div class="carousel-item active">
-                                <img alt="做好营销和销售，扩大你的生意
-                                就现在，立即获取增长方案！"
-                                     src="https://img01.yzcdn.cn/upload_files/2023/05/06/FrYGJU8wEVJMGbE26pKDTkjvhoY_.jpg?imageMogr2/format/jpg"
-                                     class="d-block w-100">
-                            </div>
-                            <div class="carousel-item">
-                                <img alt="做好营销和销售，扩大你的生意
-                                就现在，立即获取增长方案！"
-                                     src="https://img01.yzcdn.cn/upload_files/2023/05/06/FrYGJU8wEVJMGbE26pKDTkjvhoY_.jpg?imageMogr2/format/jpg"
-                                     class="d-block w-100">
-                            </div>
-                            <div class="carousel-item">
-                                <img alt="做好营销和销售，扩大你的生意
-                                就现在，立即获取增长方案！"
-                                     src="https://img01.yzcdn.cn/upload_files/2023/05/06/FrYGJU8wEVJMGbE26pKDTkjvhoY_.jpg?imageMogr2/format/jpg"
-                                     class="d-block w-100">
-                            </div>
-                        </div>
-                        <div class="col-12  canvasBottom-main-telephone">
-                            <input type="tel" enterkeyhint="next" name="mobile" placeholder="请输入您的手机号码" autocomplete="tel-local"/>
-                        </div>
-                        <div class="col-12 ">
-                            <button class=" canvasBottom-main-button" onclick="pushData()">
-                                <span style="color: white">免费开启AI画册</span>
-                            </button>
-                        </div>
-                        <div class="col-12 ">
-                            致电咨询:13266825268 <br>
-                            输入电话将立即中定制你企业的画册方案!
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="offcanvas offcanvas-bottom canvasBottom" tabindex="-1" id="canvasBottom2"
-         aria-labelledby="canvasBottomLabel">
-        <div class="zjh-canvas-border">
-            <div class="offcanvas-header">
-                <p class="offcanvas-title header-font" id="canvasBottomLabel2">
-                    <b>上传你公司的PDF,即可免费开通AI画册!</b>
-                </p>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-            </div>
-            <div class="offcanvas-body small">
-                <div id="carouselExampleSlidesOnly2" class="carousel slide row gy-3" data-bs-ride="carousel" onclick="canvasMainUpload()">
-                    <div class="col-12  carousel-inner" >
-                        <div class="row canvas-main-upload" >
-                            <div class="col-7" style="display: flex; align-items: center">
-                                <div style="font-size: 16px">
-                                    <div>点击上传pdf文件</div>
-                                    <div>汇智AI自动帮你生成画册</div>
-                                    <div>支持解析99%的PDF文件</div>
-                                </div>
-                            </div>
-                            <div class="col-5">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor"
-                                     class="bi bi-filetype-pdf" viewBox="0 0 16 16" opacity=".5">
-                                    <path fill-rule="evenodd"
-                                          d="M14 4.5V14a2 2 0 0 1-2 2h-1v-1h1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM1.6 11.85H0v3.999h.791v-1.342h.803c.287 0 .531-.057.732-.173.203-.117.358-.275.463-.474a1.42 1.42 0 0 0 .161-.677c0-.25-.053-.476-.158-.677a1.176 1.176 0 0 0-.46-.477c-.2-.12-.443-.179-.732-.179Zm.545 1.333a.795.795 0 0 1-.085.38.574.574 0 0 1-.238.241.794.794 0 0 1-.375.082H.788V12.48h.66c.218 0 .389.06.512.181.123.122.185.296.185.522Zm1.217-1.333v3.999h1.46c.401 0 .734-.08.998-.237a1.45 1.45 0 0 0 .595-.689c.13-.3.196-.662.196-1.084 0-.42-.065-.778-.196-1.075a1.426 1.426 0 0 0-.589-.68c-.264-.156-.599-.234-1.005-.234H3.362Zm.791.645h.563c.248 0 .45.05.609.152a.89.89 0 0 1 .354.454c.079.201.118.452.118.753a2.3 2.3 0 0 1-.068.592 1.14 1.14 0 0 1-.196.422.8.8 0 0 1-.334.252 1.298 1.298 0 0 1-.483.082h-.563v-2.707Zm3.743 1.763v1.591h-.79V11.85h2.548v.653H7.896v1.117h1.606v.638H7.896Z"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 ">
-                        <button class=" canvasBottom-main-button">
-                            <span style="color: white">点击急速上传,免费开通AI画册!</span>
-                        </button>
-                    </div>
-                    <div class="col-12 container-1">
-                        <div class="li-box">
-                            <ul>
-                                <li>飞鲨勇士张超：曾驾歼-8战机逼退外军侦察机</li>
-                                <li>台媒炒作大陆军机飞临台海 台军方：全程监控</li>
-                                <li>菲总统对华为何晴转阴：先期待“访华”后欲“清算中国”</li>
-                                <li>外媒称韩国醉心中等强国地位 屡次在关涉中国时遇挫</li>
-                                <li>伊朗官方回应日本驻伊大使被扣押：没有的事儿</li>
-                                <li>菲总统对华为何晴转阴：先期待“访华”后欲“清算中国”</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
-    <div class="offcanvas offcanvas-bottom canvasBottom" tabindex="-1" id="canvasBottom3"
-         aria-labelledby="canvasBottomLabel">
-        <div class="zjh-canvas-border">
-            <div class="offcanvas-header" style="justify-content: center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16" opacity="0.5">
-                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                    <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
-                </svg>
-            </div>
-            <div class="offcanvas-body small">
-                <div id="carouselExampleSlidesOnly3" class="carousel slide row gy-3" data-bs-ride="carousel">
-                    <div class="col-12  carousel-inner">
-                        <div class="canvas-warning">
-                            <div style="font-size: 20px"><b>恭喜你提交成功，系统正在审核中！</b></div>
-                            <br/>
-                            <div style="font-size: 16px">预计3小时内审核完毕，审核过程中会有专属客服拨打您电话核实！请留意接听！</div>
-                        </div>
-                    </div>
-                    <div class="col-12 ">
-                        <button class="canvasBottom-main-button canvasBottom-warning-button ">
-                            <span style="color: white; font-size: 20px">好的，我知道了!</span>
-                        </button>
-                    </div>
-                    <div class="col-12 container-1">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
-</body>
-</html>

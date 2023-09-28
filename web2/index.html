@@ -4,12 +4,12 @@
     <!-- 必须的 meta 标签 -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>work</title>
+    <title>汇智AI数据服务平台</title>
     <!-- CSS 文件 -->
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/bigData.css">
-
 </head>
+
 <body style="display: flex; align-items: center; justify-content: center">
 <div id="app">
     <header class="header-background">
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="header-text-center">
-                <b>汇智AI数据大屏</b>
+                <b>汇智AI数据服务平台</b>
             </div>
             <div class="header-text-right">
                 <div class="header-text-right-data" id="header-text-right-data">
@@ -133,7 +133,7 @@
             </div>
 
             <div class="div-main-instrument-text">
-                平台预估成交金额
+                平台预计成交订单
             </div>
         </div>
         <div class="div-main-left">
@@ -153,21 +153,39 @@
                     </div>
                 </div>
             </div>
-            <div class="div-main-left-header-main">
-                <div class="carouselList-container">
-                    <div class="div-main-left-header-main-row" v-for="_ in 5">
+            <div class="div-main-left-header-main1">
+                <div id="leftMain11">
+                    <div class="div-main-left-header-main-row" v-for="item in data11">
                         <div class="col-1">
                             <img class="triangle" src="./img/triangle.png" alt="">
                         </div>
                         <div class="col-5 div-main-left-header-main-font">
-                            {{ generateRandomChinese(7) }}公司
+                            {{ item.enterpriseName }}
                         </div>
                         <div class="col-3 div-main-left-header-main-font">
-                            {{ generateRandomNumber(500, 5000) }}
+                            {{ item.pictureSize }}
                         </div>
                         <div class="col-3 div-main-left-header-main-font">
                             <div class="div-main-left-header-main-man">
-                                {{ generateRandomChinese(3) }}
+                                {{ item.peopleName }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="leftMain12">
+                    <div class="div-main-left-header-main-row" v-for="item in data12">
+                        <div class="col-1">
+                            <img class="triangle" src="./img/triangle.png" alt="">
+                        </div>
+                        <div class="col-5 div-main-left-header-main-font">
+                            {{ item.enterpriseName }}
+                        </div>
+                        <div class="col-3 div-main-left-header-main-font">
+                            {{ item.pictureSize }}
+                        </div>
+                        <div class="col-3 div-main-left-header-main-font">
+                            <div class="div-main-left-header-main-man">
+                                {{ item.peopleName }}
                             </div>
                         </div>
                     </div>
@@ -187,33 +205,35 @@
                         画册页数
                     </div>
                     <div class="col-3 div-main-left-header-2-font">
-                        访问人
+                        添加时间
                     </div>
                 </div>
             </div>
             <div class="div-main-left-header-main">
-                <div class="div-main-left-header-main-row" v-for="_ in 5">
+                <div id = ""></div>
+                <div class="div-main-left-header-main-row" v-for="item in data2">
                     <div class="col-1">
                         <img class="triangle" src="./img/triangle.png" alt="">
                     </div>
                     <div class="col-5 div-main-left-header-main-font">
-                        {{ generateRandomChinese(7) }}公司
+                        {{ item.enterpriseName }}
                     </div>
                     <div class="col-3 div-main-left-header-main-font">
-                        {{ generateRandomNumber(500, 5000) }}
+                        {{ item.pictureSize }}
                     </div>
                     <div class="col-3 div-main-left-header-main-font">
-                        <div class="div-main-left-header-main-man">
-                            {{ generateRandomChinese(3) }}
+                        <div class="div-main-left-header-main-man1">
+                            {{ item.peopleName }}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- 右下角 -->
         <div class="div-main-right2">
             <div class="div-main-left-header">
                 <div class="div-main-left-header-1">
-                    <b>画册被访问数量统计</b>
+                    <b>企业画册访问统计排行</b>
                 </div>
                 <div class="div-main-left-header-2">
                     <div class="col-6 div-main-left-header-2-font">
@@ -228,24 +248,25 @@
                 </div>
             </div>
             <div class="div-main-left-header-main">
-                <div class="div-main-left-header-main-row" v-for="_ in 5">
+                <div class="div-main-left-header-main-row" v-for="item in data3">
                     <div class="col-1">
                         <img class="triangle" src="./img/triangle.png" alt="">
                     </div>
                     <div class="col-5 div-main-left-header-main-font">
-                        {{ generateRandomChinese(7) }}公司
+                        {{ item.enterpriseName }}
                     </div>
                     <div class="col-3 div-main-left-header-main-font">
-                        {{ generateRandomNumber(500, 5000) }}
+                        {{ item.pictureSize }}
                     </div>
                     <div class="col-3 div-main-left-header-main-font">
                         <div class="div-main-left-header-main-man">
-                            {{ generateRandomChinese(3) }}
+                            {{ item.peopleName }}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- 中间的左边 -->
         <div class="div-main-center1">
             <div class="div-main-left-header">
                 <div class="div-main-left-header-1">
@@ -264,22 +285,43 @@
                 </div>
             </div>
             <div class="div-main-left-header-main">
-                <div class="div-main-left-header-main-row" v-for="_ in 5">
-                    <div class="col-1">
-                        <img class="triangle" src="./img/triangle.png" alt="">
-                    </div>
-                    <div class="col-5 div-main-left-header-main-font">
-                        {{ generateRandomChinese(7) }}公司
-                    </div>
-                    <div class="col-3 div-main-left-header-main-font">
-                        {{ generateRandomNumber(500, 5000) }}
-                    </div>
-                    <div class="col-3 div-main-left-header-main-font">
-                        <div class="div-main-left-header-main-man">
-                            {{ generateRandomChinese(3) }}
+                <div id="data41">
+                    <div class="div-main-left-header-main-row" v-for="item in data41">
+                        <div class="col-1">
+                            <img class="triangle" src="./img/triangle.png" alt="">
+                        </div>
+                        <div class="col-5 div-main-left-header-main-font">
+                            {{ item.enterpriseName }}
+                        </div>
+                        <div class="col-3 div-main-left-header-main-font">
+                            {{ item.pictureSize }}
+                        </div>
+                        <div class="col-3 div-main-left-header-main-font">
+                            <div class="div-main-left-header-main-man">
+                                {{ item.peopleName }}
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div id="data42">
+                    <div class="div-main-left-header-main-row" v-for="item in data42">
+                        <div class="col-1">
+                            <img class="triangle" src="./img/triangle.png" alt="">
+                        </div>
+                        <div class="col-5 div-main-left-header-main-font">
+                            {{ item.enterpriseName }}
+                        </div>
+                        <div class="col-3 div-main-left-header-main-font">
+                            {{ item.pictureSize }}
+                        </div>
+                        <div class="col-3 div-main-left-header-main-font">
+                            <div class="div-main-left-header-main-man">
+                                {{ item.peopleName }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
         <div class="div-main-center2">
@@ -300,19 +342,39 @@
                 </div>
             </div>
             <div class="div-main-left-header-main">
-                <div class="div-main-left-header-main-row" v-for="_ in 5">
-                    <div class="col-1">
-                        <img class="triangle" src="./img/triangle.png" alt="">
+                <div id="idData51">
+                    <div class="div-main-left-header-main-row" v-for="item in data51">
+                        <div class="col-1">
+                            <img class="triangle" src="./img/triangle.png" alt="">
+                        </div>
+                        <div class="col-5 div-main-left-header-main-font">
+                            {{ item.enterpriseName }}
+                        </div>
+                        <div class="col-3 div-main-left-header-main-font">
+                            {{ item.pictureSize }}
+                        </div>
+                        <div class="col-3 div-main-left-header-main-font">
+                            <div class="div-main-left-header-main-man">
+                                {{ item.peopleName }}
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-5 div-main-left-header-main-font">
-                        {{ generateRandomChinese(7) }}公司
-                    </div>
-                    <div class="col-3 div-main-left-header-main-font">
-                        {{ generateRandomNumber(500, 5000) }}
-                    </div>
-                    <div class="col-3 div-main-left-header-main-font">
-                        <div class="div-main-left-header-main-man">
-                            {{ generateRandomChinese(3) }}
+                </div>
+                <div id="idData52">
+                    <div class="div-main-left-header-main-row" v-for="item in data52">
+                        <div class="col-1">
+                            <img class="triangle" src="./img/triangle.png" alt="">
+                        </div>
+                        <div class="col-5 div-main-left-header-main-font">
+                            {{ item.enterpriseName }}
+                        </div>
+                        <div class="col-3 div-main-left-header-main-font">
+                            {{ item.pictureSize }}
+                        </div>
+                        <div class="col-3 div-main-left-header-main-font">
+                            <div class="div-main-left-header-main-man">
+                                {{ item.peopleName }}
+                            </div>
                         </div>
                     </div>
                 </div>
