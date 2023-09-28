@@ -178,6 +178,7 @@ const App = {
         const data51 = ref([]);
         const data52 = ref([]);
         const genDataList = (size = 23) => {
+
             const temp = [];
             for (let i = 0; i < size; i++) {
                 const data = {
@@ -381,9 +382,9 @@ const App = {
 
                     await mySleep(Math.floor(Math.random() * 20000))
                     leftMain11.style.transition = 'transform 2s ease-in-out';
-                    leftMain11.style.transform = 'translateY(-100%)'; // 移动第一个元素
+                    leftMain11.style.transform = 'translateY(-100%)';
                     leftMain12.style.transition = 'transform 2s ease-in-out';
-                    leftMain12.style.transform = 'translateY(-100%)'; // 移动第一个元素
+                    leftMain12.style.transform = 'translateY(-100%)';
 
                     await mySleep(2020);
                     data1.value = [...data2.value];

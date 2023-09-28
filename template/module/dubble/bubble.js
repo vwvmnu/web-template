@@ -21,7 +21,7 @@ class MyBarrage {
             alignItems: "flex-start",
             // 显示几行
             numberOfColumns: 3,
-            // 每个显示的高度大小
+            // 每个显示的高度大小(盒子布局的总高度),
             barrageHeight: 20,
             // 滚动间隔
             rollInterval: 0.5,
@@ -39,7 +39,7 @@ class MyBarrage {
                 backgroundColor: "rgba(0, 0, 0, 1)",
                 height: 22.5,
                 borderRadius: 5,
-                padding: [5, 5, 5, 5],
+                padding: [5, 0, 5, 3],
                 marginTop: 2.5,
                 lineHeight: 12.5,
                 fontSize: 12.5,
@@ -72,37 +72,55 @@ class MyBarrage {
             this.myBarrageConfig.rollTime = this.initMyBarrageConfig.rollTime;
         }
 
+        (() => {
+                if (this.myBarrageConfig.isUseChildStyle) {
+                    // 默认情况,如果行高度小于子元素,则覆盖子元素的高度
+                    const childStyle = this.myBarrageConfig.childStyle;
 
-        if (this.myBarrageConfig.isUseChildStyle) {
-            const height = this.myBarrageConfig.barrageHeight;
-            if (!this.myBarrageConfig.childStyle.borderRadius) {
-                this.myBarrageConfig.childStyle.borderRadius = height * 0.4;
+                    if (childStyle.height > this.myBarrageConfig.barrageHeight) {
+                        this.myBarrageConfig.barrageHeight = childStyle.height;
+                    }
+                    if (childStyle.padding[0] + childStyle.padding[2] + childStyle.fontSize > this.myBarrageConfig.barrageHeight){
+                        this.myBarrageConfig.barrageHeight = childStyle.height;
+                    }
+
+                    const height = this.myBarrageConfig.barrageHeight;
+                    if (!this.myBarrageConfig.childStyle.fontSize) {
+                        this.myBarrageConfig.childStyle.fontSize = height * 0.5;
+                    }
+                    if (!this.myBarrageConfig.childStyle.borderRadius) {
+                        this.myBarrageConfig.childStyle.borderRadius = height * 0.4;
+                    }
+                    if (!this.myBarrageConfig.childStyle.padding) {
+                        this.myBarrageConfig.childStyle.padding =
+                            [height * 0.2, this.myBarrageConfig.childStyle.borderRadius + height * 0.2,
+                                height * 0.2, this.myBarrageConfig.childStyle.borderRadius + height * 0.2];
+                    }
+
+                    if (!this.myBarrageConfig.childStyle.lineHeight) {
+                        this.myBarrageConfig.childStyle.lineHeight = this.myBarrageConfig.childStyle.fontSize;
+                    }
+                    if (!this.myBarrageConfig.childStyle.height) {
+                        this.myBarrageConfig.childStyle.height = this.myBarrageConfig.childStyle.padding[0] + this.myBarrageConfig.childStyle.padding[2] + this.myBarrageConfig.childStyle.fontSize;
+                        if (this.myBarrageConfig.childStyle.height > this.myBarrageConfig.barrageHeight) {
+                            this.myBarrageConfig.barrageHeight = this.myBarrageConfig.childStyle.height;
+                        }
+                    }
+
+                    if (!this.myBarrageConfig.childStyle.marginTop) {
+                        this.myBarrageConfig.childStyle.marginTop = this.myBarrageConfig.barrageHeight - this.myBarrageConfig.childStyle.height;
+                    } else {
+                        this.myBarrageConfig.barrageHeight += this.myBarrageConfig.childStyle.marginTop;
+                    }
+                }
             }
-            if (!this.myBarrageConfig.childStyle.fontSize) {
-                this.myBarrageConfig.childStyle.fontSize = height * 0.5;
-            }
-            if (!this.myBarrageConfig.childStyle.padding) {
-                this.myBarrageConfig.childStyle.padding =
-                    [height * 0.2, this.myBarrageConfig.childStyle.borderRadius + height * 0.2,
-                        height * 0.2, this.myBarrageConfig.childStyle.borderRadius + height * 0.2];
-            }
-            if (!this.myBarrageConfig.childStyle.lineHeight) {
-                this.myBarrageConfig.childStyle.lineHeight = this.myBarrageConfig.childStyle.fontSize;
-            }
-            if (!this.myBarrageConfig.childStyle.height) {
-                this.myBarrageConfig.childStyle.height = this.myBarrageConfig.childStyle.padding * 2 + this.myBarrageConfig.childStyle.fontSize;
-            }
-            if (!this.myBarrageConfig.childStyle.marginTop) {
-                this.myBarrageConfig.childStyle.marginTop = height - this.myBarrageConfig.childStyle.height;
-            }
-            debugger
-        }
+        )()
+
 
         // 弹幕的相关配置
         this.myBarrageConfig = {...this.initMyBarrageConfig, ...this.myBarrageConfig};
-
-
         this.myBarrageConfig.height = this.myBarrageConfig.numberOfColumns * this.myBarrageConfig.barrageHeight + "px"
+
         this.myBarrage.style.setProperty('--height', this.myBarrageConfig.height);
         this.myBarrage.style.setProperty('--numberOfColumns', this.myBarrageConfig.numberOfColumns);
 
