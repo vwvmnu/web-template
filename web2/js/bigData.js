@@ -48,6 +48,8 @@ document.querySelector('body').style.transformOrigin = "0 0"
 
 
 const {createApp, ref, onMounted} = Vue;
+// 向给定ID的用户发起请求
+
 const UpIcon = {
     template: ``, setup() {
     }
@@ -168,7 +170,6 @@ const App = {
             }
         };
 
-
         const data11 = ref([]);
         const data12 = ref([]);
         const data2 = ref([]);
@@ -178,6 +179,20 @@ const App = {
         const data51 = ref([]);
         const data52 = ref([]);
         const genDataList = (size = 23) => {
+            axios.get('/user', {
+                params: {
+                    ID: 12345
+                }
+            })
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+                .then(function () {
+                    // 总是会执行
+                });
             const temp = [];
             for (let i = 0; i < size; i++) {
                 const data = {

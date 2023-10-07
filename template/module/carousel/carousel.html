@@ -109,10 +109,8 @@
     let isTouchEnd = true, isMove = true;
     const scrollContainer = document.querySelector('.carousel-slides');
 
-    // 手指放在屏幕上
-    scrollContainer.addEventListener("touchstart", function (e) {
+    const eventStart = (e) => {
         e.preventDefault();
-
         // 单手指触摸或者多手指同时触摸，禁止第二个手指延迟操作事件
         if (e.touches.length === 1 || isTouchEnd) {
             clearInterval(carouseInterval);
@@ -121,23 +119,24 @@
             startY = touch.pageY;
             isTouchEnd = false;
         }
-    });
+    }
+    const eventMove = (e) => {
+            // 如果当前滑动已结束，不管其他手指是否在屏幕上都禁止该事件
+            if (isTouchEnd) {
+                return
+            }
+            const touch = e.touches[0];
+            endX = touch.pageX
+            endY = touch.pageY
 
-    scrollContainer.addEventListener("touchmove", function (e) {
-        // 如果当前滑动已结束，不管其他手指是否在屏幕上都禁止该事件
-        if (isTouchEnd) {
-            return
-        }
-        const touch = e.touches[0];
-        endX = touch.pageX
-        endY = touch.pageY
+            document.querySelector('.carousel-slides').style.transform = `translateX(${(-currentIndex*100) + (endX - startX)/10}%)`;
+    }
 
-        document.querySelector('.carousel-slides').style.transform = `translateX(${(-currentIndex*100) + (endX - startX)/10}%)`;
-    });
-    //手指离开屏幕时，计算最终需要停留在哪一页
-    scrollContainer.addEventListener("touchend", function (e) {
+    const eventEnd = (e) => {
+        isTouchEnd = true;
         carouseInterval = setInterval(function() {
             currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
+            updateCarousel()
         }, 2000);
         const touch = e.touches[0];
         let deltaX = endX - startX;
@@ -148,10 +147,53 @@
             } else {
                 carouselPrev();
             }
-            updateCarousel();
         }
+        updateCarousel();
+    }
+    // 手指放在屏幕上
+    scrollContainer.addEventListener("touchstart", eventStart);
+    // 鼠标按下
+    scrollContainer.addEventListener("mousedown", (e) => {
+        clearInterval(carouseInterval);
+        e.preventDefault();
+        startX = e.clientX;
+        startY = e.clientY;
+        isTouchEnd = false;
+    });
+    // 鼠标移动
+    scrollContainer.addEventListener("mousemove", (e)=>{
+        // 如果当前滑动已结束，不管其他手指是否在屏幕上都禁止该事件
+        if (isTouchEnd) {
+            return
+        }
+        endX = e.clientX;
+        endY = e.clientY;
+        console.log(startX, startY)
+        console.log()
+        document.querySelector('.carousel-slides').style.transform = `translateX(${(-currentIndex*100) + (endX - startX)/10}%)`;
+    });
+    // 手指移动
+    scrollContainer.addEventListener("touchmove", eventMove);
+    //手指离开屏幕时，计算最终需要停留在哪一页
+    scrollContainer.addEventListener("touchend", eventEnd)
+    //鼠标松开时，计算最终需要停留在哪一页
+    scrollContainer.addEventListener("mouseup", (e)=>{
+        isTouchEnd = true;
+        let deltaX = endX - startX;
+        let deltaY = endY - startY;
+        if (Math.abs(deltaX) > 50){
+            if (deltaX < 0) {
+                carouselNext();
+            } else {
+                carouselPrev();
+            }
+        }
+        updateCarousel();
+        carouseInterval = setInterval(function() {
+            currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
+            updateCarousel()
+        }, 2000);
     })
-
 
 </script>
 
