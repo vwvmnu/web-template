@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- 必须的 meta 标签 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>work</title>
+    <!-- CSS 文件 -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+
+<div class="" style="height: 100vh; width: 100vw;" id="app">
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary active" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Launch static backdrop modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal modal-dialog modal-dialog-scrollable" id="staticBackdrop" data-bs-backdrop="static"
+         data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="container">
+                    <h1 class="modal-title fs-5 mt-2" id="staticBackdropLabel">Modal title</h1>
+                    <button type="button" class="btn-close" style="position: absolute; right: 1rem; top: 1rem"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    <div class="mt-3">
+                        <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true"
+                             class="scrollspy-example  overflow-y-auto" style="height: 75vh" tabindex="0">
+                            <div class="card">
+                                <h2 id="list-item-1">生态介绍</h2>
+                                <div class="container">
+                                    <h5>创始人介绍</h5>
+                                    <div style="height: 300px; width: 100%; background-color: red">
+                                    </div>
+                                    <h6>
+                                        创始时间: 2022年10月2日
+                                    </h6>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <h2 id="list-item-2">赋能价值</h2>
+                                <div class="container">
+                                    <div style="height: 300px; width: 100%; background-color: red">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <h2 id="list-item-3">已加入企业</h2>
+                                <div class="container">
+                                    <div style="height: 300px; width: 100%; background-color: red">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <h2 id="list-item-4">申请加入</h2>
+                                <div class="container">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">姓名:</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="name"
+                                                   aria-describedby="basic-addon3 basic-addon4">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="telephone" class="form-label">电话:</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="telephone"
+                                                   aria-describedby="basic-addon3 basic-addon4">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="companyName" class="form-label">公司名称:</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="companyName"
+                                                   aria-describedby="basic-addon3 basic-addon4">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">是否为{xx}协会成员:</label>
+                                        <div class="form-check ms-1">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                   id="flexRadioDefault1">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                是
+                                            </label>
+                                        </div>
+                                        <div class="form-check ms-1">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                   id="flexRadioDefault2" checked>
+                                            <label class="form-check-label" for="flexRadioDefault2">
+                                                否
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">是否为{xx}展会参展商:</label>
+                                        <div class="form-check ms-1">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault1"
+                                                   id="flexRadioDefault3">
+                                            <label class="form-check-label" for="flexRadioDefault3">
+                                                是
+                                            </label>
+                                        </div>
+                                        <div class="form-check ms-1">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault1"
+                                                   id="flexRadioDefault4" checked>
+                                            <label class="form-check-label" for="flexRadioDefault4">
+                                                否
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="myList" style="position:absolute; bottom: 3rem">
+                    <div id="list-example" class=" list-group ">
+                        <a class="list-group-item list-group-item-action" href="#list-item-1">生态介绍</a>
+                        <a class="list-group-item list-group-item-action" href="#list-item-2">赋能价值</a>
+                        <a class="list-group-item list-group-item-action" href="#list-item-3">已加入企业</a>
+                        <a class="list-group-item list-group-item-action" href="#list-item-4">申请加入</a>
+                    </div>
+                </div>
+                <div class="border-bottom bg-white row" style="height: 3rem; z-index: 1;">
+                    <button class="btn col-6" id="myShare" type="button">
+                        <svg class="" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"
+                             width="2rem" height="2rem">
+                            <path d="M558.933333 699.733333l-170.666666-93.866666c-25.6 21.333333-55.466667 34.133333-89.6 34.133333-72.533333 0-128-55.466667-128-128s55.466667-128 128-128c38.4 0 68.266667 17.066667 93.866666 38.4L597.333333 320V298.666667c0-72.533333 55.466667-128 128-128s128 55.466667 128 128-55.466667 128-128 128c-34.133333 0-64-12.8-85.333333-34.133334l-213.333333 110.933334v21.333333l174.933333 98.133333c21.333333-17.066667 51.2-29.866667 81.066667-29.866666 72.533333 0 128 55.466667 128 128s-55.466667 128-128 128-128-55.466667-128-128c0-4.266667 0-12.8 4.266666-21.333334zM298.666667 554.666667c25.6 0 42.666667-17.066667 42.666666-42.666667s-17.066667-42.666667-42.666666-42.666667-42.666667 17.066667-42.666667 42.666667 17.066667 42.666667 42.666667 42.666667z m426.666666-213.333334c25.6 0 42.666667-17.066667 42.666667-42.666666s-17.066667-42.666667-42.666667-42.666667-42.666667 17.066667-42.666666 42.666667 17.066667 42.666667 42.666666 42.666666z m-42.666666 426.666667c25.6 0 42.666667-17.066667 42.666666-42.666667s-17.066667-42.666667-42.666666-42.666666-42.666667 17.066667-42.666667 42.666666 17.066667 42.666667 42.666667 42.666667z"
+                                  fill="#444444" ></path>
+                        </svg>
+                        分享
+                    </button>
+
+                    <button class="btn col-6" id="showListButton" type="button">
+                        <svg class="rotate90" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"
+                             width="2rem" height="2rem">
+                            <path d="M512 128c212 0 384 172 384 384s-172 384-384 384-384-172-384-384 172-384 384-384m0-64C264.8 64 64 264.8 64 512s200.8 448 448 448 448-200.8 448-448S759.2 64 512 64z m272 530.4L557.6 368 512 322.4 466.4 368 240 594.4l45.6 45.6L512 413.6 738.4 640l45.6-45.6z"></path>
+                        </svg>
+                        打开目录
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 引入js文件 -->
+<script src="./js/jquery-3.7.1.js"></script>
+<script src="./js/bootstrap.js"></script>
+<script src="./js/index.js"></script>
+<script src="./js/http_cdn.jsdelivr.net_npm_echarts@5.4.3_dist_echarts.js"></script>
+<script src="./js/http_unpkg.com_vue@3_dist_vue.global.js"></script>
+<script>
+    $(".rotate90").css("transform", "rotate(90deg)");
+    $(".myList").css({"transform": "translateY(100%)",})
+
+    // 找到所有带有.smooth-scroll类的链接
+    const smoothScrollLinks = document.querySelectorAll('a');
+
+    // 添加点击事件处理程序
+    smoothScrollLinks.forEach(link => {
+        link.addEventListener('click', event => {
+            event.preventDefault();
+
+            // 获取目标元素的ID
+            const targetId = link.getAttribute('href').substring(1);
+
+            // 找到目标元素
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                // 使用scrollIntoView方法滚动到目标元素
+                targetElement.scrollIntoView({behavior: 'smooth'});
+            }
+        });
+    });
+
+    const showList = () => {
+        const rote = $(".rotate90");
+        const myList = $(".myList");
+
+        rote.css("transform", "rotate(0)");
+        rote.css("transition", "transform 0.3s ease");
+        const roteA = {
+            "transform": "rotate(90deg)",
+            "transition": "transform 0.3s ease"
+        }
+        const roteB = {
+            "transform": "rotate(0)",
+            "transition": "transform 0.3s ease"
+        }
+        // 列表状态B
+        const myListA = {
+            "transform": "translateY(100%)",
+            "transition": "transform 0.3s ease"
+        }
+
+        // 列表状态B
+        const myListB = {
+            "transform": "translateY(0)",
+            "transition": "transform 0.3s ease"
+        }
+
+        myList.css(myListB)
+
+
+        // 添加回复事件
+        $(document).one('touchend click', (e) => {
+            debugger
+            myList.css(myListA);
+            rote.css(roteA);
+        });
+    }
+
+    $("#showListButton").click((e) => {
+        debugger
+        e.stopPropagation();
+        showList()
+    });
+
+
+</script>
+</body>
+</html>
