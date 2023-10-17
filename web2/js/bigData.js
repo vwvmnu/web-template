@@ -42,7 +42,6 @@ const windowHeight = window.screen.height / 1080
 const windowWidth = window.screen.width / 1920
 const differenceValueWidth = window.screen.width - 1920
 const differenceValueHeight = window.screen.height - 1920
-console.log(windowHeight)
 document.querySelector('body').style.transform = `scale(${windowWidth}, ${windowHeight})`;
 document.querySelector('body').style.transformOrigin = "0 0"
 
@@ -59,7 +58,8 @@ const App = {
     //使用短横线命名
     components: {
         UpIcon,
-    }, setup() {
+    },
+    setup() {
         const enterpriseName = ["星辰科技有限公司", "云峰技术有限公司", "海洋探索有限公司", "智源科技有限公司", "赛博技术有限公司", "超越实业有限公司", "梦幻科技有限公司", "宇宙网络有限公司", "黑金科技有限公司", "风云实业有限公司", "金牛科技有限公司", "神秘岛网络有限公司", "乐游科技有限公司", "飞翼技术有限公司", "时光科技有限公司", "绿宝实业有限公司", "天际线科技有限公司", "青云技术有限公司", "晶莹网络有限公司", "千里科技有限公司", "龙飞科技有限公司", "智慧源技术有限公司", "星空网络有限公司", "风华实业有限公司", "金融宝科技有限公司", "虚拟视界技术有限公司", "世纪龙网络有限公司", "云端科技有限公司", "翼动科技有限公司", "环宇实业有限公司", "海豚科技有限公司", "未来宝网络有限公司", "银河科技有限公司", "空中宫殿技术有限公司", "梦想实现网络有限公司", "金字塔科技有限公司", "云图技术有限公司", "大师网络有限公司", "蓝天科技有限公司", "光影技术有限公司", "神奇网络有限公司", "时空穿越科技有限公司", "星际实业有限公司", "智能核心网络有限公司", "青春科技有限公司", "深海秘密技术有限公司", "超级网络有限公司", "钢铁侠科技有限公司", "闪电实业有限公司", "飞速网络有限公司", "黑洞科技有限公司", "魔法世界技术有限公司", "恒星网络有限公司", "世界之窗科技有限公司", "无限可能技术有限公司", "超能网络有限公司", "火箭科技有限公司", "晶体技术有限公司", "黄金时代网络有限公司", "铁人科技有限公司", "精灵之森技术有限公司", "高峰网络有限公司", "飞龙科技有限公司", "奇迹实现技术有限公司", "天堂网络有限公司", "地心科技有限公司", "神话技术有限公司", "永恒网络有限公司", "量子科技有限公司", "虚拟实业有限公司", "梦幻岛网络有限公司", "火星探索科技有限公司", "太空城技术有限公司", "未来网络有限公司", "光速科技有限公司", "智能城市技术有限公司", "金矿网络有限公司", "无穷科技有限公司", "奇点技术有限公司", "宇宙网络有限公司", "雷神科技有限公司", "天使之城技术有限公司", "神秘网络有限公司", "海洋之心科技有限公司", "风之谷技术有限公司", "世界之巅网络有限公司", "黄金科技有限公司", "无尽之地技术有限公司", "龙之梦网络有限公司", "奇幻科技有限公司", "未来之门技术有限公司", "银月网络有限公司", "星辰大海科技有限公司", "飞跃技术有限公司", "宇宙之星网络有限公司", "时光之旅科技有限公司", "未来探索技术有限公司", "星际迷航网络有限公司", "虚拟现实科技有限公司", "黑科技有限公司",];
         const peopleName = ["许澄邈", "刘德泽", "程海超", "邓海阳", "邓海荣", "陈海逸", "宋海昌", "徐瀚钰", "徐瀚文", "陈涵亮", "程涵煦", "宋明宇", "徐涵衍", "万浩皛", "万浩波", "荣浩博", "陈浩初", "陈浩宕", "赵浩歌", "周浩广", "周浩邈", "周浩气", "章浩思", "徐浩言", "徐鸿宝", "许鸿波", "许鸿博", "许鸿才", "徐鸿畅", "许鸿畴", "宋鸿达", "徐鸿德", "徐鸿飞", "徐鸿风", "徐鸿福", "许鸿光", "徐鸿晖", "章鸿朗", "周鸿文", "章鸿轩", "宋鸿煊", "和鸿骞", "凯鸿远", "宋鸿云", "徐鸿哲", "徐鸿祯", "徐鸿志", "徐鸿卓", "徐嘉澍", "徐光济", "徐澎湃", "徐彭泽", "宋鹏池", "宋鹏海", "宋浦和", "宋浦泽", "方瑞渊", "方越泽", "方博耘", "方德运", "方辰宇", "方辰皓", "方辰钊", "方辰铭", "方辰锟", "方辰阳", "方辰韦", "方辰良", "方辰沛", "方晨轩", "方晨涛", "方晨濡", "方晨潍", "方鸿振", "方吉星", "方铭晨", "方起运", "方运凡", "方运凯", "方运鹏", "方运浩", "方运诚", "方运良", "方运鸿", "方运锋", "方运盛", "方运升", "方运杰", "方运珧", "方运骏", "方运凯", "方运乾", "方维运", "方运晟", "方运莱", "方运华", "方耘豪", "方星爵", "方星腾", "方星睿"];
 
@@ -179,20 +179,6 @@ const App = {
         const data51 = ref([]);
         const data52 = ref([]);
         const genDataList = (size = 23) => {
-            axios.get('/user', {
-                params: {
-                    ID: 12345
-                }
-            })
-                .then(function (response) {
-                    console.log(response);
-                })
-                .catch(function (error) {
-                    console.log(error);
-                })
-                .then(function () {
-                    // 总是会执行
-                });
             const temp = [];
             for (let i = 0; i < size; i++) {
                 const data = {
@@ -270,7 +256,7 @@ const App = {
         // 添加滚动事件监听器
         window.addEventListener('scroll', handleScroll);
 
-
+        // 组件加载完成
         onMounted(() => {
                 const chartRef = document.getElementById("main");
 
@@ -392,7 +378,7 @@ const App = {
                     return new Promise(resolve => setTimeout(resolve, ms));
                 }
 
-                const rollList = async ( leftMain11 = document.getElementById("leftMain11"), leftMain12 = document.getElementById("leftMain12"), data1=ref(), data2 = ref(), size=23) => {
+                const rollList = async (leftMain11 = document.getElementById("leftMain11"), leftMain12 = document.getElementById("leftMain12"), data1 = ref(), data2 = ref(), size = 23) => {
 
                     await mySleep(Math.floor(Math.random() * 20000))
                     leftMain11.style.transition = 'transform 2s ease-in-out';
@@ -437,8 +423,11 @@ const App = {
             }
         )
 
+        const testClick = () => {
+            console.log("testClick")
+        }
         return {
-            albumDetailsData, generateRandomChinese, generateRandomNumber, getEnterpriseName, getPeopleName,
+            albumDetailsData, generateRandomChinese, generateRandomNumber, getEnterpriseName, getPeopleName, testClick,
             data11, data12, data2, data3, data41, data42, data51, data52,
         };
     }
