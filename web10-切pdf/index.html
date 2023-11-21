@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- 必须的 meta 标签 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>work</title>
+    <!-- CSS 文件 -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+
+    <!-- 引入js文件 -->
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/echarts543.js"></script>
+    <script src="./js/vue.js"></script>
+    <script src="./pdf-new/build/pdf.mjs" type="module"></script>
+    <script src="./pdf-new/build/pdf.worker.mjs" type="module"></script>
+    <!-- <script src="./myPDF.js" type="module"></script> -->
+    <script src="./js/jszip.js"></script>
+    <script src="./index.js" type="module"></script>
+</head>
+<body>
+<div id="app">
+    <input type="file" id="file-input" accept="application/pdf" @change="pdfFileClick"/>
+    <div id="showPdf">
+
+    </div>
+    <canvas id="pdf-render" style="border: 1px solid black;"></canvas>
+</div>
+
+</body>
+</html>

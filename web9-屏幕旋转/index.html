@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>横屏网页示例</title>
+</head>
+<body>
+<p>这是一个横屏网页示例。</p>
+
+<script>
+    // 强制横屏显示
+    function forceLandscape() {
+        if (window.screen.orientation && window.screen.orientation.lock) {
+            // 使用Screen Orientation API来锁定屏幕方向为横屏
+            window.screen.orientation.lock("landscape");
+        } else if (window.screen.mozLockOrientation) {
+            // 使用Firefox特定的API来锁定屏幕方向为横屏
+            window.screen.mozLockOrientation("landscape");
+        } else if (window.screen.msLockOrientation) {
+            // 使用IE/Edge特定的API来锁定屏幕方向为横屏
+            window.screen.msLockOrientation("landscape");
+        }
+    }
+
+    // 在页面加载时调用强制横屏函数
+    window.addEventListener("load", forceLandscape);
+</script>
+</body>
+</html>
+
+
+</body>
+</html>
