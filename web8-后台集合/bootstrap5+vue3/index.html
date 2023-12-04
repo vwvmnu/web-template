@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- 必须的 meta 标签 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>work</title>
+    <!-- CSS 文件 -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/index.css">
+
+    <!-- 引入js文件 -->
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/http_cdn.jsdelivr.net_npm_echarts@5.4.3_dist_echarts.js"></script>
+    <script src="./js/http_unpkg.com_vue@3_dist_vue.global.js"></script>
+
+
+</head>
+<body>
+<div id="app">
+
+    <div style="z-index: 13" class="myModalShade myCenterContainer" v-if="isShowModal" v-cloak>
+        <div style="height: 60rem; width: 70rem; padding: 2rem; position: relative; background: white; border: 1px solid rgba(158, 158, 158, 0.85); box-shadow: black">
+            <div style="display: flex; justify-content: space-between;">
+                <div class="">
+                    <el-select v-model="value1" class="m-2" placeholder="Select" v-if="false">
+                        <el-option value="0" label="不限年份" selected="selected">不限年份</el-option>
+                        <el-option
+                                v-for="(item, value) in years"
+                                :key="item"
+                                :label="item"
+                                :value="value+1">
+                        </el-option>
+                    </el-select>
+                    <el-select v-model="value2" class="m-2" placeholder="Select" v-if="false">
+                        <el-option value="0" label="不限月份" selected="selected">不限月份</el-option>
+                        <el-option
+                                v-for="(item, value) in months"
+                                :key="item"
+                                :label="item"
+                                :value="value+1">
+                        </el-option>
+                    </el-select>
+                    <el-select v-model="value3" class="m-2" placeholder="Select" v-if="false">
+                        <el-option value="asc" label="上传时间正序" selected="selected">上传时间正序</el-option>
+                        <el-option value="desc" label="上传时间倒序">上传时间倒序</el-option>
+                        <el-option value="filename_asc" label="名称正序">名称正序</el-option>
+                        <el-option value="filename_desc" label="名称倒序">名称倒序</el-option>
+                    </el-select>
+                </div>
+                <input
+                        @change="myUpLoad($event, 'image')"
+                        id="thumb-input" multiple="multiple"
+                        onchange="doupload(this, 'image')" type="file"
+                        value=""
+                        style="position:absolute;top:0;left:0;font-size:22px; opacity:0;width: 80px;cursor: pointer;z-index:-1"
+                >
+            </div>
+            <div>
+                <el-row :gutter="10">
+                    <el-col :span="16">
+                        <div style="font-size: 3rem; margin: 1rem;">
+                            <span>图片上传</span><span style="color: red">(支持多图)</span>
+                        </div>
+                    </el-col>
+                    <el-col :span="8"></el-col>
+                </el-row>
+                <div style="overflow-y: scroll; height: 50rem">
+                    <el-upload
+                            v-model:file-list="fileList"
+                            action="{php echo $this->createMobileUrl('yb_upload')}&type=image"
+                            multiple
+                            list-type="picture-card"
+                            :on-preview="handlePictureCardPreview"
+                            :on-remove="handleRemove"
+                            :limit=500
+                            :on-exceed="handleExceed"
+                            :on-success="onSuccess"
+                            :before-remove="beforeRemove"
+
+                    >
+                        <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                            <svg class="icon" viewBox="0 0 1025 1024" xmlns="http://www.w3.org/2000/svg" width="100"
+                                 height="100">
+                                <path d="M480.485369 672.004125c0-17.599794 14.398831-31.999625 31.998625-31.999625 17.600794 0 31.999625 14.399831 31.999625 31.999625l0 319.99625c0 17.600794-14.398831 31.999625-31.999625 31.999625-17.599794 0-31.999625-14.399831-31.999625-31.999625L480.485369 672.004125z"
+                                      fill="#cdcdcd" p-id="2391"></path>
+                                <path d="M490.133256 649.632387c12.443854-12.444854 32.809616-12.444854 45.25347-0.001 12.443854 12.444854 12.443854 32.810616-0.001 45.25547L412.878162 817.394421c-12.443854 12.444854-32.809616 12.444854-45.25347 0.001-12.443854-12.444854-12.443854-32.810616 0-45.25547L490.133256 649.632387z"
+                                      fill="#cdcdcd" p-id="2392"></path>
+                                <path d="M489.624262 694.885857c-12.444854-12.443854-12.444854-32.808616 0-45.25347l0 0c12.444854-12.444854 32.810616-12.443854 45.25447 0.001L657.385296 772.140951c12.444854 12.444854 12.444854 32.809616 0.001 45.25447-12.444854 12.444854-32.809616 12.443854-45.25447 0L489.624262 694.885857z"
+                                      fill="#cdcdcd" p-id="2393"></path>
+                                <path d="M826.91031 326.82917c-26.958684-149.445249-157.686152-262.81692-314.89531-262.81692-157.212158 0-287.939626 113.374671-314.89631 262.82292C84.140014 353.448858 0.042999 454.900669 0.042999 576.00525c0 141.377343 114.602657 255.985 255.976 255.997 17.672793 0 31.999625-14.326832 31.999625-31.999625s-14.326832-31.999625-31.999625-31.999625c-51.276399-0.006-99.482834-19.976766-135.741409-56.234341C84.013015 675.505084 64.04225 627.290649 64.04225 576.00525c0-22.249739 3.754956-44.021484 11.161869-64.712242 7.159916-20.000766 17.568794-38.595548 30.938637-55.268352 26.782686-33.397609 64.304246-57.15633 105.650762-66.896216l40.856521-9.624887 7.450913-41.308516c10.502877-58.228318 41.365515-111.468694 86.903982-149.911243 22.610735-19.088776 48.055437-33.977602 75.624114-44.251481 28.523666-10.629875 58.597313-16.020812 89.385953-16.020812 30.787639 0 60.861287 5.389937 89.384953 16.020812 27.568677 10.27388 53.012379 25.162705 75.624114 44.250481 45.536466 38.44255 76.400105 91.680926 86.903982 149.909243l7.451913 41.312516 40.861521 9.621887c41.351515 9.736886 78.876076 33.493607 105.662762 66.894216 13.370843 16.672805 23.781721 35.268587 30.941637 55.270352 7.406913 20.691758 11.162869 42.466502 11.162869 64.717242 0 51.281399-19.969766 99.494834-56.228341 135.757409-36.260575 36.262575-84.47101 56.235341-135.746409 56.240341l-0.021 0c-17.672793 0-31.999625 14.326832-31.999625 31.999625s14.326832 31.999625 31.999625 31.999625l0.021 0c141.373343-0.013 255.975-114.620657 255.975-255.997C1024.008 454.892669 939.899986 353.434858 826.91031 326.82917z"
+                                      fill="#cdcdcd" p-id="2394"></path>
+                            </svg>
+                        </div>
+
+                    </el-upload>
+                </div>
+
+
+                <el-dialog v-model="dialogVisible" width="80%">
+                    <img w-full style="height: auto; max-width: 100%" :src="dialogImageUrl" alt="Preview Image" />
+                </el-dialog>
+
+            </div>
+            <div style="width:100%; position: absolute; bottom: 1rem; display: flex; justify-content: center; align-items: center">
+                <el-button  @click="addImages() ;isShowModal = !isShowModal" type="primary">确定</el-button>
+                <el-button @click="isShowModal = !isShowModal" type="info">取消</el-button>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container" id="main-container">
+
+        <div class="main-container-inner">
+            <a class="menu-toggler" id="menu-toggler" href="#">
+                <span class="menu-text" ></span>
+            </a>
+
+
+            <div class="main-content">
+                <div class="breadcrumbs" id="breadcrumbs">
+                    <ul class="breadcrumb">
+                        <li>
+                            <i class="icon-home home-icon"></i>
+                            <a href="{php echo $this->createMobileUrl('yb_admin')}">首页</a>
+                        </li>
+                        <li class="active">编辑-{$ybtitle}</li>
+                    </ul>
+                </div>
+
+                <div class="page-content">
+                    <div class="row">
+                        <div class="">
+                            <ul class="nav nav-tabs" style="height: 34px">
+                                <li>
+                                    <a href="{php echo $this->createMobileUrl('yb_edit', array('id' => $id))}">
+                                        编辑
+                                    </a>
+                                </li>
+
+                                <li class="active">
+                                    <a href="{php echo $this->createMobileUrl('yb_editcontent', array('id' => $id))}">
+                                        编辑内容页
+                                    </a>
+                                </li>
+
+                                <li class="">
+                                    <a href="{php echo $this->createMobileUrl('yb_contents', array('id' => $id))}">
+                                        目录管理
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="{php echo $this->createMobileUrl('yb_editcontent_share', array('id' => $id))}">
+                                        分享设置
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="{php echo $this->createMobileUrl('yb_editcontent_channel', array('id' => $id, 'op'=>'display'))}">
+                                        栏目设置
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <form onsubmit="return checkSubmit()" class="" role="form" method="post"
+                                      action="{php echo $this->createMobileUrl('yb_doeditcontent')}">
+
+                                    <!--zjh-->
+                                    <div style="display: flex; flex-direction: column;">
+                                        <input type="hidden" name="yangben_id" value="{$id}">
+                                        <div class="space-4"></div>
+                                        <div class="form-group">
+                                            <label style="display:flex; justify-content: flex-end;" class="col-sm-2 control-label">名称</label>
+                                            <div class="form-controls col-sm-8">
+                                                <input type="text" id="title" autocomplete="false" class="form-control"
+                                                       name="yb[title]"
+                                                       value="{$yb['title']}" placeholder="名称" readonly>
+                                                <div class="help-block"></div>
+                                            </div>
+                                        </div>
+                                        <div class="space-4"></div>
+                                        <div class="form-group">
+                                            <label style="display:flex; justify-content: flex-end;" class="col-sm-2 control-label">上传类型</label>
+                                            <div class="form-controls col-sm-8">
+                                                <label>
+                                                    <input onchange="changeType('img')" name="yb[is_type]" type="radio"
+                                                           class="ace" checked/>
+                                                    <span class="lbl"> 图片 </span>
+                                                </label>
+
+                                                <label style="margin-left: 10px">
+                                                    <input onchange="changeType('pdf')" name="yb[is_type]" type="radio"
+                                                           class="ace"/>
+                                                    <span class="lbl"> pdf文件 </span>
+                                                </label>
+                                                <div class="help-block"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="space-4"></div>
+                                        <div class="form-group type-box" id="img-box">
+                                            <label style="display:flex; justify-content: flex-end;" class="col-sm-2 control-label"> 页批量上传 </label>
+                                            <div class="form-controls col-sm-8">
+                                                <div class="input-group">
+                                                    <input type="text" name="yb[thumb]" class="form-control"
+                                                           readonly="readonly" value="{$yb[thumb]}"
+                                                           placeholder="上传图片" autocomplete="off">
+
+                                                    <span class="input-group-btn">
+
+                                                            <button @click="showModal()"
+                                                                    class="btn btn-default" type="button"
+                                                                    onclick="selectImage(this);">选择图片
+                                                            </button>
+
+                                                            <input id="thumb-input1" multiple="multiple"
+                                                                   onchange="doupload(this, 'image')" type="file" value=""
+                                                                   style="position:absolute;top:0;left:0;font-size:22px; opacity:0;width: 80px;cursor: pointer;z-index:-1"
+                                                            >
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group type-box" id="pdf-box" style="display: none">
+                                            <label style="display:flex; justify-content: flex-end;" class="col-sm-2 control-label"> 批量上传 </label>
+                                            <div class="form-controls col-sm-8">
+                                                <div class="input-group">
+                                                    <input type="text" name="yb[thumb]" class="form-control"
+                                                           readonly="readonly" value="{$yb[thumb]}"
+                                                           placeholder="上传pdf文件" autocomplete="off">
+                                                    <span class="input-group-btn">
+                                                <button class="btn btn-default" type="button" onclick="alertDialog();">选择PDF</button>
+                                                <input id='pdf' type='file' accept="application/pdf"
+                                                       onchange="uploadPDF(this)" style="display: none;">
+                                                     </span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group" style="padding-bottom: 5rem">
+                                            <div class="input-group multi-img-details" style="padding: 10px 40px;">
+
+
+                                                <div class="multi-item" v-for="(item, value) in initArray"
+                                                     style="text-align: center; height: 21.6rem; width: 15rem; margin: 4rem 30px 10rem 30px">
+                                                    <div class="img-responsive img-thumbnail" style="text-align: center; height: 20rem; width: 15rem;">
+                                                        <img style="width: 100%; max-height: 100%"
+                                                             onerror="this.src='./resource/images/nopic.jpg';"
+                                                             :src="item.imgurl"
+                                                        >
+                                                    </div>
+
+                                                    <input required type="number" min="0" name="sort[]"
+                                                           class="form-control" :value="item.sort"
+                                                           style="display: inherit;margin-top: 10px"
+                                                           onmousewheel="scrollFunc()" ondommousescroll="scrollFunc()">
+
+                                                    <input type="button" data-pageIndex="" onclick="designer(this)"
+                                                           class="btn btn-info" name="submit" value="设计页面"
+                                                           style="width:100%;">
+
+                                                    <input type="hidden" name="content[]" :value="item.content">
+
+                                                    <em class="close" title="删除这张图片"
+                                                        onclick="deleteMultiImage(this)">×</em>
+                                                </div>
+
+
+                                                <div id="multi-item" class="multi-item"
+                                                     style="text-align: center; height: 20rem; width: 15rem; margin: 4rem 30px 10rem 30px">
+                                                    <img onclick="selectImage(this)"
+                                                         @click="showModal()"
+                                                         style="width: 160px;height: 200px;cursor: pointer;"
+                                                         onerror="this.src='{php echo MODULE_URL}template/image/waitpic.gif'; this.title='图片未找到.'"
+                                                         src="{php echo MODULE_URL}template/image/waitpic.gif"
+                                                         class="img-responsive img-thumbnail" data-times="1"
+                                                         title="图片未找到.">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="clearfix form-actions" style="position: fixed; width: 80%; bottom: 1rem;">
+                                            <div class="col-md-offset-2 col-md-8">
+                                                <button class="btn btn-info" type="submit">
+                                                    <i class="icon-ok bigger-110"></i>
+                                                    提交
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <!--zjh-->
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+            <i class="icon-double-angle-up icon-only bigger-110"></i>
+        </a>
+
+    </div>
+</div>
+<script>
+
+    const {createApp, ref, onMounted} = Vue;
+    const UpIcon = {
+        template: ` `,
+        setup() {
+        }
+    };
+
+    const App = {
+        //使用短横线命名
+        components: {
+            UpIcon,
+        },
+        setup() {
+            /**
+             * 生成{size}大小的汉字
+             * @param size 传入大小,默认3
+             * @returns {string} 返回汉字
+             */
+            const generateRandomChinese = (size = 3) => {
+                if (typeof size != "number") {
+                    console.log("请输入数字")
+                }
+                let randomChineseString = "";
+                const commonChars = "的一是了我不人在他有这个上们来到时大地为子中你说生国年着就那和要她出也得里后自以会家可下而过天去能对小多然于心学么之都好看起发";
+                for (let i = 0; i < size; i++) {
+                    //randomChineseString += String.fromCharCode(Math.floor(Math.random() * (0x9FFF - 0x4E00 + 1)) + 0x4E00);
+                    randomChineseString += commonChars[Math.floor(Math.random() * commonChars.length)];
+                }
+                return randomChineseString;
+            }
+            /**
+             * 随机生成整数
+             * @param min 最小值
+             * @param max 最大值
+             * @returns {number}
+             */
+            const generateRandomNumber = (min = 0, max = 1) => {
+                if (typeof min != "number" || typeof max != "number") {
+                    console.log("请输入数字")
+                }
+                return Math.floor(Math.random() * (max - min)) + min;
+            }
+
+            const albumDetailsData = ref([
+                {
+                    title: "某某画册",
+                    pageView: 120 + "+",
+                    whetherItIsGrowthOrNot: true,
+                }
+            ]);
+
+
+            const addData = () => {
+                albumDetailsData.value.push({
+                    title: generateRandomChinese(),
+                    pageView: (Math.floor(Math.random() * 200) + 100) + "+",
+                    whetherItIsGrowthOrNot: Math.random() < 0.5,
+                })
+            }
+
+            for (let i = 0; i < 4; i++) {
+                addData();
+            }
+
+            const loadMore = () => {
+                // 这里只是为了演示，实际情况可能需要从服务器加载数据
+                for (let i = 1; i <= 5; i++) {
+                    addData();
+                }
+            };
+
+            const handleScroll = (event) => {
+                if (window.innerHeight + window.scrollY > 20000) {
+                    return;
+                }
+                let nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000;
+                if (nearBottom) {
+                    loadMore();
+                }
+            };
+
+            // 添加滚动事件监听器
+            window.addEventListener('scroll', handleScroll);
+
+
+            onMounted(() => {
+                const chartRef = document.getElementById("main");
+
+                // ECharts 数据和配置
+                option = {
+                    series: [
+                        {
+                            type: 'gauge',
+                            center: ['50%', '60%'],
+                            startAngle: 200,
+                            endAngle: -20,
+                            min: 0,
+                            max: 600000,
+                            splitNumber: 5,
+                            itemStyle: {
+                                color: '#00C2FF '
+                            },
+                            progress: {
+                                show: true,
+                                width: 20
+                            },
+                            anchor: {
+                                show: false
+                            },
+                            pointer: {
+                                show: false
+                            },
+                            axisLine: {
+                                lineStyle: {
+                                    width: 20
+                                },
+                            },
+                            //坐标轴
+                            axisTick: {
+                                distance: -25,
+                                splitNumber: 5,
+                                lineStyle: {
+                                    width: 2,
+                                    color: '#999'
+                                },
+                                length: 4
+                            },
+
+                            //间隔标识刻度样式
+                            splitLine: {
+                                distance: -30,
+                                length: 8,
+                                lineStyle: {
+                                    width: 3,
+                                    color: '#999'
+                                },
+                                formatter: "的"
+                            },
+                            //间隔标识刻度字体
+                            axisLabel: {
+                                distance: -10,
+                                color: '#999',
+                                fontSize: 14,
+                                formatter: function (value, index) {
+                                    return value / 10000 + 'w';
+                                }
+                            },
+
+                            detail: {
+                                valueAnimation: true,
+                                width: '60%',
+                                lineHeight: 40,
+                                borderRadius: 8,
+                                offsetCenter: [0, '-15%'],
+                                fontSize: 40,
+                                fontWeight: 'bolder',
+                                formatter: '{value}',
+                                color: 'inherit'
+                            },
+                            title: {
+                                offsetCenter: [0, 10],
+                                fontSize: 18,
+                                color: "#ffffff",
+                            },
+                            data: [
+                                {
+                                    value: 20,
+                                    name: "已链接数量"
+                                }
+                            ]
+                        },
+                        {
+                            type: 'gauge',
+                            center: ['50%', '60%'],
+                            startAngle: 200,
+                            endAngle: -20,
+                            min: 0,
+                            max: 600000,
+                            itemStyle: {
+                                color: '#D200FF '
+                            },
+                            progress: {
+                                show: true,
+                                width: 8
+                            },
+                            pointer: {
+                                show: false
+                            },
+                            axisLine: {
+                                show: false
+                            },
+                            axisTick: {
+                                show: false
+                            },
+                            splitLine: {
+                                show: false
+                            },
+                            axisLabel: {
+                                show: false
+                            },
+                            detail: {
+                                show: false
+                            },
+                            data: [
+                                {
+                                    value: 20
+                                }
+                            ]
+                        }
+                    ]
+                };
+
+            })
+
+            return {albumDetailsData, generateRandomChinese, generateRandomNumber};
+        }
+    };
+
+    createApp(App).mount('#app');
+</script>
+</body>
+</html>

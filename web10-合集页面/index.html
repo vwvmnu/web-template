@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hello World</title>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+    <script src="./js/tailwindcss.3.3.5.js"></script>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script type="text/babel">
+    const {createRoot} = ReactDOM
+
+    const ImageListComponent = ({ images }) => {
+        return (
+            <div className="grid grid-cols-3 gap-6">
+                {images.map((imageUrl, index) => (
+                    <div key={index} className="p-2 border rounded">
+                        <img src={imageUrl} alt={`Image ${index}`} className="max-w-full h-auto" />
+                    </div>
+                ))}
+            </div>
+        );
+    };
+
+    const imageUrls = [
+        '../img/nature-1.jpg',
+        '../img/nature-2.jpg',
+        '../img/nature-3.jpg',
+        '../img/nature-4.jpg',
+    ];
+
+    function MyApp() {
+        return (
+            <>
+                <div style="height">
+                    <ImageListComponent images={imageUrls}/>
+                </div>
+            </>
+        );
+    }
+
+    const container = document.getElementById('root');
+    const root = createRoot(container);
+    root.render(
+        <MyApp/>
+    );
+
+</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hello World</title>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+    <script src="./js/tailwindcss.3.3.5.js"></script>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script type="text/babel">
+    const {createRoot} = ReactDOM
+
+    function MyApp() {
+        return (
+            <>
+                <div className="navbar navbar-default" id="navbar">
+                    <div className="navbar-container" id="navbar-container">
+                        <div className="navbar-header pull-left">
+                            <a href="#" className="navbar-brand">
+                                <small>
+                                    <i className="icon-leaf"/>
+                                    汇智Ai控制台
+                                </small>
+                            </a>
+                        </div>
+                        <div className="navbar-header pull-right" role="navigation">
+                            <ul className="nav ace-nav">
+                                <li style={{color: "#fff", fontSize: 15}}>未读消息</li>
+                                <li style={{border: 0}}>
+                                    <a href="./index.php?i=4&c=entry&do=yb_admin_contact&m=we7_bybook"
+                                        style={{
+                                            color: "#fff",
+                                            background: "red",
+                                            minWidth: 30,
+                                            height: 30,
+                                            width: 30,
+                                            textAlign: "center",
+                                            lineHeight: 30,
+                                            fontWeight: "bold",
+                                            borderRadius: "50%",
+                                            display: "inline-block"
+                                        }}
+                                    >
+                                        2{" "}
+                                    </a>
+                                </li>
+                                <li className="light-blue">
+                                    <a data-toggle="dropdown" href="#" className="dropdown-toggle">
+                                        <img
+                                            className="nav-user-photo"
+                                            src="https://thirdwx.qlogo.cn/mmopen/vi_32/FiaTZlxKUCEZibJFPQBO8qHZokzGo4zbAMD7Yl2sR21ia1VjOjttCiaOuGSLRbpB1hZqTQ4Svv0YyLWaSOnMsXKib9g/132"
+                                            alt="Jason's Photo"
+                                        />
+                                        <span className="user-info">
+                                          <small>欢迎光临,</small>
+                                                BlackBox{" "}
+                                             </span>
+                                        <i className="icon-caret-down"/>
+                                    </a>
+                                    <ul className="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                                        <li>
+                                            <a href="./index.php?i=4&c=entry&do=yb_logout&m=we7_bybook">
+                                                <i className="icon-off"/>
+                                                注销
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </>
+        );
+    }
+
+    const container = document.getElementById('root');
+    const root = createRoot(container);
+    root.render(
+        <MyApp/>
+    );
+
+</script>
+</body>
+</html>

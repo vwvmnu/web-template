@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hello World</title>
+
+    <script src="js/react.development.js"></script>
+    <script src="js/react-dom.development.js"></script>
+    <script src="js/babel.min.js"></script>
+    <script src="js/tailwindcss.3.3.5.js"></script>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script type="text/babel">
+    const {createRoot} = ReactDOM
+
+    function MyApp() {
+        return (
+            <>
+                <div className="" style={{}}>
+                    <div className="container mx-auto">
+                        <div className="container">
+                            <div className="container mx-auto">
+                                <div className="col-md-12">
+                                    <a href="">
+                                        <img
+                                            style={{width: 142, height: 50}}
+                                            alt="汇智云"
+                                            src="./升级会员_我的样本云_files/baige_book_190_65.png"
+                                        />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="main">
+                    <div className="container-fluid" style={{marginTop: 10, marginBottom: 50, maxWidth: 1400}}>
+                        <div className="container mx-auto">
+                            <table className="table-fixed">
+                                <thead className="">
+                                <tr>
+                                    <th style={{}}>功能</th>
+                                    <th style={{}}>
+                                        Mini版 <span style={{fontSize: 8}}/>{" "}
+                                        <span style={{fontSize: 12, color: "#f18d2b"}}/>
+                                    </th>
+                                    <th style={{}}>
+                                        基础版
+                                        <span style={{fontSize: 12, color: "#f18d2b"}}/>
+                                    </th>
+                                    <th style={{}}>
+                                        企业标准版 <span style={{fontSize: 12, color: "#f18d2b"}}/>
+                                    </th>
+                                    <th style={{}}>
+                                        企业专业版<sup style={{color: "#ee9410"}}>优选</sup>
+                                    </th>
+                                    <th style={{}}>企业增强版</th>
+                                    <th style={{}}>企业团队版</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th>
+                                        <img alt="小logo"/>
+                                    </th>
+                                    <th>
+                                        <span className="price" id="price1" data-analysis={50}>¥30元{" "}</span>
+                                        <span className="text-muted year">/月x12</span>
+                                    </th>
+                                    <th>
+                                        <span className="price" id="price1" data-analysis={50}>¥50元{" "}</span>
+                                        <span className="text-muted year">/月x12</span>
+                                    </th>
+                                    <th>
+                                        <span className="price" id="price1" data-analysis={50}>¥100元{" "}</span>
+                                        <span className="text-muted year">/月x12</span>
+                                    </th>
+                                    <th>
+                                        <span className="price" id="price1" data-analysis={50}>¥250元{" "}</span>
+                                        <span className="text-muted year">/月x12</span>
+                                    </th>
+                                    <th>
+                                        <span className="price" id="price1" data-analysis={50}>¥350元{" "}</span>
+                                        <span className="text-muted year">/月x12</span>
+                                    </th>
+                                    <th>
+                                        <span className="price" id="price1" data-analysis={50}>¥450元{" "}</span>
+                                        <span className="text-muted year">/月x12</span>
+                                    </th>
+                                </tr>
+                                </tbody>
+
+                                <tbody>
+                                <tr style={{background: "#fff"}}>
+                                    <td colSpan={7}>
+                                        <svg
+                                            className="icon"
+                                            viewBox="0 0 1024 1024"
+                                            version="1.1"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width={25}
+                                            height={25}
+                                        >
+                                            <path
+                                                d="M512 536.5c-12.7 0-25.3-2.9-37.1-8.6l-347.4-168c-15.7-7.5-25.5-23.1-25.5-40.5s9.7-32.9 25.4-40.5L475 110.7c23.5-11.4 50.6-11.4 74.1 0l347.4 168c15.7 7.5 25.4 22.9 25.5 40.3 0.1 17.5-9.6 33.1-25.4 40.7h-0.1L549 527.9c-11.7 5.7-24.3 8.6-37 8.6zM204.5 319.3l301 145.6c4.2 2 8.9 2 13.1 0l301-145.6-301-145.6c-4.2-2-8.9-2-13.1 0l-301 145.6zM866 296.8z m-708.1 0z"
+                                                fill="#337ab7"
+                                            />
+                                            <path
+                                                d="M512 729.2c-12.7 0-25.3-2.9-37.1-8.6l-347.4-168c-15.7-7.5-25.5-23.1-25.5-40.5s9.7-32.9 25.4-40.5L308 384.2l30.5 63-134 64.8 301 145.6c4.2 2 8.9 2 13.1 0l301-145.6-134.1-64.9 30.5-63 180.6 87.4c15.7 7.6 25.4 23.1 25.4 40.5 0 17.5-9.8 33-25.5 40.5L549 720.6c-11.7 5.7-24.3 8.6-37 8.6z m354.1-194.7z m-708.2 0z"
+                                                fill="#337ab7"
+                                            />
+                                            <path
+                                                d="M512 922c-12.7 0-25.3-2.9-37.1-8.6l-347.4-168c-15.7-7.5-25.5-23.1-25.5-40.5 0-17.5 9.7-33 25.4-40.5L307.9 577l30.5 63-134.1 64.9 301 145.6c4.2 2 8.9 2 13.1 0l301-145.6L685.3 640l30.5-63 180.5 87.4c15.7 7.6 25.4 23.1 25.4 40.5 0 17.5-9.8 33-25.5 40.5L549 913.4c-11.7 5.7-24.3 8.6-37 8.6z m354.1-194.7z m-708.2 0z"
+                                                fill="#337ab7"
+                                            />
+                                        </svg>
+                                        <strong className="title">基本</strong>
+                                    </td>
+                                </tr>
+                                <tr className="bg">
+                                    {/*data-toggle="tooltip" data-placement="top" title="同一时内账户内的电子书最大数量" */}
+                                    <td style={{width: "10%"}}>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        在线电子书数量
+                                    </td>
+                                    <td style={{width: "15%"}}>
+                                        <span className="">5本</span>
+                                    </td>
+                                    <td style={{width: "15%"}}>
+                                        <span className="">10本</span>
+                                    </td>
+                                    <td style={{width: "15%"}}>
+                                        <span className="">15本</span>
+                                    </td>
+                                    <td style={{width: "15%"}}>
+                                        <span className="">25本</span>
+                                    </td>
+                                    <td style={{width: "15%"}}>
+                                        <span className="">50本</span>
+                                    </td>
+                                    <td style={{width: "15%"}}>
+                                        <span className="">不限数量</span>
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        PDF最大页码
+                                    </td>
+                                    <td>
+                                        <span className="">50</span>
+                                    </td>
+                                    <td>
+                                        <span className="">200</span>
+                                    </td>
+                                    <td>
+                                        <span className="">250</span>
+                                    </td>
+                                    <td>
+                                        <span className="">250</span>
+                                    </td>
+                                    <td>
+                                        <span className="">500</span>
+                                    </td>
+                                    <td>
+                                        <span className="">500</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        PDF最大尺寸
+                                    </td>
+                                    <td>
+                                        <span className="">100M</span>
+                                    </td>
+                                    <td>
+                                        <span className="">250M</span>
+                                    </td>
+                                    <td>
+                                        <span className="">250M</span>
+                                    </td>
+                                    <td>
+                                        <span className="">500M</span>
+                                    </td>
+                                    <td>
+                                        <span className="">500M</span>
+                                    </td>
+                                    <td>
+                                        <span className="">1000M</span>
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        跟踪链接数量
+                                    </td>
+                                    <td>
+                                        <span className="">10</span>
+                                    </td>
+                                    <td>
+                                        <span className="">10</span>
+                                    </td>
+                                    <td>
+                                        <span className="">10</span>
+                                    </td>
+                                    <td>
+                                        <span className="">25</span>
+                                    </td>
+                                    <td>
+                                        <span className="">50</span>
+                                    </td>
+                                    <td>
+                                        <span className="">75</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colSpan={7} style={{paddingLeft: 20, color: "#cf8726"}}>
+                                        电子商务，客户在浏览画册时对产品进行直接询价
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        <span className="">产品数量</span>
+                                    </td>
+                                    <td>50个产品</td>
+                                    <td>100个产品</td>
+                                    <td>250个产品</td>
+                                    <td>500个产品</td>
+                                    <td>1000个产品</td>
+                                    <td>2000个产品</td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        <span className="">电子商务月费</span>
+                                    </td>
+                                    <td>100元/月</td>
+                                    <td>100元/月</td>
+                                    <td>100元/月</td>
+                                    <td>150元/月</td>
+                                    <td>200元/月</td>
+                                    <td>250元/月</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        <span className="">15天无理由退款</span>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        阅读次数
+                                    </td>
+                                    <td>无限制</td>
+                                    <td>无限制</td>
+                                    <td>无限制</td>
+                                    <td>无限制</td>
+                                    <td>无限制</td>
+                                    <td>
+                                        10万次访问/年，
+                                        <br/>
+                                        超额2元/100次
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        <span className="">加速服务器</span>
+                                    </td>
+                                    <td>国际加速</td>
+                                    <td>国际加速</td>
+                                    <td>国际加速</td>
+                                    <td>国际加速</td>
+                                    <td>国际加速</td>
+                                    <td>国际加速</td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        存储
+                                    </td>
+                                    <td>无限制</td>
+                                    <td>无限制</td>
+                                    <td>无限制</td>
+                                    <td>无限制</td>
+                                    <td>无限制</td>
+                                    <td>
+                                        10G存储空间，
+                                        <br/>
+                                        超额100元/G/年
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        百鸽视频会员
+                                    </td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>赠送100元券</td>
+                                    <td>赠送100元券</td>
+                                    <td>赠送200元券</td>
+                                    <td>赠送200元券</td>
+                                </tr>
+                                <tr>
+                                    <td colSpan={7} style={{paddingLeft: 20, color: "#cf8726"}}>
+                                        将视频嵌入电子书，让内容直观生动！查看
+                                        <input
+                                            type="hidden"
+                                            id="input_pop_1664341753340"
+                                            defaultValue='<iframe id="iframe_pop_1664341753340"  src="https://you.baige.me/view/TTU" style="width:100%;height:100%;background:#eee" frameborder=0 seamless="seamless"  allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" ></iframe>'
+                                        />
+                                        <a
+                                            href="https://m.baige.me/aux/charge#"
+                                            style={{position: "relative", display: "inline-block"}}
+                                            onclick="document.querySelector('body').style.overflow='hidden';document.querySelector('#pop_1664341753340').style.display='block';var value=document.getElementById('input_pop_1664341753340').value; var div = document.createElement('div'); div.innerHTML=value;div.setAttribute('style','width:100%;height:100%');document.querySelector('#pop_1664341753340').appendChild(div)"
+                                            title="视频案例"
+                                        >
+                                            <span style={{color: "#337ab7"}}>视频案例</span>
+                                        </a>
+                                        <div
+                                            id="pop_1664341753340"
+                                            style={{
+                                                display: "none",
+                                                position: "fixed",
+                                                width: "100%",
+                                                height: "100%",
+                                                padding: 20,
+                                                background: "rgba(0, 0, 0, 0.6)",
+                                                boxSizing: "border-box",
+                                                top: 0,
+                                                left: 0,
+                                                zIndex: 99999
+                                            }}
+                                        >
+                                            <a
+                                                href="https://m.baige.me/aux/charge#"
+                                                title="关闭"
+                                                onclick="document.querySelector('body').style.overflow='auto';document.querySelector('#pop_1664341753340').style.display='none';var rm=document.getElementById('iframe_pop_1664341753340');rm.parentNode.parentNode.parentNode.removeChild(rm.parentNode);"
+                                                style={{
+                                                    top: 0,
+                                                    right: 0,
+                                                    position: "absolute",
+                                                    width: 32,
+                                                    height: 32
+                                                }}
+                                            >
+                      <span
+                          style={{
+                              position: "absolute",
+                              cursor: "pointer",
+                              backgroundColor: "#000",
+                              border: "2px solid #fff",
+                              width: 24,
+                              height: 24,
+                              borderRadius: 12,
+                              top: 5,
+                              paddingBottom: 4,
+                              right: 5,
+                              color: "white",
+                              lineHeight: 24,
+                              boxShadow: "0 0 3px #000",
+                              textAlign: "center",
+                              display: "flex",
+                              justifyContent: "center",
+                              alignItems: "center"
+                          }}
+                      >
+                        x
+                      </span>
+                                            </a>
+                                        </div>
+                                        ，探索视频在企业形象宣传，产品演示及培训等场景中的应用
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td colSpan={7}>
+                                        <strong className="title">
+                                            <svg
+                                                t={1664720115505}
+                                                className="icon"
+                                                viewBox="0 0 1024 1024"
+                                                version="1.1"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                p-id={2550}
+                                                width={25}
+                                                height={25}
+                                            >
+                                                <path
+                                                    d="M397.184 642.112a192 192 0 1 1-10.144-270.464L554.592 262.4a144 144 0 1 1 36.8 52.416l-165.44 107.84c14.08 26.72 22.016 57.12 22.016 89.376a191.36 191.36 0 0 1-15.808 76.384l241.056 135.584a144 144 0 1 1-28.992 57.12l-247.072-138.976z"
+                                                    p-id={2551}
+                                                    fill="#337ab7"
+                                                />
+                                            </svg>
+                                            发分与传播
+                                        </strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        <span className="">直接链接分享</span>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        <span className="">网站嵌入</span>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        <span className="">二维码分享</span>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        <span className="">图文海报</span>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        <span className="">微信分享</span>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        <span className="">指定分享页</span>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        <span className="">邮件分发</span>
+                                    </td>
+                                    <td>-</td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        <span className="">PDF下载</span>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        <span className="">离线应用下载</span>
+                                    </td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td colSpan={7}>
+                                        <strong className="title">
+                                            <svg
+                                                t={1651034516057}
+                                                className="icon"
+                                                viewBox="0 0 1024 1024"
+                                                version="1.1"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                p-id={9111}
+                                                width={25}
+                                                height={25}
+                                            >
+                                                <path
+                                                    d="M733.52192 23.3472 290.47808 23.3472c-43.13088 0-78.1824 35.05152-78.1824 78.19264l0 820.92032c0 43.13088 35.05152 78.19264 78.1824 78.19264l443.04384 0c43.14112 0 78.1824-35.06176 78.1824-78.19264L811.70432 101.53984C811.70432 58.39872 776.66304 23.3472 733.52192 23.3472zM433.8176 94.76096c0-10.63936 8.64256-19.29216 19.3024-19.29216l104.74496 0c10.6496 0 19.29216 8.6528 19.29216 19.29216l0 0.52224c0 10.63936-8.64256 19.28192-19.29216 19.28192L453.12 114.56512c-10.65984 0-19.3024-8.64256-19.3024-19.28192L433.8176 94.76096zM512 971.3152c-23.31648 0-42.3424-19.01568-42.3424-42.35264 0-23.31648 19.01568-42.35264 42.3424-42.35264 23.32672 0 42.35264 19.02592 42.35264 42.35264C554.35264 952.29952 535.32672 971.3152 512 971.3152zM746.5472 844.27776c0 7.15776-5.85728 13.02528-13.02528 13.02528L290.47808 857.30304c-7.15776 0-13.02528-5.86752-13.02528-13.02528L277.4528 179.72224c0-7.15776 5.86752-13.02528 13.02528-13.02528l443.04384 0c7.168 0 13.02528 5.86752 13.02528 13.02528L746.5472 844.27776z"
+                                                    p-id={9112}
+                                                    fill="#337ab7"
+                                                />
+                                                <path
+                                                    d="M681.5232 766.08512l-339.0464 0c-7.1168 0-12.9024 5.77536-12.9024 12.91264l0 0.24576c0 7.12704 5.77536 12.91264 12.9024 12.91264l339.0464 0c7.13728 0 12.91264-5.77536 12.91264-12.91264l0-0.24576C694.4256 771.87072 688.66048 766.08512 681.5232 766.08512z"
+                                                    p-id={9113}
+                                                    fill="#337ab7"
+                                                />
+                                                <path
+                                                    d="M681.5232 687.91296l-339.0464 0c-7.1168 0-12.9024 5.76512-12.9024 12.91264l0 0.23552c0 7.13728 5.77536 12.91264 12.9024 12.91264l339.0464 0c7.13728 0 12.91264-5.76512 12.91264-12.91264l0-0.23552C694.4256 693.67808 688.66048 687.91296 681.5232 687.91296z"
+                                                    p-id={9114}
+                                                    fill="#337ab7"
+                                                />
+                                                <path
+                                                    d="M681.5232 609.72032l-339.0464 0c-7.1168 0-12.9024 5.77536-12.9024 12.91264l0 0.24576c0 7.12704 5.77536 12.91264 12.9024 12.91264l339.0464 0c7.13728 0 12.91264-5.77536 12.91264-12.91264l0-0.24576C694.4256 615.49568 688.66048 609.72032 681.5232 609.72032z"
+                                                    p-id={9115}
+                                                    fill="#337ab7"
+                                                />
+                                                <path
+                                                    d="M498.97472 258.56c-61.56288 6.11328-110.49984 55.05024-116.61312 116.62336l116.61312 0L498.97472 258.56z"
+                                                    p-id={9116}
+                                                    fill="#337ab7"
+                                                />
+                                                <path
+                                                    d="M512 518.52288c71.97696 0 130.31424-58.33728 130.31424-130.31424 0-67.57376-51.42528-123.10528-117.26848-129.64864l0 116.62336c0 14.34624-11.69408 26.0608-26.07104 26.0608L382.3616 401.24416C388.88448 467.07712 444.42624 518.52288 512 518.52288z"
+                                                    p-id={9117}
+                                                    fill="#337ab7"
+                                                />
+                                            </svg>
+                                            业务数据收集
+                                        </strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        电话
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        邮件订阅
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        销售线索捕捉
+                                    </td>
+                                    <td>
+                                        <span className="">-</span>
+                                    </td>
+                                    <td>
+                                        <span className="">-</span>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        在线聊天工具
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colSpan={7}>
+                                        <strong className="title">
+                                            <svg
+                                                t={1651034602415}
+                                                className="icon"
+                                                viewBox="0 0 1024 1024"
+                                                version="1.1"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                p-id={9722}
+                                                width={25}
+                                                height={25}
+                                            >
+                                                <path
+                                                    d="M781.3632 196.98688l-12.06272-29.98272a28.79488 28.79488 0 0 0-11.48928-13.69088l-27.4432-17.13152c-19.99872-12.4416-17.38752-42.33216 4.49536-51.12832l29.97248-12.0832a28.9792 28.9792 0 0 0 13.70112-11.4688l17.1008-27.4432c12.47232-20.00896 42.35264-17.38752 51.15904 4.46464l12.06272 30.0032a28.84608 28.84608 0 0 0 11.48928 13.6704l27.4432 17.12128c19.99872 12.45184 17.38752 42.36288-4.49536 51.15904l-29.97248 12.07296a28.8768 28.8768 0 0 0-13.70112 11.48928l-17.1008 27.4432c-12.47232 19.99872-42.35264 17.3568-51.15904-4.49536"
+                                                    p-id={9723}
+                                                    fill="#337ab7"
+                                                />
+                                                <path
+                                                    d="M941.93664 421.5296l-5.72416-14.22336a13.53728 13.53728 0 0 0-5.43744-6.46144l-12.98432-8.11008c-9.472-5.90848-8.2432-20.0704 2.12992-24.22784l14.19264-5.7344c2.69312-1.0752 4.94592-2.9696 6.49216-5.4272l8.11008-12.99456c5.89824-9.472 20.03968-8.2432 24.22784 2.10944l5.72416 14.21312c1.0752 2.6624 2.9696 4.95616 5.43744 6.47168l12.98432 8.11008c9.472 5.89824 8.2432 20.0704-2.12992 24.24832l-14.19264 5.70368c-2.69312 1.0752-4.94592 2.9696-6.49216 5.43744l-8.11008 13.01504c-5.89824 9.472-20.03968 8.21248-24.22784-2.12992"
+                                                    p-id={9724}
+                                                    fill="#337ab7"
+                                                />
+                                                <path
+                                                    d="M921.41568 285.57312l-7.6288-18.944a18.20672 18.20672 0 0 0-7.22944-8.6528l-17.34656-10.81344c-12.6464-7.86432-10.9568-26.75712 2.82624-32.3072l18.944-7.6288c3.56352-1.4336 6.61504-3.97312 8.6528-7.24992l10.78272-17.32608c7.8848-12.61568 26.75712-10.98752 32.32768 2.82624l7.6288 18.944c1.4336 3.584 3.97312 6.59456 7.22944 8.6528l17.34656 10.81344c12.6464 7.86432 10.9568 26.7264-2.82624 32.3072l-18.944 7.6288c-3.56352 1.4336-6.61504 3.97312-8.6528 7.24992l-10.78272 17.32608c-7.8848 12.61568-26.75712 10.9568-32.32768-2.82624"
+                                                    p-id={9725}
+                                                    fill="#337ab7"
+                                                />
+                                                <path
+                                                    d="M512 143.36c214.90688 0 389.12 174.21312 389.12 389.12S726.89664 921.6 512 921.6c-214.90688 0-389.12-174.21312-389.12-389.12s174.21312-389.12 389.12-389.12z m0 61.44c-180.98176 0-327.68 146.69824-327.68 327.68a326.30784 326.30784 0 0 0 34.99008 147.49696L357.2736 540.04736a58.40896 58.40896 0 0 1 83.41504 0L671.8464 774.48192a30.98624 30.98624 0 0 0 44.24704 0 32.0512 32.0512 0 0 0 0-44.88192L612.864 624.896c-20.03968-20.992-19.49696-54.48704 1.18784-74.8032a51.63008 51.63008 0 0 1 72.5504 0l121.40544 123.12576A326.38976 326.38976 0 0 0 839.68 532.48c0-180.97152-146.70848-327.68-327.68-327.68z m64.70656 88.75008a74.67008 74.67008 0 1 1 0 149.32992 74.67008 74.67008 0 0 1 0-149.32992z"
+                                                    p-id={9726}
+                                                    fill="#337ab7"
+                                                />
+                                            </svg>
+                                            内容增强
+                                        </strong>
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        自定义背景
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        公告栏
+                                    </td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        书签
+                                    </td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        添加图片
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        添加动图
+                                    </td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        添加视频与链接
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        背景音乐
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        书架功能
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td colSpan={7}>
+                                        <strong className="title">
+                                            <svg
+                                                t={1651034719611}
+                                                className="icon"
+                                                viewBox="0 0 1024 1024"
+                                                version="1.1"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                p-id={11766}
+                                                width={25}
+                                                height={25}
+                                            >
+                                                <path
+                                                    d="M544 146.474667l213.12 123.050666a64 64 0 0 1 32 55.424v246.101334a64 64 0 0 1-31.253333 54.997333l77.056 133.44-140.416 32.810667-91.648 102.4-79.466667-137.621334c-9.813333 1.770667-19.925333 1.237333-29.525333-1.6l-80.362667 139.221334-91.669333-102.4L181.418667 759.466667l79.189333-137.130667a64 64 0 0 1-25.728-51.306667V324.949333a64 64 0 0 1 32-55.424l213.12-123.050666a64 64 0 0 1 64 0zM315.797333 654.698667l-35.84 62.08 76.096 17.770666 46.186667 51.626667 35.306667-61.184-121.749334-70.293333z m386.624 3.328L580.693333 728.32l33.429334 57.856 46.186666-51.626667 76.074667-17.749333-33.92-58.773333zM512 320a128 128 0 1 0 0 256 128 128 0 0 0 0-256z m0 64a64 64 0 1 1 0 128 64 64 0 0 1 0-128z"
+                                                    p-id={11767}
+                                                    fill="#337ab7"
+                                                />
+                                            </svg>
+                                            品牌与交互
+                                        </strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        自定义界面风格
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        LOGO与其链接
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        分享控制与搜索
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        链接与目录提取
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        自定义外链
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        自有域名绑定
+                                    </td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colSpan={7}>
+                                        <strong className="title">
+                                            <svg
+                                                t={1651034980573}
+                                                className="icon"
+                                                viewBox="0 0 1024 1024"
+                                                version="1.1"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                p-id={17814}
+                                                width={25}
+                                                height={25}
+                                            >
+                                                <path
+                                                    d="M85.33 938.67V0H0v1024h1024v-85.33z"
+                                                    fill="#337ab7"
+                                                    p-id={17815}
+                                                />
+                                                <path
+                                                    d="M192 576h85.33v256H192zM405.33 448h85.33v384h-85.33zM618.67 512H704v320h-85.33zM832 320h85.33v512H832zM453.57 304.19l213.34 85.33 232.23-162.56-48.94-69.92-194.44 136.11-213.33-85.34L210.2 370.38l48.94 69.91z"
+                                                    fill="#337ab7"
+                                                    p-id={17816}
+                                                />
+                                            </svg>
+                                            数据分析
+                                        </strong>
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        链接打开提醒
+                                    </td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        浏览量统计
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        PDF下载统计
+                                    </td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        独立访客统计
+                                    </td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td colSpan={7} style={{paddingLeft: 20, color: "#cf8726"}}>
+                                        高级数据分析，通过用户在页面上的停留时间以及点击事件，来分析内容质量及业务转化率
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        高级数据分析
+                                    </td>
+                                    <td>50元/月</td>
+                                    <td>50元/月</td>
+                                    <td>50元/月</td>
+                                    <td>100元/月</td>
+                                    <td>150元/月</td>
+                                    <td>250元/月</td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        数据报告下载
+                                    </td>
+                                    <td>
+                                        <span className="">-</span>
+                                    </td>
+                                    <td>
+                                        <span className="">-</span>
+                                    </td>
+                                    <td>
+                                        <span className="">-</span>
+                                    </td>
+                                    <td>
+                                        <span className="">-</span>
+                                    </td>
+                                    <td>
+                                        <span className="">-</span>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        历史数据
+                                    </td>
+                                    <td>
+                                        <span className="">3个月</span>
+                                    </td>
+                                    <td>
+                                        <span className="">3个月</span>
+                                    </td>
+                                    <td>
+                                        <span className="">6个月</span>
+                                    </td>
+                                    <td>
+                                        <span className="">1年</span>
+                                    </td>
+                                    <td>
+                                        <span className="">1年</span>
+                                    </td>
+                                    <td>
+                                        <span className="">1年</span>
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td colSpan={7}>
+                                        <strong className="title">
+                                            <svg
+                                                t={1651034888196}
+                                                className="icon"
+                                                viewBox="0 0 1024 1024"
+                                                version="1.1"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                p-id={16631}
+                                                width={25}
+                                                height={25}
+                                            >
+                                                <path
+                                                    d="M548.211196 91.157071V34.926827a37.362288 37.362288 0 0 0-74.724577 5.043909v51.186335l-13.824046 1.214274A498.412924 498.412924 0 0 0 14.957938 538.196849a46.70286 46.70286 0 0 0 47.356701 49.785248h410.985169v305.249895a62.301615 62.301615 0 0 1-124.229608-6.351589v-54.922564a37.362288 37.362288 0 0 0-74.724576 5.043909V895.193512a137.026192 137.026192 0 0 0 273.772166-8.313109v-298.898306h416.402701a45.955614 45.955614 0 0 0 41.939169-49.505031A498.506329 498.506329 0 0 0 548.211196 91.157071zM93.979178 513.257521a423.501536 423.501536 0 0 1 833.739459 0z"
+                                                    p-id={16632}
+                                                    fill="#337ab7"
+                                                />
+                                            </svg>
+                                            内容保护
+                                        </strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        内容分享控制
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        限定域名访问
+                                    </td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        暂停访问
+                                    </td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        密码保护
+                                    </td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colSpan={7}>
+                                        <strong className="title">
+                                            <svg
+                                                t={1651035081562}
+                                                className="icon"
+                                                viewBox="0 0 1024 1024"
+                                                version="1.1"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                p-id={20299}
+                                                width={25}
+                                                height={25}
+                                            >
+                                                <path
+                                                    d="M768 177.664h9.216c11.776 0.512 23.552 1.536 35.328 2.048 43.52 2.56 86.528 8.704 129.536 16.896 15.36 3.072 22.016 11.264 22.016 26.624v35.84c0 14.336 8.192 23.04 23.04 23.552 4.096 0 8.192-0.512 12.288 0 4.096 0.512 8.192 1.024 11.776 2.56 10.24 5.12 13.312 13.824 13.312 25.088v481.28c0 11.264-3.584 20.48-14.336 25.088-4.608 2.048-9.728 2.56-14.336 2.56h-405.504c-11.264 0-15.36 3.584-16.896 14.848-1.536 9.728-5.632 13.824-15.872 13.824H468.48c-10.24 0-14.848-4.096-15.872-14.336-0.512-6.144-3.072-11.264-9.216-13.312-3.072-1.024-6.144-1.024-9.216-1.024H24.064c-13.312-1.536-21.504-9.728-22.528-23.04-0.512-3.584-0.512-7.168-0.512-10.24V305.152c0.512-0.512 0.512-1.024 1.024-2.048 3.072-13.312 11.264-19.968 24.576-20.48h10.752c16.384 0 24.576-8.192 24.576-24.576v-36.352c0-13.312 7.168-22.016 20.48-24.576C134.656 187.392 187.392 179.712 240.64 179.2c3.072 0 6.144-0.512 8.704-1.024h6.144c3.072 0.512 6.144 0.512 9.216 1.024 25.6 0 50.688 2.048 75.776 6.144 33.28 5.632 66.048 14.336 96.768 28.16 23.04 10.24 43.52 23.552 64.512 37.376 7.168 5.12 14.336 5.12 22.016 0s15.36-10.24 23.04-14.848c31.744-20.48 66.048-34.304 102.4-43.52 35.84-9.216 72.192-13.312 109.056-13.824 3.584-0.512 6.656-1.024 9.728-1.024zM92.672 473.088V701.44c0 17.92 11.264 27.648 29.184 25.088 20.992-3.072 41.472-5.632 62.464-8.192 53.76-5.632 107.008-5.12 160.256 4.096 36.352 6.144 71.168 16.384 104.448 33.28 9.728 5.12 19.456 10.752 29.184 15.872 9.728 5.12 18.432 0.512 19.456-10.752v-6.144c0-145.92 0-291.84-0.512-437.76v-6.144c-0.512-14.336-6.656-26.112-18.432-35.328-18.432-14.336-38.912-26.112-59.904-35.328-48.64-21.504-99.84-31.232-152.576-33.28-50.176-2.048-99.84 2.048-148.992 10.752-17.408 3.072-24.064 11.264-24.064 28.672-0.512 76.288-0.512 151.552-0.512 226.816z m840.704 0.512V387.584 245.248c0-14.848-8.192-24.576-22.016-26.624-21.504-3.072-43.008-6.144-64.512-8.192-48.64-5.12-97.28-4.608-145.408 3.072-54.784 8.704-104.96 27.136-150.528 59.392-15.36 10.752-22.528 24.576-22.528 43.52v439.808c0 2.56 0 4.608 0.512 7.168 1.024 7.168 7.68 12.288 14.848 10.24 2.56-0.512 4.608-2.048 6.656-3.072 25.088-14.848 51.2-26.624 79.36-35.328 31.744-9.728 64.512-16.384 97.792-17.92 27.648-1.536 55.808-2.048 83.456-0.512 31.232 2.048 62.464 6.656 93.696 10.24 8.704 1.024 16.896 0 23.04-7.168 4.608-5.12 5.632-11.264 5.632-17.92V473.6z"
+                                                    p-id={20300}
+                                                    fill="#337ab7"
+                                                />
+                                            </svg>
+                                            HTML5阅读器
+                                        </strong>
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        无广告
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        样本云标识
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        智能缩放
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        矢量PDF处理
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td colSpan={7} style={{paddingLeft: 20, color: "#cf8726"}}>
+                                        样本云"锐丽"显示技术，让内容在不同尺寸的屏幕上保持清晰，打开
+                                        <span style={{color: "#337ab7"}}>
+                    <input
+                        type="hidden"
+                        id="input_pop_1664342801010"
+                        defaultValue='<iframe id="iframe_pop_1664342801010"  src="https://you.baige.me/view/YV7" style="width:100%;height:100%;background:#eee" frameborder=0 seamless="seamless"  allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" ></iframe>'
+                    />
+                    <a
+                        href="https://m.baige.me/aux/charge#"
+                        style={{position: "relative", display: "inline-block"}}
+                        onclick="document.querySelector('body').style.overflow='hidden';document.querySelector('#pop_1664342801010').style.display='block';var value=document.getElementById('input_pop_1664342801010').value; var div = document.createElement('div'); div.innerHTML=value;div.setAttribute('style','width:100%;height:100%');document.querySelector('#pop_1664342801010').appendChild(div)"
+                        title="《电子画册设计指南》"
+                    >
+                      《电子画册设计指南》
+                    </a>
+                    <div
+                        id="pop_1664342801010"
+                        style={{
+                            display: "none",
+                            position: "fixed",
+                            width: "100%",
+                            height: "100%",
+                            padding: 20,
+                            background: "rgba(0, 0, 0, 0.6)",
+                            boxSizing: "border-box",
+                            top: 0,
+                            left: 0,
+                            zIndex: 99999
+                        }}
+                    >
+                      <a
+                          href="https://m.baige.me/aux/charge#"
+                          title="关闭"
+                          onclick="document.querySelector('body').style.overflow='auto';document.querySelector('#pop_1664342801010').style.display='none';var rm=document.getElementById('iframe_pop_1664342801010');rm.parentNode.parentNode.parentNode.removeChild(rm.parentNode);"
+                          style={{
+                              top: 0,
+                              right: 0,
+                              position: "absolute",
+                              width: 32,
+                              height: 32
+                          }}
+                      >
+                        <span
+                            style={{
+                                position: "absolute",
+                                cursor: "pointer",
+                                backgroundColor: "#000",
+                                border: "2px solid #fff",
+                                width: 24,
+                                height: 24,
+                                borderRadius: 12,
+                                top: 5,
+                                paddingBottom: 4,
+                                right: 5,
+                                color: "white",
+                                lineHeight: 24,
+                                boxShadow: "0 0 3px #000",
+                                textAlign: "center",
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center"
+                            }}
+                        >
+                          x
+                        </span>
+                      </a>
+                    </div>
+                  </span>
+                                        ，了解更多
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        自适应文本复制
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td colSpan={7} style={{paddingLeft: 20, color: "#cf8726"}}>
+                                        了解样本云自适应文本复制技术，打开
+                                        <span>
+                    {" "}
+                                            <input
+                                                type="hidden"
+                                                id="input_pop_1664342801011"
+                                                defaultValue='<iframe id="iframe_pop_1664342801010"  src="https://you.baige.me/view/YV7" style="width:100%;height:100%;background:#eee" frameborder=0 seamless="seamless"  allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" ></iframe>'
+                                            />
+                    <a
+                        href="https://m.baige.me/aux/charge#"
+                        style={{position: "relative", display: "inline-block"}}
+                        onclick="document.querySelector('body').style.overflow='hidden';document.querySelector('#pop_1664342801010').style.display='block';var value=document.getElementById('input_pop_1664342801011').value; var div = document.createElement('div'); div.innerHTML=value;div.setAttribute('style','width:100%;height:100%');document.querySelector('#pop_1664342801010').appendChild(div)"
+                        title="《电子画册设计指南》"
+                    >
+                      《电子画册设计指南》
+                    </a>
+                    <div
+                        id="pop_1664342801010"
+                        style={{
+                            display: "none",
+                            position: "fixed",
+                            width: "100%",
+                            height: "100%",
+                            padding: 20,
+                            background: "rgba(0, 0, 0, 0.6)",
+                            boxSizing: "border-box",
+                            top: 0,
+                            left: 0,
+                            zIndex: 99999
+                        }}
+                    >
+                      <a
+                          href="https://m.baige.me/aux/charge#"
+                          title="关闭"
+                          onclick="document.querySelector('body').style.overflow='auto';document.querySelector('#pop_1664342801010').style.display='none';var rm=document.getElementById('iframe_pop_1664342801010');rm.parentNode.parentNode.parentNode.removeChild(rm.parentNode);"
+                          style={{
+                              top: 0,
+                              right: 0,
+                              position: "absolute",
+                              width: 32,
+                              height: 32
+                          }}
+                      >
+                        <span
+                            style={{
+                                position: "absolute",
+                                cursor: "pointer",
+                                backgroundColor: "#000",
+                                border: "2px solid #fff",
+                                width: 24,
+                                height: 24,
+                                borderRadius: 12,
+                                top: 5,
+                                paddingBottom: 4,
+                                right: 5,
+                                color: "white",
+                                lineHeight: 24,
+                                boxShadow: "0 0 3px #000",
+                                textAlign: "center",
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center"
+                            }}
+                        >
+                          x
+                        </span>
+                      </a>
+                    </div>
+                  </span>
+                                        ，将鼠标移到文本区域，即可复制文本
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        阅读备注
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        3D翻页效果
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        手机与平板兼容
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                <tr style={{background: "#fff"}}>
+                                    <td>
+                                        <span className="glyphicon glyphicon-info-sign"/>
+                                        自适应英文界面
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                    <td>
+                                        <span className="glyphicon glyphicon-ok"/>
+                                    </td>
+                                </tr>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                    <hr/>
+                    <input id="userId" type="hidden" defaultValue=""/>
+                    <input id="value" type="hidden" defaultValue={1}/>
+                </div>
+            </>
+        );
+    }
+
+    const container = document.getElementById('root');
+    const root = createRoot(container);
+    root.render(
+        <MyApp/>
+    );
+
+</script>
+</body>
+</html>
