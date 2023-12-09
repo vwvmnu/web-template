@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Ant Design Button Example</title>
+    <link href="./css/reset.css" rel="stylesheet">
+
+    <script src="./js/babel.min.js"></script>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/dayjs.min.js"></script>
+    <script src="./js/antd.js"></script>
+
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+    const {createRoot} = ReactDOM;
+    const {useState} = React;
+    const {Button, Select, Tag} = window.antd;
+    const {Option} = Select;
+
+
+    const options = [
+        {
+            value: 'gold',
+            title: "jj1",
+        },
+        {
+            value: 'lime',
+            title: "jj1",
+        },
+        {
+            value: 'green',
+            title: "jj1",
+        },
+        {
+            value: 'cyan',
+            title: "jj1",
+        },
+    ];
+
+
+    const MySelect = () => {
+
+        const [selectedOptions, setSelectedOptions] = useState([]);
+
+        const handleChange = (selectedValues) => {
+
+            // 根据选中的值找到完整的选项数据
+            const selected = options.filter(option => selectedValues.includes(option.value));
+            console.log('Selected items: ', selected);
+            setSelectedOptions(selected);
+        };
+
+        const filterOption = (input, option) => {
+            const combinedString = Array.isArray(option.children) ? option.children.join('') : option.children;
+            return combinedString.toLowerCase().includes(input.toLowerCase());
+        };
+
+
+        return (
+            <label>
+                <Select
+                    mode="multiple"
+                    onChange={handleChange}
+                    filterOption={filterOption}
+                    value={selectedOptions.map(option => option.value)}
+                    style={{
+                        width: '100%',
+                    }}>
+                    {options.map(item => (
+                        <Option key={item.value} value={item.value}>{item.title}{item.title}2</Option>
+                    ))}
+                </Select>
+            </label>
+        )
+    }
+
+    const App = () => {
+        return (
+            <>
+                <MySelect/>
+            </>
+        )
+    }
+
+    const container = document.getElementById('root');
+    const root = createRoot(container);
+    root.render(<App/>);
+</script>
+</body>
+</html>
