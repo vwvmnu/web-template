@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- 必须的 meta 标签 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>work</title>
+    <!-- CSS 文件 -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/index.css">
+
+    <!-- 引入js文件 -->
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script src="./js/bootstrap.bundle.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/http_cdn.jsdelivr.net_npm_echarts@5.4.3_dist_echarts.js"></script>
+    <script src="./js/http_unpkg.com_vue@3_dist_vue.global.js"></script>
+
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+
+    <div class="container" v-cloak>
+        <div class="fs-1 mb-3">
+            恭喜你申请成功
+        </div>
+
+        <div  class="fs-4 mb-3">管理基本信息</div>
+
+        <div class="mb-3">
+            <label for="basic-url1" class="form-label">你的后台管理地址</label>
+            <div class="input-group">
+                <input disabled type="text" class="form-control" id="basic-url1"  aria-describedby="basic-addon3 basic-addon4"
+                    v-model="addr">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="basic-url2" class="form-label">你的登录用户名</label>
+            <div class="input-group">
+                <input disabled type="text" class="form-control" id="basic-url2"  aria-describedby="basic-addon3 basic-addon4"
+                       v-model="username">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="basic-url3" class="form-label">你的登录密码</label>
+            <div class="input-group">
+                <input disabled type="text" class="form-control" id="basic-url3"  aria-describedby="basic-addon3 basic-addon4"
+                       v-model="password">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="basic-url4" class="form-label">你的注册时间</label>
+            <div class="input-group">
+                <input disabled type="text" class="form-control" id="basic-url4"  aria-describedby="basic-addon3 basic-addon4"
+                       v-model="registrationDate">
+            </div>
+        </div>
+
+        <div  class="fs-4 mb-3">你的权限</div>
+
+        <div class="mb-3">
+            <label for="basic-url6" class="form-label">你的可创建AI画册数量</label>
+            <div class="input-group">
+                <input disabled type="text" class="form-control" id="basic-url6"  aria-describedby="basic-addon3 basic-addon4"
+                       v-model="canBeCreatedNumber">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="basic-url7" class="form-label">你的可创建生态圈数量</label>
+            <div class="input-group">
+                <input disabled type="text" class="form-control" id="basic-url7"  aria-describedby="basic-addon3 basic-addon4"
+                       v-model="canQuantityNumber">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="basic-url8" class="form-label">你的试用时长</label>
+            <div class="input-group">
+                <input disabled type="text" class="form-control" id="basic-url8"  aria-describedby="basic-addon3 basic-addon4"
+                       v-model="trialDuration">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const {createApp, ref, onMounted} = Vue;
+    const UpIcon = {
+        template: `
+        `,
+        setup() {
+        }
+    };
+
+    const App = {
+        //使用短横线命名
+        components: {
+            UpIcon,
+        },
+        setup() {
+
+            // 地址
+            const addr = ref("www.baidu.com");
+            // 用户名
+            const username = ref("123456");
+            // 密码
+            const password = ref("1234565");
+            // 注册时间
+            const registrationDate = ref("123456a");
+            // 权限
+            const jurisdiction = ref("123456s");
+            // 可创建AI画册数量
+            const canBeCreatedNumber = ref("123456e");
+            // 可创建生态圈数量
+            const canQuantityNumber = ref("123456g");
+            // 试用时长
+            const trialDuration = ref("123456z");
+
+            onMounted(() => {
+
+            })
+
+            return {
+                addr, username, password, registrationDate,
+                jurisdiction, canBeCreatedNumber,
+                canQuantityNumber, trialDuration,
+            };
+        }
+    };
+
+    createApp(App).mount('#app');
+</script>
+</body>
+</html>

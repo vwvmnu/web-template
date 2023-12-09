@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- 必须的 meta 标签 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>work</title>
+    <!-- CSS 文件 -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/index.css">
+
+    <!-- 引入js文件 -->
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/http_cdn.jsdelivr.net_npm_echarts@5.4.3_dist_echarts.js"></script>
+    <script src="./js/http_unpkg.com_vue@3_dist_vue.global.js"></script>
+    <style>
+        #book {
+            perspective: 1200px;
+        }
+
+        .page {
+            width: 100px;
+            height: 100px;
+
+            position: absolute;
+            background-color: white;
+            /*border: 1px solid #ccc;*/
+            transform-origin: left center;
+            transition: transform 1s;
+            /*clip-path: polygon(14% 14%, 14% 86%, 86% 86%, 86% 14%);*/
+        }
+
+        #page-1 {
+            transform-origin: left center;
+            transform: scaleX(-1) ;
+            left: 100px
+        }
+
+        #page-2 {
+            left: 100px;
+            z-index: 1;
+        }
+
+        #page-3 {
+            left: 100px
+        }
+
+        .flipped {
+            transform: rotateY(-180deg);
+        }
+
+        #shou {
+            opacity: 0;
+        }
+
+        #shou2 {
+            opacity: 0;
+        }
+
+        .shouB {
+            transition: transform 1s;
+            transform: translateX(-150%);
+        }
+
+        .shouA {
+            transition: transform 1s;
+            transform: translateX(150%);
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div style="position: relative">
+        <div id="book">
+            <div class="page" id="page-1">
+                <img src="bookPage.png" alt="">
+            </div>
+            <div class="page" id="page-2">
+                <img src="bookPage.png" alt="">
+            </div>
+            <div class="page" id="page-3">
+                <img src="bookPage.png" alt="">
+            </div>
+        </div>
+        <div>
+            <div style="position: absolute;z-index: 2;left: 120px;top: 70px;" id="shou">
+                <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"
+                     width="48" height="48">
+                    <path d="M116.053333 116.053333c197.973333-47.786667 402.773333-40.96 597.333334 17.066667 10.24 3.413333 27.306667-3.413333 30.72-13.653333 3.413333-10.24-3.413333-23.893333-17.066667-27.306667C525.653333 30.72 310.613333 23.893333 109.226667 71.68c-6.826667-17.066667-10.24-34.133333-13.653334-51.2 0-6.826667-3.413333-13.653333-13.653333-13.653333-6.826667 0-10.24 3.413333-13.653333 10.24C47.786667 44.373333 27.306667 71.68 10.24 102.4c-3.413333 6.826667 0 17.066667 6.826667 23.893333 30.72 13.653333 61.44 27.306667 88.746666 44.373334 6.826667 3.413333 10.24 3.413333 17.066667 0s6.826667-10.24 3.413333-17.066667c-3.413333-13.653333-6.826667-27.306667-10.24-37.546667z m812.373334 324.266667c-10.24-23.893333-37.546667-40.96-64.853334-40.96-10.24 0-17.066667 0-23.893333 3.413333-3.413333 0-13.653333 6.826667-23.893333 13.653334-13.653333-27.306667-40.96-44.373333-71.68-44.373334-10.24 0-17.066667 0-27.306667 3.413334-17.066667 6.826667-30.72 17.066667-40.96 34.133333-20.48-23.893333-51.2-34.133333-81.92-23.893333-20.48 6.826667-34.133333 20.48-44.373333 40.96l-78.506667-191.146667c-13.653333-34.133333-40.96-58.026667-75.093333-58.026667-10.24 0-17.066667 0-27.306667 3.413334-40.96 17.066667-61.44 61.44-44.373333 105.813333l129.706666 331.093333c-6.826667 6.826667-17.066667 20.48-27.306666 40.96-37.546667 71.68-10.24 204.8 88.746666 276.48 71.68 51.2 136.533333 78.506667 208.213334 78.506667 40.96 0 85.333333-6.826667 129.706666-23.893333 133.12-47.786667 153.6-129.706667 163.84-211.626667 6.826667-75.093333-85.333333-327.68-88.746666-337.92z m51.2 334.506667c-10.24 75.093333-23.893333 139.946667-139.946667 184.32-44.373333 17.066667-81.92 23.893333-119.466667 23.893333-64.853333 0-119.466667-20.48-187.733333-71.68-58.026667-44.373333-119.466667-157.013333-78.506667-235.52 3.413333-6.826667 10.24-13.653333 13.653334-20.48l40.96 109.226667c3.413333 10.24 13.653333 13.653333 20.48 10.24 10.24-3.413333 13.653333-13.653333 10.24-20.48l-187.733334-477.866667c-10.24-27.306667 0-54.613333 23.893334-61.44 23.893333-10.24 51.2 3.413333 58.026666 30.72l119.466667 290.133333c3.413333 6.826667 13.653333 13.653333 20.48 10.24 6.826667-3.413333 13.653333-10.24 10.24-20.48l-3.413333-51.2v-3.413333c-3.413333-10.24-3.413333-23.893333 0-34.133333 3.413333-10.24 13.653333-17.066667 23.893333-20.48 20.48-6.826667 44.373333 3.413333 51.2 27.306666l10.24 30.72c3.413333 10.24 13.653333 13.653333 20.48 10.24 10.24-3.413333 13.653333-13.653333 10.24-20.48-3.413333-10.24-3.413333-23.893333 0-34.133333 3.413333-10.24 13.653333-20.48 23.893333-23.893333 3.413333-3.413333 10.24-3.413333 13.653334-3.413334 17.066667 0 34.133333 10.24 40.96 30.72 0 0 23.893333 54.613333 27.306666 68.266667 3.413333 13.653333 13.653333 13.653333 20.48 10.24 6.826667-3.413333 10.24-10.24 6.826667-23.893333l-13.653333-40.96c6.826667-6.826667 17.066667-13.653333 23.893333-17.066667 3.413333 0 10.24-3.413333 13.653333-3.413333 17.066667 0 30.72 6.826667 34.133334 20.48 34.133333 75.093333 98.986667 269.653333 92.16 327.68z m0 0"
+                          fill="#343a40"></path>
+                </svg>
+            </div>
+
+            <div style="position: absolute;z-index: 2;left: 45px;top: 70px;" id="shou2">
+                <div style="transform: scaleX(-1);">
+                    <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"
+                         width="48" height="48">
+                        <path d="M116.053333 116.053333c197.973333-47.786667 402.773333-40.96 597.333334 17.066667 10.24 3.413333 27.306667-3.413333 30.72-13.653333 3.413333-10.24-3.413333-23.893333-17.066667-27.306667C525.653333 30.72 310.613333 23.893333 109.226667 71.68c-6.826667-17.066667-10.24-34.133333-13.653334-51.2 0-6.826667-3.413333-13.653333-13.653333-13.653333-6.826667 0-10.24 3.413333-13.653333 10.24C47.786667 44.373333 27.306667 71.68 10.24 102.4c-3.413333 6.826667 0 17.066667 6.826667 23.893333 30.72 13.653333 61.44 27.306667 88.746666 44.373334 6.826667 3.413333 10.24 3.413333 17.066667 0s6.826667-10.24 3.413333-17.066667c-3.413333-13.653333-6.826667-27.306667-10.24-37.546667z m812.373334 324.266667c-10.24-23.893333-37.546667-40.96-64.853334-40.96-10.24 0-17.066667 0-23.893333 3.413333-3.413333 0-13.653333 6.826667-23.893333 13.653334-13.653333-27.306667-40.96-44.373333-71.68-44.373334-10.24 0-17.066667 0-27.306667 3.413334-17.066667 6.826667-30.72 17.066667-40.96 34.133333-20.48-23.893333-51.2-34.133333-81.92-23.893333-20.48 6.826667-34.133333 20.48-44.373333 40.96l-78.506667-191.146667c-13.653333-34.133333-40.96-58.026667-75.093333-58.026667-10.24 0-17.066667 0-27.306667 3.413334-40.96 17.066667-61.44 61.44-44.373333 105.813333l129.706666 331.093333c-6.826667 6.826667-17.066667 20.48-27.306666 40.96-37.546667 71.68-10.24 204.8 88.746666 276.48 71.68 51.2 136.533333 78.506667 208.213334 78.506667 40.96 0 85.333333-6.826667 129.706666-23.893333 133.12-47.786667 153.6-129.706667 163.84-211.626667 6.826667-75.093333-85.333333-327.68-88.746666-337.92z m51.2 334.506667c-10.24 75.093333-23.893333 139.946667-139.946667 184.32-44.373333 17.066667-81.92 23.893333-119.466667 23.893333-64.853333 0-119.466667-20.48-187.733333-71.68-58.026667-44.373333-119.466667-157.013333-78.506667-235.52 3.413333-6.826667 10.24-13.653333 13.653334-20.48l40.96 109.226667c3.413333 10.24 13.653333 13.653333 20.48 10.24 10.24-3.413333 13.653333-13.653333 10.24-20.48l-187.733334-477.866667c-10.24-27.306667 0-54.613333 23.893334-61.44 23.893333-10.24 51.2 3.413333 58.026666 30.72l119.466667 290.133333c3.413333 6.826667 13.653333 13.653333 20.48 10.24 6.826667-3.413333 13.653333-10.24 10.24-20.48l-3.413333-51.2v-3.413333c-3.413333-10.24-3.413333-23.893333 0-34.133333 3.413333-10.24 13.653333-17.066667 23.893333-20.48 20.48-6.826667 44.373333 3.413333 51.2 27.306666l10.24 30.72c3.413333 10.24 13.653333 13.653333 20.48 10.24 10.24-3.413333 13.653333-13.653333 10.24-20.48-3.413333-10.24-3.413333-23.893333 0-34.133333 3.413333-10.24 13.653333-20.48 23.893333-23.893333 3.413333-3.413333 10.24-3.413333 13.653334-3.413334 17.066667 0 34.133333 10.24 40.96 30.72 0 0 23.893333 54.613333 27.306666 68.266667 3.413333 13.653333 13.653333 13.653333 20.48 10.24 6.826667-3.413333 10.24-10.24 6.826667-23.893333l-13.653333-40.96c6.826667-6.826667 17.066667-13.653333 23.893333-17.066667 3.413333 0 10.24-3.413333 13.653333-3.413333 17.066667 0 30.72 6.826667 34.133334 20.48 34.133333 75.093333 98.986667 269.653333 92.16 327.68z m0 0"
+                              fill="#343a40"></path>
+                    </svg>
+                </div>
+            </div>
+            <div style="position: absolute;z-index: 2;left: 45px;top: 110px;">
+                <!-- 左右滑动翻页 -->
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<script>
+
+    let currentPage = 1;
+
+    function flipPage() {
+        // const page = document.getElementById(`page-${currentPage}`);
+
+        if (currentPage === 1) {
+            const shou = document.getElementById("shou");
+            shou.style.opacity = "1";
+            shou.classList.toggle("shouB");
+            setTimeout(() => {
+                shou.style.opacity = "0";
+                shou.classList.toggle("shouB");
+            }, 1000);
+            currentPage = 2;
+        } else {
+            const shou2 = document.getElementById("shou2");
+            shou2.style.opacity = "1";
+            shou2.classList.toggle("shouA");
+            setTimeout(() => {
+                shou2.style.opacity = "0";
+                shou2.classList.toggle("shouA");
+            }, 1000);
+            currentPage = 1;
+        }
+
+        const page = document.getElementById(`page-2`);
+        page.classList.toggle('flipped');
+        // currentPage = currentPage === 1 ? 2 : 1;
+    }
+    setInterval(flipPage, 2000)
+
+
+    const {createApp, ref, onMounted} = Vue;
+    const UpIcon = {
+        template: `
+        `,
+        setup() {
+        }
+    };
+
+    const App = {
+        //使用短横线命名
+        components: {
+            UpIcon,
+        },
+        setup() {
+            /**
+             * 生成{size}大小的汉字
+             * @param size 传入大小,默认3
+             * @returns {string} 返回汉字
+             */
+            const generateRandomChinese = (size = 3) => {
+                if (typeof size != "number") {
+                    console.log("请输入数字")
+                }
+                let randomChineseString = "";
+                const commonChars = "的一是了我不人在他有这个上们来到时大地为子中你说生国年着就那和要她出也得里后自以会家可下而过天去能对小多然于心学么之都好看起发";
+                for (let i = 0; i < size; i++) {
+                    //randomChineseString += String.fromCharCode(Math.floor(Math.random() * (0x9FFF - 0x4E00 + 1)) + 0x4E00);
+                    randomChineseString += commonChars[Math.floor(Math.random() * commonChars.length)];
+                }
+                return randomChineseString;
+            }
+            /**
+             * 随机生成整数
+             * @param min 最小值
+             * @param max 最大值
+             * @returns {number}
+             */
+            const generateRandomNumber = (min = 0, max = 1) => {
+                if (typeof min != "number" || typeof max != "number") {
+                    console.log("请输入数字")
+                }
+                return Math.floor(Math.random() * (max - min)) + min;
+            }
+
+            const albumDetailsData = ref([
+                {
+                    title: "某某画册",
+                    pageView: 120 + "+",
+                    whetherItIsGrowthOrNot: true,
+                }
+            ]);
+
+
+            const addData = () => {
+                albumDetailsData.value.push({
+                    title: generateRandomChinese(),
+                    pageView: (Math.floor(Math.random() * 200) + 100) + "+",
+                    whetherItIsGrowthOrNot: Math.random() < 0.5,
+                })
+            }
+
+            for (let i = 0; i < 4; i++) {
+                addData();
+            }
+
+            const loadMore = () => {
+                // 这里只是为了演示，实际情况可能需要从服务器加载数据
+                for (let i = 1; i <= 5; i++) {
+                    addData();
+                }
+            };
+
+            const handleScroll = (event) => {
+                if (window.innerHeight + window.scrollY > 20000) {
+                    return;
+                }
+                let nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000;
+                if (nearBottom) {
+                    loadMore();
+                }
+            };
+
+            // 添加滚动事件监听器
+            window.addEventListener('scroll', handleScroll);
+
+
+            onMounted(() => {
+                const chartRef = document.getElementById("main");
+
+                // ECharts 数据和配置
+                option = {
+                    series: [
+                        {
+                            type: 'gauge',
+                            center: ['50%', '60%'],
+                            startAngle: 200,
+                            endAngle: -20,
+                            min: 0,
+                            max: 600000,
+                            splitNumber: 5,
+                            itemStyle: {
+                                color: '#00C2FF '
+                            },
+                            progress: {
+                                show: true,
+                                width: 20
+                            },
+                            anchor: {
+                                show: false
+                            },
+                            pointer: {
+                                show: false
+                            },
+                            axisLine: {
+                                lineStyle: {
+                                    width: 20
+                                },
+                            },
+                            //坐标轴
+                            axisTick: {
+                                distance: -25,
+                                splitNumber: 5,
+                                lineStyle: {
+                                    width: 2,
+                                    color: '#999'
+                                },
+                                length: 4
+                            },
+
+                            //间隔标识刻度样式
+                            splitLine: {
+                                distance: -30,
+                                length: 8,
+                                lineStyle: {
+                                    width: 3,
+                                    color: '#999'
+                                },
+                                formatter: "的"
+                            },
+                            //间隔标识刻度字体
+                            axisLabel: {
+                                distance: -10,
+                                color: '#999',
+                                fontSize: 14,
+                                formatter: function (value, index) {
+                                    return value / 10000 + 'w';
+                                }
+                            },
+
+                            detail: {
+                                valueAnimation: true,
+                                width: '60%',
+                                lineHeight: 40,
+                                borderRadius: 8,
+                                offsetCenter: [0, '-15%'],
+                                fontSize: 40,
+                                fontWeight: 'bolder',
+                                formatter: '{value}',
+                                color: 'inherit'
+                            },
+                            title: {
+                                offsetCenter: [0, 10],
+                                fontSize: 18,
+                                color: "#ffffff",
+                            },
+                            data: [
+                                {
+                                    value: 20,
+                                    name: "已链接数量"
+                                }
+                            ]
+                        },
+                        {
+                            type: 'gauge',
+                            center: ['50%', '60%'],
+                            startAngle: 200,
+                            endAngle: -20,
+                            min: 0,
+                            max: 600000,
+                            itemStyle: {
+                                color: '#D200FF '
+                            },
+                            progress: {
+                                show: true,
+                                width: 8
+                            },
+                            pointer: {
+                                show: false
+                            },
+                            axisLine: {
+                                show: false
+                            },
+                            axisTick: {
+                                show: false
+                            },
+                            splitLine: {
+                                show: false
+                            },
+                            axisLabel: {
+                                show: false
+                            },
+                            detail: {
+                                show: false
+                            },
+                            data: [
+                                {
+                                    value: 20
+                                }
+                            ]
+                        }
+                    ]
+                };
+
+            })
+
+            return {albumDetailsData, generateRandomChinese, generateRandomNumber};
+        }
+    };
+
+    createApp(App).mount('#app');
+</script>
+</body>
+</html>
